@@ -1,0 +1,74 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "@vocab": "https://schema.org/",
+    "cloverly": "https://api.cloverly.com/2019-03-beta/",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dcterms": "http://purl.org/dc/terms/",
+
+    "Estimate": {
+      "@id": "cloverly:Estimate",
+      "@context": {
+        "slug": { "@id": "cloverly:Estimate/slug", "@type": "xsd:string" },
+        "state": { "@id": "cloverly:Estimate/state", "@type": "xsd:string" },
+        "total_co2e_in_grams": { "@id": "cloverly:Estimate/totalCo2eInGrams", "@type": "xsd:decimal" },
+        "total_cost_in_usd_cents": { "@id": "cloverly:Estimate/totalCostInUsdCents", "@type": "xsd:integer" },
+        "transaction_cost_in_usd_cents": { "@id": "cloverly:Estimate/transactionCostInUsdCents", "@type": "xsd:integer" },
+        "offset_cost_in_usd_cents": { "@id": "cloverly:Estimate/offsetCostInUsdCents", "@type": "xsd:integer" },
+        "offset": { "@id": "cloverly:Estimate/offset", "@type": "cloverly:Offset" },
+        "pretty_url": { "@id": "cloverly:Estimate/prettyUrl", "@type": "xsd:anyURI" },
+        "created_at": { "@id": "cloverly:Estimate/createdAt", "@type": "xsd:dateTime" }
+      }
+    },
+
+    "Purchase": {
+      "@id": "cloverly:Purchase",
+      "@context": {
+        "slug": { "@id": "cloverly:Purchase/slug", "@type": "xsd:string" },
+        "state": { "@id": "cloverly:Purchase/state", "@type": "xsd:string" },
+        "total_co2e_in_grams": { "@id": "cloverly:Purchase/totalCo2eInGrams", "@type": "xsd:decimal" },
+        "total_cost_in_usd_cents": { "@id": "cloverly:Purchase/totalCostInUsdCents", "@type": "xsd:integer" },
+        "offset": { "@id": "cloverly:Purchase/offset", "@type": "cloverly:Offset" },
+        "retirement": { "@id": "cloverly:Purchase/retirement", "@type": "cloverly:Retirement" },
+        "receipt_url": { "@id": "cloverly:Purchase/receiptUrl", "@type": "xsd:anyURI" }
+      }
+    },
+
+    "Offset": {
+      "@id": "cloverly:Offset",
+      "@context": {
+        "slug": { "@id": "cloverly:Offset/slug", "@type": "xsd:string" },
+        "name": { "@id": "cloverly:Offset/name", "@type": "xsd:string" },
+        "registry_name": { "@id": "cloverly:Offset/registryName", "@type": "xsd:string" },
+        "registry_project_id": { "@id": "cloverly:Offset/registryProjectId", "@type": "xsd:string" },
+        "registry_url": { "@id": "cloverly:Offset/registryUrl", "@type": "xsd:anyURI" },
+        "offset_type": { "@id": "cloverly:Offset/offsetType", "@type": "xsd:string" },
+        "country": { "@id": "cloverly:Offset/country", "@type": "xsd:string" },
+        "vintage_year": { "@id": "cloverly:Offset/vintageYear", "@type": "xsd:integer" },
+        "available_co2e_in_kg": { "@id": "cloverly:Offset/availableCo2eInKg", "@type": "xsd:decimal" },
+        "price_per_kg_in_usd_cents": { "@id": "cloverly:Offset/pricePerKgInUsdCents", "@type": "xsd:decimal" }
+      }
+    },
+
+    "Retirement": {
+      "@id": "cloverly:Retirement",
+      "@context": {
+        "serial_number": { "@id": "cloverly:Retirement/serialNumber", "@type": "xsd:string" },
+        "registry_url": { "@id": "cloverly:Retirement/registryUrl", "@type": "xsd:anyURI" },
+        "retired_at": { "@id": "cloverly:Retirement/retiredAt", "@type": "xsd:dateTime" }
+      }
+    },
+
+    "Account": {
+      "@id": "cloverly:Account",
+      "@context": {
+        "slug": { "@id": "cloverly:Account/slug", "@type": "xsd:string" },
+        "name": { "@id": "cloverly:Account/name", "@type": "xsd:string" },
+        "currency": { "@id": "cloverly:Account/currency", "@type": "xsd:string" },
+        "environment": { "@id": "cloverly:Account/environment", "@type": "xsd:string" },
+        "key_type": { "@id": "cloverly:Account/keyType", "@type": "xsd:string" }
+      }
+    }
+  }
+}

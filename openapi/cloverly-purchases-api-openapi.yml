@@ -1,0 +1,395 @@
+openapi: 3.1.0
+info:
+  title: Cloverly Purchases API
+  description: >
+    Purchase and retire carbon offsets via Cloverly. Mirrors the Estimates
+    activity surface (shipping, vehicle, flights, electricity, carbon,
+    currency), but each call immediately reserves credits against a verified
+    project source and returns a purchase record with the retired offset
+    details. Existing estimates can be converted to purchases by posting their
+    estimate slug.
+  version: '2019-03-beta'
+  contact:
+    name: Cloverly Support
+    url: https://cloverly.com/contact
+  license:
+    name: Cloverly Terms of Service
+    url: https://cloverly.com/terms-of-service
+servers:
+  - url: https://api.cloverly.com
+    description: Production server
+security:
+  - BearerAuth: []
+tags:
+  - name: Purchases
+    description: Retire carbon offsets and produce auditable purchase records
+paths:
+  /2019-03-beta/purchases:
+    get:
+      summary: Cloverly List Purchases
+      description: List purchases recorded against the authenticated account.
+      operationId: listPurchases
+      tags:
+        - Purchases
+      responses:
+        '200':
+          description: A list of purchase records.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Purchase'
+    post:
+      summary: Cloverly Convert Estimate To Purchase
+      description: Promote a previously created estimate to a purchase by posting its slug.
+      operationId: convertEstimateToPurchase
+      tags:
+        - Purchases
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [estimate_slug]
+              properties:
+                estimate_slug:
+                  type: string
+      responses:
+        '200':
+          description: The purchased offset record.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Purchase'
+  /2019-03-beta/purchases/{slug}:
+    get:
+      summary: Cloverly Retrieve Purchase
+      description: Retrieve a single purchase by slug.
+      operationId: retrievePurchase
+      tags:
+        - Purchases
+      parameters:
+        - $ref: '#/components/parameters/PurchaseSlug'
+      responses:
+        '200':
+          description: The purchase record.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Purchase'
+    delete:
+      summary: Cloverly Cancel Purchase
+      description: Cancel a purchase (subject to Cloverly's cancellation window).
+      operationId: cancelPurchase
+      tags:
+        - Purchases
+      parameters:
+        - $ref: '#/components/parameters/PurchaseSlug'
+      responses:
+        '200':
+          description: The cancelled purchase record.
+  /2019-03-beta/purchases/shipping:
+    post:
+      summary: Cloverly Purchase Shipping Offset
+      description: Estimate and immediately retire offsets for a shipping activity.
+      operationId: purchaseShipping
+      tags:
+        - Purchases
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ShippingRequest'
+      responses:
+        '200':
+          description: A purchased shipping offset.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Purchase'
+  /2019-03-beta/purchases/vehicle:
+    post:
+      summary: Cloverly Purchase Vehicle Offset
+      description: Estimate and immediately retire offsets for vehicle travel.
+      operationId: purchaseVehicle
+      tags:
+        - Purchases
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/VehicleRequest'
+      responses:
+        '200':
+          description: A purchased vehicle offset.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Purchase'
+  /2019-03-beta/purchases/flights:
+    post:
+      summary: Cloverly Purchase Flight Offset
+      description: Estimate and immediately retire offsets for one or more flight legs.
+      operationId: purchaseFlight
+      tags:
+        - Purchases
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FlightRequest'
+      responses:
+        '200':
+          description: A purchased flight offset.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Purchase'
+  /2019-03-beta/purchases/electricity:
+    post:
+      summary: Cloverly Purchase Electricity Offset
+      description: Estimate and immediately retire offsets for electricity consumption.
+      operationId: purchaseElectricity
+      tags:
+        - Purchases
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ElectricityRequest'
+      responses:
+        '200':
+          description: A purchased electricity offset.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Purchase'
+  /2019-03-beta/purchases/carbon:
+    post:
+      summary: Cloverly Purchase Carbon Offset
+      description: Estimate and immediately retire offsets for a direct mass of CO2-equivalent emissions.
+      operationId: purchaseCarbon
+      tags:
+        - Purchases
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CarbonRequest'
+      responses:
+        '200':
+          description: A purchased carbon offset.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Purchase'
+  /2019-03-beta/purchases/currency:
+    post:
+      summary: Cloverly Purchase Currency Offset
+      description: Retire offsets corresponding to a fixed currency spend.
+      operationId: purchaseCurrency
+      tags:
+        - Purchases
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CurrencyRequest'
+      responses:
+        '200':
+          description: A purchased currency-based offset.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Purchase'
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+  parameters:
+    PurchaseSlug:
+      name: slug
+      in: path
+      required: true
+      schema:
+        type: string
+  schemas:
+    Purchase:
+      type: object
+      properties:
+        slug:
+          type: string
+        state:
+          type: string
+          enum: [purchased, cancelled]
+        total_co2e_in_grams:
+          type: number
+        total_cost_in_usd_cents:
+          type: integer
+        transaction_cost_in_usd_cents:
+          type: integer
+        offset_cost_in_usd_cents:
+          type: integer
+        offset:
+          $ref: '#/components/schemas/Offset'
+        retirement:
+          type: object
+          properties:
+            serial_number:
+              type: string
+            registry_url:
+              type: string
+              format: uri
+            retired_at:
+              type: string
+              format: date-time
+        receipt_url:
+          type: string
+          format: uri
+        pretty_url:
+          type: string
+          format: uri
+        created_at:
+          type: string
+          format: date-time
+    Offset:
+      type: object
+      properties:
+        slug:
+          type: string
+        name:
+          type: string
+        registry_name:
+          type: string
+        offset_type:
+          type: string
+        country:
+          type: string
+        vintage_year:
+          type: integer
+        price_per_kg_in_usd_cents:
+          type: number
+    Place:
+      type: object
+      properties:
+        zip:
+          type: string
+        postal_code:
+          type: string
+        country:
+          type: string
+        city:
+          type: string
+        state:
+          type: string
+    Weight:
+      type: object
+      required: [value, units]
+      properties:
+        value:
+          type: number
+        units:
+          type: string
+          enum: [g, kg, pounds, tonnes, mt]
+    Distance:
+      type: object
+      required: [value, units]
+      properties:
+        value:
+          type: number
+        units:
+          type: string
+          enum: [meters, km, miles]
+    FuelEfficiency:
+      type: object
+      required: [value, units, of]
+      properties:
+        value:
+          type: number
+        units:
+          type: string
+          enum: [mpg, km/l, l/100km]
+        of:
+          type: string
+          enum: [gasoline, diesel]
+    Currency:
+      type: object
+      required: [value, units]
+      properties:
+        value:
+          type: number
+        units:
+          type: string
+          enum: [usd, usd cents]
+    ShippingRequest:
+      type: object
+      properties:
+        to:
+          $ref: '#/components/schemas/Place'
+        from:
+          $ref: '#/components/schemas/Place'
+        distance:
+          $ref: '#/components/schemas/Distance'
+        weight:
+          $ref: '#/components/schemas/Weight'
+    VehicleRequest:
+      type: object
+      properties:
+        to:
+          $ref: '#/components/schemas/Place'
+        from:
+          $ref: '#/components/schemas/Place'
+        distance:
+          $ref: '#/components/schemas/Distance'
+        fuel_efficiency:
+          $ref: '#/components/schemas/FuelEfficiency'
+    FlightRequest:
+      type: object
+      properties:
+        airports:
+          type: array
+          items:
+            type: object
+            properties:
+              iata:
+                type: string
+        passengers:
+          type: integer
+        cabin_class:
+          type: string
+          enum: [economy, business, first]
+    ElectricityRequest:
+      type: object
+      properties:
+        energy:
+          type: object
+          required: [value, units]
+          properties:
+            value:
+              type: number
+            units:
+              type: string
+              enum: [kwh, mwh]
+        country:
+          type: string
+        region:
+          type: string
+    CarbonRequest:
+      type: object
+      properties:
+        weight:
+          $ref: '#/components/schemas/Weight'
+    CurrencyRequest:
+      type: object
+      properties:
+        currency:
+          $ref: '#/components/schemas/Currency'

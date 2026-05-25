@@ -1,0 +1,61 @@
+vocabulary: cloverly
+specification: 'API Commons Vocabulary 0.1'
+provider: Cloverly
+providerId: cloverly
+created: '2026-05-24'
+modified: '2026-05-24'
+description: >
+  Domain vocabulary for the Cloverly carbon-offset infrastructure API,
+  covering the actor types, business surfaces, units, and standards Cloverly
+  intersects with.
+tags:
+  - Carbon
+  - Carbon Offsets
+  - Climate
+  - Sustainability
+  - VCM
+terms:
+  - term: Carbon Offset
+    definition: A tradable certificate representing the reduction or removal of one metric tonne of CO2-equivalent (CO2e) emissions.
+  - term: CO2-equivalent (CO2e)
+    definition: A standard unit for measuring the warming impact of different greenhouse gases, normalised to carbon dioxide.
+  - term: Voluntary Carbon Market (VCM)
+    definition: The non-regulated marketplace where organisations and individuals purchase carbon credits to offset emissions on a voluntary basis.
+  - term: Estimate
+    definition: A Cloverly resource quoting the price and matched offset source for a hypothetical activity without retiring credits.
+  - term: Purchase
+    definition: A Cloverly resource recording the immediate retirement of a carbon credit against a verified project source.
+  - term: Offset Source
+    definition: An individual carbon project (e.g. Rimba Raya REDD+) whose credits Cloverly can retire on behalf of API callers.
+  - term: Retirement
+    definition: The registry-level act of permanently removing a credit from circulation so it cannot be double-counted.
+  - term: Serial Number
+    definition: The unique identifier issued by the carbon registry for a retired credit; the auditable unit-of-evidence for ESG disclosure.
+  - term: Registry
+    definition: The standards body that issues and tracks carbon credits — Verra (VCS), Gold Standard, ACR, Climate Action Reserve (CAR), Puro.earth.
+  - term: Vintage
+    definition: The year in which the underlying emissions reduction or removal occurred.
+  - term: Reforestation
+    definition: Project type that captures carbon via tree planting on previously deforested land.
+  - term: Biochar
+    definition: Engineered-removal project type that pyrolises biomass into stable carbon for soil application.
+  - term: Direct Air Capture (DAC)
+    definition: Engineered-removal technology that pulls CO2 directly from the atmosphere for permanent storage.
+  - term: REDD+
+    definition: Reducing Emissions from Deforestation and forest Degradation — a UNFCCC framework for forest-carbon credits.
+  - term: Catalyst
+    definition: Cloverly's commercial software platform for carbon project developers — inventory, pricing, content, payments, omnichannel distribution.
+  - term: Climate Impact X (CIX)
+    definition: Singapore-based carbon exchange that acquired Cloverly in 2024 and now operates Cloverly as its developer-platform arm.
+  - term: Scope 1/2/3
+    definition: GHG Protocol emissions classifications — direct (1), purchased energy (2), and value-chain (3) emissions.
+  - term: FOCUS
+    definition: FinOps Open Cost and Usage Specification — the data spec Cloverly's purchase records align with for cost reporting.
+relatedStandards:
+  - GHG Protocol Corporate Standard
+  - ISO 14064-1
+  - SBTi Net-Zero Standard
+  - CSRD / ESRS E1 (Climate)
+  - CDP Climate Disclosure
+  - ICVCM Core Carbon Principles
+  - VCMI Claims Code of Practice

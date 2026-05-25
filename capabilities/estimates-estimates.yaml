@@ -1,0 +1,258 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Cloverly Estimates API — Estimates
+  description: 'Cloverly Estimates API — Estimates. 9 operations covering list, retrieve, cancel, and per-activity
+    estimate creation (shipping, vehicle, flight, electricity, carbon, currency). Self-contained Naftiko
+    capability covering Cloverly''s estimation business surface.'
+  tags:
+  - Cloverly
+  - Estimates
+  - Carbon
+  - Offsets
+  created: '2026-05-24'
+  modified: '2026-05-24'
+binds:
+- namespace: env
+  keys:
+    CLOVERLY_API_KEY: CLOVERLY_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: estimates-estimates
+    baseUri: https://api.cloverly.com
+    description: Cloverly Estimates API. Self-contained, no shared references.
+    resources:
+    - name: estimates
+      path: /2019-03-beta/estimates
+      operations:
+      - name: listEstimates
+        method: GET
+        description: Cloverly List Estimates
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: array
+          value: $.
+    - name: estimate
+      path: /2019-03-beta/estimates/{slug}
+      operations:
+      - name: retrieveEstimate
+        method: GET
+        description: Cloverly Retrieve Estimate
+        outputRawFormat: json
+        inputParameters:
+        - name: slug
+          in: path
+          type: string
+          required: true
+      - name: cancelEstimate
+        method: DELETE
+        description: Cloverly Cancel Estimate
+        inputParameters:
+        - name: slug
+          in: path
+          type: string
+          required: true
+    - name: estimate-shipping
+      path: /2019-03-beta/estimates/shipping
+      operations:
+      - name: estimateShipping
+        method: POST
+        description: Cloverly Estimate Shipping Offset
+        outputRawFormat: json
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          required: true
+    - name: estimate-vehicle
+      path: /2019-03-beta/estimates/vehicle
+      operations:
+      - name: estimateVehicle
+        method: POST
+        description: Cloverly Estimate Vehicle Offset
+        outputRawFormat: json
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          required: true
+    - name: estimate-flights
+      path: /2019-03-beta/estimates/flights
+      operations:
+      - name: estimateFlight
+        method: POST
+        description: Cloverly Estimate Flight Offset
+        outputRawFormat: json
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          required: true
+    - name: estimate-electricity
+      path: /2019-03-beta/estimates/electricity
+      operations:
+      - name: estimateElectricity
+        method: POST
+        description: Cloverly Estimate Electricity Offset
+        outputRawFormat: json
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          required: true
+    - name: estimate-carbon
+      path: /2019-03-beta/estimates/carbon
+      operations:
+      - name: estimateCarbon
+        method: POST
+        description: Cloverly Estimate Carbon Offset
+        outputRawFormat: json
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          required: true
+    - name: estimate-currency
+      path: /2019-03-beta/estimates/currency
+      operations:
+      - name: estimateCurrency
+        method: POST
+        description: Cloverly Estimate Currency Offset
+        outputRawFormat: json
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          required: true
+    authentication:
+      type: bearer
+      value: '{{env.CLOVERLY_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: estimates-estimates-rest
+    port: 8080
+    description: REST adapter for Cloverly Estimates.
+    resources:
+    - path: /v1/estimates
+      name: estimates
+      operations:
+      - method: GET
+        name: listEstimates
+        call: estimates-estimates.listEstimates
+    - path: /v1/estimates/shipping
+      name: estimate-shipping
+      operations:
+      - method: POST
+        name: estimateShipping
+        call: estimates-estimates.estimateShipping
+        with:
+          body: rest.body
+    - path: /v1/estimates/vehicle
+      name: estimate-vehicle
+      operations:
+      - method: POST
+        name: estimateVehicle
+        call: estimates-estimates.estimateVehicle
+        with:
+          body: rest.body
+    - path: /v1/estimates/flights
+      name: estimate-flights
+      operations:
+      - method: POST
+        name: estimateFlight
+        call: estimates-estimates.estimateFlight
+        with:
+          body: rest.body
+    - path: /v1/estimates/electricity
+      name: estimate-electricity
+      operations:
+      - method: POST
+        name: estimateElectricity
+        call: estimates-estimates.estimateElectricity
+        with:
+          body: rest.body
+    - path: /v1/estimates/carbon
+      name: estimate-carbon
+      operations:
+      - method: POST
+        name: estimateCarbon
+        call: estimates-estimates.estimateCarbon
+        with:
+          body: rest.body
+    - path: /v1/estimates/currency
+      name: estimate-currency
+      operations:
+      - method: POST
+        name: estimateCurrency
+        call: estimates-estimates.estimateCurrency
+        with:
+          body: rest.body
+  - type: mcp
+    namespace: estimates-estimates-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Cloverly Estimates.
+    tools:
+    - name: cloverly-list-estimates
+      description: Cloverly List Estimates
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: estimates-estimates.listEstimates
+    - name: cloverly-estimate-shipping
+      description: Cloverly Estimate Shipping Offset
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: estimates-estimates.estimateShipping
+      with:
+        body: tools.body
+    - name: cloverly-estimate-vehicle
+      description: Cloverly Estimate Vehicle Offset
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: estimates-estimates.estimateVehicle
+      with:
+        body: tools.body
+    - name: cloverly-estimate-flight
+      description: Cloverly Estimate Flight Offset
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: estimates-estimates.estimateFlight
+      with:
+        body: tools.body
+    - name: cloverly-estimate-electricity
+      description: Cloverly Estimate Electricity Offset
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: estimates-estimates.estimateElectricity
+      with:
+        body: tools.body
+    - name: cloverly-estimate-carbon
+      description: Cloverly Estimate Carbon Offset
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: estimates-estimates.estimateCarbon
+      with:
+        body: tools.body
+    - name: cloverly-estimate-currency
+      description: Cloverly Estimate Currency Offset
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: estimates-estimates.estimateCurrency
+      with:
+        body: tools.body

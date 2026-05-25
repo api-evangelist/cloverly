@@ -1,0 +1,87 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Cloverly Offset Types API — Offset Types
+  description: 'Cloverly Offset Types API — Offset Types. 2 operations covering list and retrieve of carbon
+    offset project sources. Self-contained Naftiko capability covering Cloverly''s project catalog business
+    surface.'
+  tags:
+  - Cloverly
+  - Offsets
+  - Carbon
+  - Catalog
+  created: '2026-05-24'
+  modified: '2026-05-24'
+binds:
+- namespace: env
+  keys:
+    CLOVERLY_API_KEY: CLOVERLY_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: offset-types-offset-types
+    baseUri: https://api.cloverly.com
+    description: Cloverly Offset Types API.
+    resources:
+    - name: offsets
+      path: /2019-03-beta/offsets
+      operations:
+      - name: listOffsets
+        method: GET
+        description: Cloverly List Offset Sources
+    - name: offset
+      path: /2019-03-beta/offsets/{slug}
+      operations:
+      - name: retrieveOffset
+        method: GET
+        description: Cloverly Retrieve Offset Source
+        inputParameters:
+        - name: slug
+          in: path
+          type: string
+          required: true
+    authentication:
+      type: bearer
+      value: '{{env.CLOVERLY_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: offset-types-offset-types-rest
+    port: 8080
+    description: REST adapter for Cloverly Offset Types.
+    resources:
+    - path: /v1/offsets
+      name: offsets
+      operations:
+      - method: GET
+        name: listOffsets
+        call: offset-types-offset-types.listOffsets
+    - path: /v1/offsets/{slug}
+      name: offset
+      operations:
+      - method: GET
+        name: retrieveOffset
+        call: offset-types-offset-types.retrieveOffset
+        with:
+          slug: rest.path.slug
+  - type: mcp
+    namespace: offset-types-offset-types-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Cloverly Offset Types.
+    tools:
+    - name: cloverly-list-offsets
+      description: Cloverly List Offset Sources
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: offset-types-offset-types.listOffsets
+    - name: cloverly-retrieve-offset
+      description: Cloverly Retrieve Offset Source
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: offset-types-offset-types.retrieveOffset
+      with:
+        slug: tools.slug

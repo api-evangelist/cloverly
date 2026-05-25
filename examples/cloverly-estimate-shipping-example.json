@@ -1,0 +1,37 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "https://api.cloverly.com/2019-03-beta/estimates/shipping",
+    "headers": {
+      "Authorization": "Bearer <CLOVERLY_API_KEY>",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "to": { "country": "US", "postal_code": "35209" },
+      "from": { "country": "PK", "postal_code": "54000" },
+      "weight": { "value": 5, "units": "kg" }
+    }
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "slug": "estimate_2026_05_24_abc123",
+      "state": "estimated",
+      "total_co2e_in_grams": 14200,
+      "total_cost_in_usd_cents": 12,
+      "transaction_cost_in_usd_cents": 7,
+      "offset_cost_in_usd_cents": 5,
+      "offset": {
+        "slug": "rimba-raya-reforestation",
+        "name": "Rimba Raya REDD+ Reforestation",
+        "registry_name": "Verra",
+        "offset_type": "Reforestation",
+        "country": "ID",
+        "vintage_year": 2024,
+        "price_per_kg_in_usd_cents": 0.35
+      },
+      "pretty_url": "https://cloverly.com/r/estimate_2026_05_24_abc123",
+      "created_at": "2026-05-24T15:42:11Z"
+    }
+  }
+}

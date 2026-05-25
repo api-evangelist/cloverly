@@ -1,0 +1,37 @@
+extends: [[spectral:oas, all]]
+rules:
+  cloverly-versioned-path:
+    description: All Cloverly API paths must be prefixed with /2019-03-beta/.
+    message: 'Path {{property}} must start with /2019-03-beta/ (Cloverly''s versioning convention).'
+    severity: warn
+    given: '$.paths[*]~'
+    then:
+      function: pattern
+      functionOptions:
+        match: '^/2019-03-beta/'
+  cloverly-bearer-auth:
+    description: Cloverly authenticates via Bearer tokens issued from the dashboard.
+    message: Operations must declare bearer auth.
+    severity: warn
+    given: '$.components.securitySchemes[*]'
+    then:
+      field: scheme
+      function: pattern
+      functionOptions:
+        match: '^bearer$'
+  cloverly-title-case-summaries:
+    description: Operation summaries should use Title Case and start with the provider name.
+    message: 'Summary "{{value}}" should be Title Case and lead with "Cloverly".'
+    severity: warn
+    given: '$.paths.*.*.summary'
+    then:
+      function: pattern
+      functionOptions:
+        match: '^Cloverly [A-Z][A-Za-z]*( [A-Z][A-Za-z]*)*$'
+  cloverly-co2e-grams-units:
+    description: Emissions response fields should be in grams with explicit naming.
+    message: Use total_co2e_in_grams (or *_in_kg) — Cloverly never uses ambiguous "co2" field names.
+    severity: hint
+    given: '$.components.schemas..properties[?(@property === "co2")]'
+    then:
+      function: falsy

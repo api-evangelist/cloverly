@@ -1,0 +1,45 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Cloverly Platform Workflow
+  description: 'Workflow-oriented capability composing the four Cloverly business surfaces — Account,
+    Offset Types catalog, Estimates, and Purchases — into a single estimate-then-retire flow. Useful when
+    an agent needs to: (1) confirm account context, (2) browse the available project catalog, (3) request
+    an estimate for a shipping/vehicle/flight/electricity/carbon/currency activity, then (4) promote the
+    estimate to a retired purchase with a registry-backed serial number.'
+  tags:
+  - Cloverly
+  - Workflow
+  - Carbon
+  - Climate Action
+  created: '2026-05-24'
+  modified: '2026-05-24'
+binds:
+- namespace: env
+  keys:
+    CLOVERLY_API_KEY: CLOVERLY_API_KEY
+capability:
+  composes:
+  - capabilities/account-account.yaml
+  - capabilities/offset-types-offset-types.yaml
+  - capabilities/estimates-estimates.yaml
+  - capabilities/purchases-purchases.yaml
+  workflows:
+  - name: estimate-and-retire-shipping
+    description: List available offset sources, estimate the shipping offset, then convert the estimate to a purchase.
+    steps:
+    - call: offset-types-offset-types.listOffsets
+    - call: estimates-estimates.estimateShipping
+      with:
+        body: workflow.input.shipping
+      capture:
+        estimate_slug: $.slug
+    - call: purchases-purchases.convertEstimateToPurchase
+      with:
+        body:
+          estimate_slug: $captured.estimate_slug
+  - name: retire-fixed-currency
+    description: Retire offsets for a fixed USD amount without an explicit estimate review.
+    steps:
+    - call: purchases-purchases.purchaseCurrency
+      with:
+        body: workflow.input.currency

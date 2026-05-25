@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-structure.org/draft/2026-01",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/cloverly/main/json-structure/cloverly-estimate-structure.json",
+  "title": "Cloverly Estimate Structure",
+  "description": "JSON Structure description of a Cloverly Estimate as returned by POST /estimates/{type}.",
+  "type": "object",
+  "fields": {
+    "slug": { "type": "string", "required": true, "description": "Stable identifier." },
+    "state": { "type": "string", "enum": ["estimated", "purchased", "cancelled"], "required": true },
+    "total_co2e_in_grams": { "type": "number", "unit": "g", "required": true },
+    "total_cost_in_usd_cents": { "type": "integer", "unit": "USD cents", "required": true },
+    "transaction_cost_in_usd_cents": { "type": "integer", "unit": "USD cents" },
+    "offset_cost_in_usd_cents": { "type": "integer", "unit": "USD cents" },
+    "offset": {
+      "type": "object",
+      "fields": {
+        "slug": { "type": "string" },
+        "name": { "type": "string" },
+        "registry_name": { "type": "string", "description": "Verra | Gold Standard | ACR | CAR | Puro.earth | ..." },
+        "offset_type": { "type": "string", "description": "Reforestation | Biochar | DAC | Renewable Energy | Methane | ..." },
+        "country": { "type": "string", "format": "iso-3166-1-alpha-2" },
+        "vintage_year": { "type": "integer" },
+        "price_per_kg_in_usd_cents": { "type": "number", "unit": "USD cents/kg" }
+      }
+    },
+    "pretty_url": { "type": "string", "format": "uri" },
+    "created_at": { "type": "string", "format": "date-time" }
+  }
+}

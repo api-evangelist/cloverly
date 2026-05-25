@@ -1,0 +1,407 @@
+openapi: 3.1.0
+info:
+  title: Cloverly Estimates API
+  description: >
+    Create, retrieve, list, and cancel carbon-offset estimates without
+    committing a purchase. An estimate quotes the equivalent carbon emissions
+    (in grams) and the transaction cost (in USD cents) for a hypothetical
+    activity — shipping, vehicle travel, flights, electricity consumption,
+    direct carbon mass, or a fixed dollar amount — and returns a slug that can
+    later be converted to a purchase against the matched offset source.
+  version: '2019-03-beta'
+  contact:
+    name: Cloverly Support
+    url: https://cloverly.com/contact
+  license:
+    name: Cloverly Terms of Service
+    url: https://cloverly.com/terms-of-service
+servers:
+  - url: https://api.cloverly.com
+    description: Production server
+security:
+  - BearerAuth: []
+tags:
+  - name: Estimates
+    description: Carbon-offset cost and emissions estimates by activity type
+paths:
+  /2019-03-beta/estimates:
+    get:
+      summary: Cloverly List Estimates
+      description: List estimates created against the authenticated account.
+      operationId: listEstimates
+      tags:
+        - Estimates
+      responses:
+        '200':
+          description: A list of estimate records.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Estimate'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /2019-03-beta/estimates/{slug}:
+    get:
+      summary: Cloverly Retrieve Estimate
+      description: Retrieve a single estimate by its slug.
+      operationId: retrieveEstimate
+      tags:
+        - Estimates
+      parameters:
+        - $ref: '#/components/parameters/EstimateSlug'
+      responses:
+        '200':
+          description: The estimate record.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Estimate'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    delete:
+      summary: Cloverly Cancel Estimate
+      description: Cancel (delete) an outstanding estimate by slug.
+      operationId: cancelEstimate
+      tags:
+        - Estimates
+      parameters:
+        - $ref: '#/components/parameters/EstimateSlug'
+      responses:
+        '200':
+          description: The cancelled estimate record.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Estimate'
+  /2019-03-beta/estimates/shipping:
+    post:
+      summary: Cloverly Estimate Shipping Offset
+      description: >
+        Estimate the carbon-offset cost for a shipping activity defined by
+        either an origin/destination pair or an explicit distance, plus the
+        package weight.
+      operationId: estimateShipping
+      tags:
+        - Estimates
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ShippingRequest'
+      responses:
+        '200':
+          description: A shipping estimate.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Estimate'
+  /2019-03-beta/estimates/vehicle:
+    post:
+      summary: Cloverly Estimate Vehicle Offset
+      description: >
+        Estimate the carbon-offset cost for vehicle travel defined by either
+        an origin/destination pair or an explicit distance, plus the vehicle's
+        fuel efficiency.
+      operationId: estimateVehicle
+      tags:
+        - Estimates
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/VehicleRequest'
+      responses:
+        '200':
+          description: A vehicle estimate.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Estimate'
+  /2019-03-beta/estimates/flights:
+    post:
+      summary: Cloverly Estimate Flight Offset
+      description: >
+        Estimate the carbon-offset cost for one or more flight legs defined
+        by airports (IATA codes) and a passenger count or class of service.
+      operationId: estimateFlight
+      tags:
+        - Estimates
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FlightRequest'
+      responses:
+        '200':
+          description: A flight estimate.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Estimate'
+  /2019-03-beta/estimates/electricity:
+    post:
+      summary: Cloverly Estimate Electricity Offset
+      description: >
+        Estimate the carbon-offset cost for electricity consumption (kWh)
+        in a given country / grid region.
+      operationId: estimateElectricity
+      tags:
+        - Estimates
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ElectricityRequest'
+      responses:
+        '200':
+          description: An electricity estimate.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Estimate'
+  /2019-03-beta/estimates/carbon:
+    post:
+      summary: Cloverly Estimate Carbon Offset
+      description: >
+        Estimate the offset cost for a direct mass of CO2-equivalent
+        emissions (kg, g, pounds, or tonnes).
+      operationId: estimateCarbon
+      tags:
+        - Estimates
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CarbonRequest'
+      responses:
+        '200':
+          description: A carbon-weight estimate.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Estimate'
+  /2019-03-beta/estimates/currency:
+    post:
+      summary: Cloverly Estimate Currency Offset
+      description: >
+        Estimate the amount of CO2 offset that can be retired for a fixed
+        currency amount.
+      operationId: estimateCurrency
+      tags:
+        - Estimates
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CurrencyRequest'
+      responses:
+        '200':
+          description: A currency-based estimate.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Estimate'
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      description: Cloverly public or private API key issued from the dashboard.
+  parameters:
+    EstimateSlug:
+      name: slug
+      in: path
+      required: true
+      description: The estimate slug returned at creation time.
+      schema:
+        type: string
+  responses:
+    Unauthorized:
+      description: Invalid or missing API key.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    NotFound:
+      description: The requested resource does not exist.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+  schemas:
+    Estimate:
+      type: object
+      properties:
+        slug:
+          type: string
+          description: Unique identifier for the estimate.
+        state:
+          type: string
+          enum: [estimated, purchased, cancelled]
+        total_co2e_in_grams:
+          type: number
+          description: Equivalent CO2 emissions (in grams) calculated for the activity.
+        total_cost_in_usd_cents:
+          type: integer
+          description: Total cost in USD cents to offset the calculated emissions.
+        transaction_cost_in_usd_cents:
+          type: integer
+          description: Transaction-level cost (Cloverly fee + offset price) in USD cents.
+        offset_cost_in_usd_cents:
+          type: integer
+        offset:
+          $ref: '#/components/schemas/Offset'
+        pretty_url:
+          type: string
+          format: uri
+        created_at:
+          type: string
+          format: date-time
+    Offset:
+      type: object
+      properties:
+        slug:
+          type: string
+        name:
+          type: string
+        registry_name:
+          type: string
+          description: Registry that issued the credit (Verra, Gold Standard, ACR, CAR, Puro.earth, etc.).
+        offset_type:
+          type: string
+          description: Project category (Reforestation, Biochar, DAC, Renewable Energy, Methane).
+        country:
+          type: string
+        vintage_year:
+          type: integer
+        price_per_kg_in_usd_cents:
+          type: number
+    Place:
+      type: object
+      properties:
+        zip:
+          type: string
+        postal_code:
+          type: string
+        country:
+          type: string
+        city:
+          type: string
+        state:
+          type: string
+    Weight:
+      type: object
+      required: [value, units]
+      properties:
+        value:
+          type: number
+        units:
+          type: string
+          enum: [g, kg, pounds, tonnes, mt]
+    Distance:
+      type: object
+      required: [value, units]
+      properties:
+        value:
+          type: number
+        units:
+          type: string
+          enum: [meters, km, miles]
+    FuelEfficiency:
+      type: object
+      required: [value, units, of]
+      properties:
+        value:
+          type: number
+        units:
+          type: string
+          enum: [mpg, km/l, l/100km]
+        of:
+          type: string
+          enum: [gasoline, diesel]
+    Currency:
+      type: object
+      required: [value, units]
+      properties:
+        value:
+          type: number
+        units:
+          type: string
+          enum: [usd, usd cents]
+    ShippingRequest:
+      type: object
+      properties:
+        to:
+          $ref: '#/components/schemas/Place'
+        from:
+          $ref: '#/components/schemas/Place'
+        distance:
+          $ref: '#/components/schemas/Distance'
+        weight:
+          $ref: '#/components/schemas/Weight'
+    VehicleRequest:
+      type: object
+      properties:
+        to:
+          $ref: '#/components/schemas/Place'
+        from:
+          $ref: '#/components/schemas/Place'
+        distance:
+          $ref: '#/components/schemas/Distance'
+        fuel_efficiency:
+          $ref: '#/components/schemas/FuelEfficiency'
+    FlightRequest:
+      type: object
+      properties:
+        airports:
+          type: array
+          items:
+            type: object
+            properties:
+              iata:
+                type: string
+                example: ATL
+        passengers:
+          type: integer
+        cabin_class:
+          type: string
+          enum: [economy, business, first]
+    ElectricityRequest:
+      type: object
+      properties:
+        energy:
+          type: object
+          required: [value, units]
+          properties:
+            value:
+              type: number
+            units:
+              type: string
+              enum: [kwh, mwh]
+        country:
+          type: string
+        region:
+          type: string
+    CarbonRequest:
+      type: object
+      properties:
+        weight:
+          $ref: '#/components/schemas/Weight'
+    CurrencyRequest:
+      type: object
+      properties:
+        currency:
+          $ref: '#/components/schemas/Currency'
+    Error:
+      type: object
+      properties:
+        error:
+          type: string

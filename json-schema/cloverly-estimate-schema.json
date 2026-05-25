@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/cloverly/main/json-schema/cloverly-estimate-schema.json",
+  "title": "Cloverly Estimate",
+  "description": "A quoted but not-yet-retired carbon offset record returned by POST /estimates/{type}.",
+  "type": "object",
+  "required": ["slug", "state", "total_co2e_in_grams", "total_cost_in_usd_cents"],
+  "properties": {
+    "slug": {
+      "type": "string",
+      "description": "Stable identifier for the estimate."
+    },
+    "state": {
+      "type": "string",
+      "enum": ["estimated", "purchased", "cancelled"]
+    },
+    "total_co2e_in_grams": {
+      "type": "number",
+      "minimum": 0,
+      "description": "Equivalent CO2 emissions in grams."
+    },
+    "total_cost_in_usd_cents": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Total cost (offset + transaction fee) in USD cents."
+    },
+    "transaction_cost_in_usd_cents": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "offset_cost_in_usd_cents": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "offset": {
+      "type": "object",
+      "properties": {
+        "slug": { "type": "string" },
+        "name": { "type": "string" },
+        "registry_name": {
+          "type": "string",
+          "description": "Verra, Gold Standard, ACR, CAR, Puro.earth, etc."
+        },
+        "offset_type": {
+          "type": "string",
+          "description": "Reforestation, Biochar, DAC, Renewable Energy, Methane, etc."
+        },
+        "country": { "type": "string" },
+        "vintage_year": { "type": "integer" },
+        "price_per_kg_in_usd_cents": { "type": "number" }
+      }
+    },
+    "pretty_url": {
+      "type": "string",
+      "format": "uri",
+      "description": "Public-facing shareable receipt URL on cloverly.com."
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "additionalProperties": true
+}

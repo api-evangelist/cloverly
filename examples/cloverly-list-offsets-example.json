@@ -1,0 +1,50 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "https://api.cloverly.com/2019-03-beta/offsets",
+    "headers": {
+      "Authorization": "Bearer <CLOVERLY_API_KEY>"
+    }
+  },
+  "response": {
+    "status": 200,
+    "body": [
+      {
+        "slug": "rimba-raya-reforestation",
+        "name": "Rimba Raya REDD+ Reforestation",
+        "registry_name": "Verra",
+        "registry_project_id": "VCS-674",
+        "registry_url": "https://registry.verra.org/app/projectDetail/VCS/674",
+        "offset_type": "Reforestation",
+        "country": "ID",
+        "vintage_year": 2024,
+        "available_co2e_in_kg": 2400000,
+        "price_per_kg_in_usd_cents": 0.35
+      },
+      {
+        "slug": "puro-biochar-stockholm",
+        "name": "Stockholm Biochar Project",
+        "registry_name": "Puro.earth",
+        "registry_project_id": "PURO-BC-038",
+        "registry_url": "https://puro.earth/CORC-issuance/stockholm-biochar",
+        "offset_type": "Biochar",
+        "country": "SE",
+        "vintage_year": 2025,
+        "available_co2e_in_kg": 85000,
+        "price_per_kg_in_usd_cents": 18.5
+      },
+      {
+        "slug": "climeworks-orca-dac",
+        "name": "Climeworks Orca Direct Air Capture",
+        "registry_name": "Puro.earth",
+        "registry_project_id": "PURO-DAC-001",
+        "registry_url": "https://puro.earth/CORC-issuance/orca-dac",
+        "offset_type": "DAC",
+        "country": "IS",
+        "vintage_year": 2025,
+        "available_co2e_in_kg": 4000,
+        "price_per_kg_in_usd_cents": 95.0
+      }
+    ]
+  }
+}

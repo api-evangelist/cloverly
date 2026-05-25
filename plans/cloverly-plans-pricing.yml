@@ -1,0 +1,128 @@
+specification: API Commons Plans
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
+provider: Cloverly
+providerId: cloverly
+created: '2026-05-24'
+modified: '2026-05-24'
+reconciled: false
+tags:
+  - Carbon
+  - Carbon Offsets
+  - Climate
+  - VCM
+  - Voluntary Carbon Market
+description: >
+  Reconciled pricing for the Cloverly API. Cloverly does not publish a public
+  rate card for API access — credit pricing is set per offset source (per
+  kilogram of CO2-equivalent) and varies by project type, registry, and
+  vintage. Transaction fees and tier discounts are negotiated through
+  Cloverly's sales team. Sandbox / public API keys are free.
+sources:
+  - https://cloverly.com/api
+  - https://cloverly.com/catalyst
+  - https://docs.cloverly.com
+plans:
+  - id: cloverly-sandbox
+    name: Sandbox
+    type: free
+    description: Free sandbox tier for development and integration testing. Public API key issued from the Cloverly dashboard. No live credit retirement.
+    entries:
+      - label: API calls
+        name: api_calls
+        type: included
+        metric: requests
+        limit: -1
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: '0.00'
+        userMultiplied: false
+      - label: Sandbox offsets
+        name: sandbox_offsets
+        type: included
+        metric: kg-co2e
+        limit: -1
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: '0.00'
+        userMultiplied: false
+  - id: cloverly-pay-per-credit
+    name: Production (per-credit)
+    type: usage-based
+    description: Production API access. Each retired offset is billed at the project source's per-kg price plus Cloverly's transaction fee. Pricing varies by project type.
+    entries:
+      - label: Reforestation / avoided deforestation (per tonne CO2e)
+        name: reforestation
+        type: metered
+        metric: tonnes
+        limit: -1
+        timeFrame: usage
+        geo: global
+        unit: 1
+        price: 'market'
+        userMultiplied: false
+        notes: 'Typical Verra/Gold Standard range $3 - $20 per tonne; final price set by selected source.'
+      - label: Biochar (per tonne CO2e)
+        name: biochar
+        type: metered
+        metric: tonnes
+        limit: -1
+        timeFrame: usage
+        geo: global
+        unit: 1
+        price: 'market'
+        userMultiplied: false
+        notes: 'Typical Puro.earth biochar range $100 - $200 per tonne.'
+      - label: Direct Air Capture (per tonne CO2e)
+        name: dac
+        type: metered
+        metric: tonnes
+        limit: -1
+        timeFrame: usage
+        geo: global
+        unit: 1
+        price: 'market'
+        userMultiplied: false
+        notes: 'Premium tier — DAC and engineered removals typically $400 - $1,200 per tonne.'
+      - label: Renewable energy (per tonne CO2e)
+        name: renewables
+        type: metered
+        metric: tonnes
+        limit: -1
+        timeFrame: usage
+        geo: global
+        unit: 1
+        price: 'market'
+        userMultiplied: false
+      - label: Methane abatement (per tonne CO2e)
+        name: methane
+        type: metered
+        metric: tonnes
+        limit: -1
+        timeFrame: usage
+        geo: global
+        unit: 1
+        price: 'market'
+        userMultiplied: false
+  - id: cloverly-catalyst
+    name: Catalyst
+    type: subscription
+    description: Catalyst is Cloverly's commercial software platform for carbon project developers — inventory, pricing, content, payments, omnichannel distribution. Pricing is custom / sales-led.
+    entries:
+      - label: Catalyst platform subscription
+        name: catalyst_subscription
+        type: subscription
+        metric: month
+        limit: -1
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: 'contact-sales'
+        userMultiplied: false
+notes: >
+  Cloverly's API itself is free to call — costs accrue only when offsets are
+  retired through /purchases. Public keys retire from a Cloverly-curated
+  default portfolio; private keys can target specific project sources
+  identified by their /offsets slug.

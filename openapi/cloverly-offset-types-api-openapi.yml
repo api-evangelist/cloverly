@@ -1,0 +1,101 @@
+openapi: 3.1.0
+info:
+  title: Cloverly Offset Types API
+  description: >
+    List the carbon-offset project types and individual offset sources
+    available through Cloverly. Each source is backed by a registry-issued
+    credit (Verra, Gold Standard, ACR, Climate Action Reserve, Puro.earth)
+    and exposes its project type, location, vintage year, available tonnes,
+    and price per kilogram of CO2-equivalent.
+  version: '2019-03-beta'
+  contact:
+    name: Cloverly Support
+    url: https://cloverly.com/contact
+  license:
+    name: Cloverly Terms of Service
+    url: https://cloverly.com/terms-of-service
+servers:
+  - url: https://api.cloverly.com
+    description: Production server
+security:
+  - BearerAuth: []
+tags:
+  - name: Offset Types
+    description: Catalog of available carbon-offset projects and sources
+paths:
+  /2019-03-beta/offsets:
+    get:
+      summary: Cloverly List Offset Sources
+      description: List the available offset sources (projects) the authenticated account can purchase from.
+      operationId: listOffsets
+      tags:
+        - Offset Types
+      responses:
+        '200':
+          description: A list of offset sources.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Offset'
+  /2019-03-beta/offsets/{slug}:
+    get:
+      summary: Cloverly Retrieve Offset Source
+      description: Retrieve a single offset source by slug, including project details, registry link, and price.
+      operationId: retrieveOffset
+      tags:
+        - Offset Types
+      parameters:
+        - name: slug
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: The offset source record.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Offset'
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+  schemas:
+    Offset:
+      type: object
+      properties:
+        slug:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        registry_name:
+          type: string
+          description: Registry that issued the credit (Verra, Gold Standard, ACR, CAR, Puro.earth, etc.).
+        registry_project_id:
+          type: string
+        registry_url:
+          type: string
+          format: uri
+        offset_type:
+          type: string
+          description: Project category — Reforestation, Biochar, DAC, Renewable Energy, Methane, etc.
+        country:
+          type: string
+        location:
+          type: string
+        vintage_year:
+          type: integer
+        available_co2e_in_kg:
+          type: number
+          description: Currently available CO2-equivalent inventory in kilograms.
+        price_per_kg_in_usd_cents:
+          type: number
+        image_url:
+          type: string
+          format: uri

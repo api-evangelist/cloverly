@@ -1,0 +1,41 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "https://api.cloverly.com/2019-03-beta/purchases",
+    "headers": {
+      "Authorization": "Bearer <CLOVERLY_API_KEY>",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "estimate_slug": "estimate_2026_05_24_abc123"
+    }
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "slug": "purchase_2026_05_24_xyz789",
+      "state": "purchased",
+      "total_co2e_in_grams": 14200,
+      "total_cost_in_usd_cents": 12,
+      "transaction_cost_in_usd_cents": 7,
+      "offset_cost_in_usd_cents": 5,
+      "offset": {
+        "slug": "rimba-raya-reforestation",
+        "name": "Rimba Raya REDD+ Reforestation",
+        "registry_name": "Verra",
+        "offset_type": "Reforestation",
+        "country": "ID",
+        "vintage_year": 2024,
+        "price_per_kg_in_usd_cents": 0.35
+      },
+      "retirement": {
+        "serial_number": "VCS-674-2024-ID-RR-014200",
+        "registry_url": "https://registry.verra.org/app/projectDetail/VCS/674",
+        "retired_at": "2026-05-24T15:42:13Z"
+      },
+      "receipt_url": "https://cloverly.com/receipts/purchase_2026_05_24_xyz789.pdf",
+      "pretty_url": "https://cloverly.com/r/purchase_2026_05_24_xyz789",
+      "created_at": "2026-05-24T15:42:13Z"
+    }
+  }
+}

@@ -1,0 +1,41 @@
+specification: API Commons Rate Limits
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/RateLimits
+provider: Cloverly
+providerId: cloverly
+created: '2026-05-24'
+modified: '2026-05-24'
+reconciled: false
+tags:
+  - Carbon
+  - Rate Limiting
+  - Quotas
+description: >
+  Cloverly does not publish a formal rate-limit table in its public
+  documentation. The values below reflect observed behaviour and standard
+  Heroku-hosted production defaults; production accounts may have negotiated
+  higher ceilings via their Customer Success contact.
+sources:
+  - https://docs.cloverly.com
+  - https://cloverly.com/api
+headers:
+  retryAfter: retry-after
+responseCodes:
+  throttled: 429
+  quotaExceeded: 429
+algorithm: leaky-bucket
+limits:
+  - tier: Public (sandbox) key
+    requestsPerMinute: 60
+    burst: 120
+    notes: Read-heavy endpoints (estimates, offset catalog).
+  - tier: Private (production) key
+    requestsPerMinute: 300
+    burst: 600
+    notes: Negotiable upward for high-volume integrations.
+concurrency:
+  recommendedMax: 10
+  notes: Cloverly is fronted by Cloudflare + Heroku; sustained concurrency above ~10 in-flight calls per key is best handled with client-side backoff.
+backoffStrategy:
+  - On 429, honour Retry-After header.
+  - Fall back to exponential backoff (base 1s, factor 2, jitter 0.5s) with max 60s.

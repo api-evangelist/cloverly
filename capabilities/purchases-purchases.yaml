@@ -1,0 +1,269 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Cloverly Purchases API — Purchases
+  description: 'Cloverly Purchases API — Purchases. 10 operations covering list, retrieve, cancel, convert
+    estimate to purchase, and per-activity purchase creation (shipping, vehicle, flight, electricity, carbon,
+    currency). Self-contained Naftiko capability covering Cloverly''s offset retirement business surface.'
+  tags:
+  - Cloverly
+  - Purchases
+  - Carbon
+  - Offsets
+  - Retirement
+  created: '2026-05-24'
+  modified: '2026-05-24'
+binds:
+- namespace: env
+  keys:
+    CLOVERLY_API_KEY: CLOVERLY_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: purchases-purchases
+    baseUri: https://api.cloverly.com
+    description: Cloverly Purchases API. Self-contained, no shared references.
+    resources:
+    - name: purchases
+      path: /2019-03-beta/purchases
+      operations:
+      - name: listPurchases
+        method: GET
+        description: Cloverly List Purchases
+      - name: convertEstimateToPurchase
+        method: POST
+        description: Cloverly Convert Estimate To Purchase
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          required: true
+    - name: purchase
+      path: /2019-03-beta/purchases/{slug}
+      operations:
+      - name: retrievePurchase
+        method: GET
+        description: Cloverly Retrieve Purchase
+        inputParameters:
+        - name: slug
+          in: path
+          type: string
+          required: true
+      - name: cancelPurchase
+        method: DELETE
+        description: Cloverly Cancel Purchase
+        inputParameters:
+        - name: slug
+          in: path
+          type: string
+          required: true
+    - name: purchase-shipping
+      path: /2019-03-beta/purchases/shipping
+      operations:
+      - name: purchaseShipping
+        method: POST
+        description: Cloverly Purchase Shipping Offset
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          required: true
+    - name: purchase-vehicle
+      path: /2019-03-beta/purchases/vehicle
+      operations:
+      - name: purchaseVehicle
+        method: POST
+        description: Cloverly Purchase Vehicle Offset
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          required: true
+    - name: purchase-flights
+      path: /2019-03-beta/purchases/flights
+      operations:
+      - name: purchaseFlight
+        method: POST
+        description: Cloverly Purchase Flight Offset
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          required: true
+    - name: purchase-electricity
+      path: /2019-03-beta/purchases/electricity
+      operations:
+      - name: purchaseElectricity
+        method: POST
+        description: Cloverly Purchase Electricity Offset
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          required: true
+    - name: purchase-carbon
+      path: /2019-03-beta/purchases/carbon
+      operations:
+      - name: purchaseCarbon
+        method: POST
+        description: Cloverly Purchase Carbon Offset
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          required: true
+    - name: purchase-currency
+      path: /2019-03-beta/purchases/currency
+      operations:
+      - name: purchaseCurrency
+        method: POST
+        description: Cloverly Purchase Currency Offset
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          required: true
+    authentication:
+      type: bearer
+      value: '{{env.CLOVERLY_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: purchases-purchases-rest
+    port: 8080
+    description: REST adapter for Cloverly Purchases.
+    resources:
+    - path: /v1/purchases
+      name: purchases
+      operations:
+      - method: GET
+        name: listPurchases
+        call: purchases-purchases.listPurchases
+      - method: POST
+        name: convertEstimateToPurchase
+        call: purchases-purchases.convertEstimateToPurchase
+        with:
+          body: rest.body
+    - path: /v1/purchases/shipping
+      name: purchase-shipping
+      operations:
+      - method: POST
+        name: purchaseShipping
+        call: purchases-purchases.purchaseShipping
+        with:
+          body: rest.body
+    - path: /v1/purchases/vehicle
+      name: purchase-vehicle
+      operations:
+      - method: POST
+        name: purchaseVehicle
+        call: purchases-purchases.purchaseVehicle
+        with:
+          body: rest.body
+    - path: /v1/purchases/flights
+      name: purchase-flights
+      operations:
+      - method: POST
+        name: purchaseFlight
+        call: purchases-purchases.purchaseFlight
+        with:
+          body: rest.body
+    - path: /v1/purchases/electricity
+      name: purchase-electricity
+      operations:
+      - method: POST
+        name: purchaseElectricity
+        call: purchases-purchases.purchaseElectricity
+        with:
+          body: rest.body
+    - path: /v1/purchases/carbon
+      name: purchase-carbon
+      operations:
+      - method: POST
+        name: purchaseCarbon
+        call: purchases-purchases.purchaseCarbon
+        with:
+          body: rest.body
+    - path: /v1/purchases/currency
+      name: purchase-currency
+      operations:
+      - method: POST
+        name: purchaseCurrency
+        call: purchases-purchases.purchaseCurrency
+        with:
+          body: rest.body
+  - type: mcp
+    namespace: purchases-purchases-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Cloverly Purchases.
+    tools:
+    - name: cloverly-list-purchases
+      description: Cloverly List Purchases
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: purchases-purchases.listPurchases
+    - name: cloverly-convert-estimate-to-purchase
+      description: Cloverly Convert Estimate To Purchase
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: purchases-purchases.convertEstimateToPurchase
+      with:
+        body: tools.body
+    - name: cloverly-purchase-shipping
+      description: Cloverly Purchase Shipping Offset
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: purchases-purchases.purchaseShipping
+      with:
+        body: tools.body
+    - name: cloverly-purchase-vehicle
+      description: Cloverly Purchase Vehicle Offset
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: purchases-purchases.purchaseVehicle
+      with:
+        body: tools.body
+    - name: cloverly-purchase-flight
+      description: Cloverly Purchase Flight Offset
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: purchases-purchases.purchaseFlight
+      with:
+        body: tools.body
+    - name: cloverly-purchase-electricity
+      description: Cloverly Purchase Electricity Offset
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: purchases-purchases.purchaseElectricity
+      with:
+        body: tools.body
+    - name: cloverly-purchase-carbon
+      description: Cloverly Purchase Carbon Offset
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: purchases-purchases.purchaseCarbon
+      with:
+        body: tools.body
+    - name: cloverly-purchase-currency
+      description: Cloverly Purchase Currency Offset
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: purchases-purchases.purchaseCurrency
+      with:
+        body: tools.body

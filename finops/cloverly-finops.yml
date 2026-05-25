@@ -1,0 +1,74 @@
+specification: FinOps Framework
+specificationVersion: '1.0'
+schema: https://www.finops.org/framework/
+provider: Cloverly
+providerId: cloverly
+created: '2026-05-24'
+modified: '2026-05-24'
+reconciled: false
+tags:
+  - FinOps
+  - Cost Management
+  - FOCUS
+  - Carbon
+  - Climate
+description: >
+  FOCUS-aligned FinOps definition for Cloverly's carbon-offset retirement
+  surface. Unlike a typical cloud service, the variable cost driver is not
+  compute or storage — it is the kilogram of CO2-equivalent retired through
+  /purchases. Each transaction maps to a registry-issued retirement serial
+  number, providing an auditable Charge record.
+sources:
+  - https://cloverly.com/api
+  - https://cloverly.com/catalyst
+alignedWith:
+  framework: FinOps Foundation Framework
+  frameworkUrl: https://www.finops.org/framework/
+  dataSpec: FOCUS
+  dataSpecVersion: '1.3'
+  dataSpecUrl: https://focus.finops.org/focus-specification/v1-3/
+publisherName: Cloverly
+serviceCategory: Sustainability and Carbon Markets
+billingModel:
+  pricingCategory: Usage-Based
+  billingFrequency: Monthly
+  billingCurrency: USD
+  chargeCategories:
+    - Usage
+    - Purchase
+    - Adjustment
+    - Refund
+  primaryUnit: kilogram-co2e
+  secondaryUnits:
+    - tonne-co2e
+    - usd-cent
+costAllocation:
+  dimensions:
+    - offset_type
+    - registry_name
+    - vintage_year
+    - country
+    - api_key_environment
+  recommendedTags:
+    - department
+    - product
+    - cost-center
+    - scope (1/2/3)
+operationsToCost:
+  - operation: POST /2019-03-beta/purchases/{type}
+    chargeCategory: Usage
+    chargeDescription: Per-kg retirement of CO2e against the matched offset source.
+  - operation: POST /2019-03-beta/purchases (estimate conversion)
+    chargeCategory: Usage
+    chargeDescription: Promotes a quoted estimate to a retired purchase at the quoted price.
+  - operation: DELETE /2019-03-beta/purchases/{slug}
+    chargeCategory: Refund
+    chargeDescription: Cancellation within Cloverly's reversal window produces a credit/refund Charge.
+reportingArtifacts:
+  - Monthly retirement statement (PDF/CSV) exported from the Cloverly dashboard.
+  - Per-purchase receipt_url plus registry retirement serial number for downstream ESG/CSRD/CSDDD reporting.
+notes: >
+  For Scope 3 reporting, treat retired Cloverly purchases as "purchased
+  removals" rather than reductions. The registry_name + serial_number pair on
+  each Purchase is the auditable unit-of-evidence required by CDP, SBTi, and
+  ISSB-aligned disclosures.
