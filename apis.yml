@@ -1,187 +1,178 @@
 aid: cloverly
 url: https://raw.githubusercontent.com/api-evangelist/cloverly/refs/heads/main/apis.yml
 apis:
-- aid: cloverly:cloverly-estimates-api
-  name: Cloverly Estimates API
-  tags:
-  - Carbon
-  - Climate
-  - Estimates
-  - Offsets
-  - Sustainability
-  humanURL: https://docs.cloverly.com
-  baseURL: https://api.cloverly.com
-  properties:
-  - url: https://docs.cloverly.com
-    type: Documentation
-  - url: openapi/cloverly-estimates-api-openapi.yml
-    type: OpenAPI
-  - url: capabilities/estimates-estimates.yaml
-    type: NaftikoCapability
-  - url: json-schema/cloverly-estimate-schema.json
-    type: JSONSchema
-  description: Create and retrieve carbon-offset estimates without committing a purchase. Supports shipping
-    (distance + weight), vehicle (distance + fuel efficiency), flights (passenger-miles), electricity (kWh),
-    direct carbon weight, and fixed currency amounts. Each estimate returns a slug, the equivalent carbon
-    in grams, the matched offset source, and the transaction cost in USD cents, then can be converted to a
-    purchase via the Purchases API.
-- aid: cloverly:cloverly-purchases-api
-  name: Cloverly Purchases API
-  tags:
-  - Carbon
-  - Climate
-  - Purchases
-  - Offsets
-  - Retirement
-  humanURL: https://docs.cloverly.com
-  baseURL: https://api.cloverly.com
-  properties:
-  - url: https://docs.cloverly.com
-    type: Documentation
-  - url: openapi/cloverly-purchases-api-openapi.yml
-    type: OpenAPI
-  - url: capabilities/purchases-purchases.yaml
-    type: NaftikoCapability
-  - url: json-schema/cloverly-purchase-schema.json
-    type: JSONSchema
-  description: Purchase and retire carbon offsets from Cloverly's curated marketplace. Mirrors the Estimates
-    shape (shipping, vehicle, flight, electricity, carbon, currency) but immediately reserves and retires
-    credits against a verified project. Estimates can be promoted to purchases by posting their slug.
-- aid: cloverly:cloverly-offset-types-api
-  name: Cloverly Offset Types API
-  tags:
-  - Carbon
-  - Catalog
-  - Climate
-  - Offsets
-  - Projects
-  humanURL: https://docs.cloverly.com
-  baseURL: https://api.cloverly.com
-  properties:
-  - url: https://docs.cloverly.com
-    type: Documentation
-  - url: openapi/cloverly-offset-types-api-openapi.yml
-    type: OpenAPI
-  - url: capabilities/offset-types-offset-types.yaml
-    type: NaftikoCapability
-  description: List the carbon-offset project types and individual offset sources available through
-    Cloverly — including reforestation, biochar, direct air capture, renewable energy, methane abatement,
-    and other registry-backed projects. Each source records the registry (Verra, Gold Standard, ACR,
-    Climate Action Reserve, Puro.earth, etc.), project location, vintage, available tonnes, and price per
-    tonne.
-- aid: cloverly:cloverly-account-api
-  name: Cloverly Account API
-  tags:
-  - Account
-  - Carbon
-  - Climate
-  humanURL: https://docs.cloverly.com
-  baseURL: https://api.cloverly.com
-  properties:
-  - url: https://docs.cloverly.com
-    type: Documentation
-  - url: openapi/cloverly-account-api-openapi.yml
-    type: OpenAPI
-  - url: capabilities/account-account.yaml
-    type: NaftikoCapability
-  description: Retrieve the authenticated account record including the configured currency, default offset
-    type preferences, and the public/private API key context. Useful for confirming which environment
-    (sandbox vs production) and which key tier a client is operating under.
+  - aid: cloverly:cloverly-estimates-api
+    name: Cloverly Estimates API
+    tags:
+      - Carbon
+      - Climate
+      - Estimates
+      - Offsets
+      - Sustainability
+    humanURL: https://docs.cloverly.com
+    baseURL: https://api.cloverly.com
+    properties:
+      - url: https://docs.cloverly.com
+        type: Documentation
+      - url: openapi/cloverly-estimates-api-openapi.yml
+        type: OpenAPI
+      - url: json-schema/cloverly-estimate-schema.json
+        type: JSONSchema
+    description: >-
+      Create and retrieve carbon-offset estimates without committing a purchase. Supports shipping (distance + weight),
+      vehicle (distance + fuel efficiency), flights (passenger-miles), electricity (kWh), direct carbon weight, and
+      fixed currency amounts. Each estimate returns a slug, the equivalent carbon in grams, the matched offset source,
+      and the transaction cost in USD cents, then can be converted to a purchase via the Purchases API.
+  - aid: cloverly:cloverly-purchases-api
+    name: Cloverly Purchases API
+    tags:
+      - Carbon
+      - Climate
+      - Purchases
+      - Offsets
+      - Retirement
+    humanURL: https://docs.cloverly.com
+    baseURL: https://api.cloverly.com
+    properties:
+      - url: https://docs.cloverly.com
+        type: Documentation
+      - url: openapi/cloverly-purchases-api-openapi.yml
+        type: OpenAPI
+      - url: json-schema/cloverly-purchase-schema.json
+        type: JSONSchema
+    description: >-
+      Purchase and retire carbon offsets from Cloverly's curated marketplace. Mirrors the Estimates shape (shipping,
+      vehicle, flight, electricity, carbon, currency) but immediately reserves and retires credits against a verified
+      project. Estimates can be promoted to purchases by posting their slug.
+  - aid: cloverly:cloverly-offset-types-api
+    name: Cloverly Offset Types API
+    tags:
+      - Carbon
+      - Catalog
+      - Climate
+      - Offsets
+      - Projects
+    humanURL: https://docs.cloverly.com
+    baseURL: https://api.cloverly.com
+    properties:
+      - url: https://docs.cloverly.com
+        type: Documentation
+      - url: openapi/cloverly-offset-types-api-openapi.yml
+        type: OpenAPI
+    description: >-
+      List the carbon-offset project types and individual offset sources available through Cloverly — including
+      reforestation, biochar, direct air capture, renewable energy, methane abatement, and other registry-backed
+      projects. Each source records the registry (Verra, Gold Standard, ACR, Climate Action Reserve, Puro.earth, etc.),
+      project location, vintage, available tonnes, and price per tonne.
+  - aid: cloverly:cloverly-account-api
+    name: Cloverly Account API
+    tags:
+      - Account
+      - Carbon
+      - Climate
+    humanURL: https://docs.cloverly.com
+    baseURL: https://api.cloverly.com
+    properties:
+      - url: https://docs.cloverly.com
+        type: Documentation
+      - url: openapi/cloverly-account-api-openapi.yml
+        type: OpenAPI
+    description: >-
+      Retrieve the authenticated account record including the configured currency, default offset type preferences, and
+      the public/private API key context. Useful for confirming which environment (sandbox vs production) and which key
+      tier a client is operating under.
 name: Cloverly
 tags:
-- Carbon
-- Carbon Credits
-- Carbon Offsets
-- Catalyst
-- Climate
-- Climate Action
-- Climate Impact X
-- CIX
-- Decarbonization
-- ESG
-- Greenhouse Gas
-- Net Zero
-- Project Developers
-- Registries
-- Sustainability
-- Voluntary Carbon Market
-- VCM
+  - Carbon
+  - Carbon Credits
+  - Carbon Offsets
+  - Catalyst
+  - Climate
+  - Climate Action
+  - Climate Impact X
+  - CIX
+  - Decarbonization
+  - ESG
+  - Greenhouse Gas
+  - Net Zero
+  - Project Developers
+  - Registries
+  - Sustainability
+  - Voluntary Carbon Market
+  - VCM
 kind: contract
 image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 access: 3rd-Party
 common:
-- url: https://cloverly.com
-  type: Portal
-- url: https://docs.cloverly.com
-  type: Documentation
-- url: https://dashboard.cloverly.com
-  type: SignUp
-- url: https://dashboard.cloverly.com/user/new
-  type: Registration
-- url: https://cloverly.com/api
-  type: ProductPage
-- url: https://cloverly.com/catalyst
-  type: ProductPage
-- url: https://supply.cloverly.com
-  type: Marketplace
-- url: https://cloverly.com/blog
-  type: Blog
-- url: https://cloverly.com/case-studies
-  type: CaseStudies
-- url: https://cloverly.com/white-papers
-  type: WhitePapers
-- url: https://cloverly.com/contact
-  type: ContactUs
-- url: https://cloverly.com/careers
-  type: Careers
-- url: https://www.linkedin.com/company/cloverly/
-  type: LinkedIn
-- url: https://twitter.com/getcloverly
-  type: Twitter
-- url: https://www.youtube.com/@getcloverly
-  type: YouTube
-- url: https://github.com/cloverly
-  type: GitHubOrganization
-- url: https://github.com/cloverly/cloverly-ruby-gem
-  type: SDK
-  name: Ruby Gem
-- url: https://github.com/cloverly/cloverly-python-module
-  type: SDK
-  name: Python Module
-- url: https://rubygems.org/gems/cloverly
-  type: PackageRegistry
-  name: RubyGems
-- url: https://pypi.org/project/cloverly-python-module/
-  type: PackageRegistry
-  name: PyPI
-- url: https://docs.cloverly.com
-  type: APIReference
-- url: capabilities/cloverly-platform.yaml
-  type: NaftikoCapability
-  name: Cloverly Platform Workflow
-- url: plans/cloverly-plans-pricing.yml
-  type: Plans
-- url: rate-limits/cloverly-rate-limits.yml
-  type: RateLimits
-- url: finops/cloverly-finops.yml
-  type: FinOps
-- url: vocabulary/cloverly-vocabulary.yml
-  type: Vocabulary
-- url: json-ld/cloverly-context.jsonld
-  type: JSONLD
-- url: rules/cloverly-rules.yml
-  type: Spectral
+  - url: https://cloverly.com
+    type: Portal
+  - url: https://docs.cloverly.com
+    type: Documentation
+  - url: https://dashboard.cloverly.com
+    type: SignUp
+  - url: https://dashboard.cloverly.com/user/new
+    type: Registration
+  - url: https://cloverly.com/api
+    type: ProductPage
+  - url: https://cloverly.com/catalyst
+    type: ProductPage
+  - url: https://supply.cloverly.com
+    type: Marketplace
+  - url: https://cloverly.com/blog
+    type: Blog
+  - url: https://cloverly.com/case-studies
+    type: CaseStudies
+  - url: https://cloverly.com/white-papers
+    type: WhitePapers
+  - url: https://cloverly.com/contact
+    type: ContactUs
+  - url: https://cloverly.com/careers
+    type: Careers
+  - url: https://www.linkedin.com/company/cloverly/
+    type: LinkedIn
+  - url: https://twitter.com/getcloverly
+    type: Twitter
+  - url: https://www.youtube.com/@getcloverly
+    type: YouTube
+  - url: https://github.com/cloverly
+    type: GitHubOrganization
+  - url: https://github.com/cloverly/cloverly-ruby-gem
+    type: SDK
+    name: Ruby Gem
+  - url: https://github.com/cloverly/cloverly-python-module
+    type: SDK
+    name: Python Module
+  - url: https://rubygems.org/gems/cloverly
+    type: PackageRegistry
+    name: RubyGems
+  - url: https://pypi.org/project/cloverly-python-module/
+    type: PackageRegistry
+    name: PyPI
+  - url: https://docs.cloverly.com
+    type: APIReference
+  - url: plans/cloverly-plans-pricing.yml
+    type: Plans
+  - url: rate-limits/cloverly-rate-limits.yml
+    type: RateLimits
+  - url: finops/cloverly-finops.yml
+    type: FinOps
+  - url: vocabulary/cloverly-vocabulary.yml
+    type: Vocabulary
+  - url: json-ld/cloverly-context.jsonld
+    type: JSONLD
+  - url: rules/cloverly-rules.yml
+    type: Spectral
 specificationVersion: '0.20'
-description: Cloverly is an Atlanta-headquartered climate technology company that operates a developer-first
-  carbon-credit infrastructure platform. The Cloverly API estimates and purchases verified carbon offsets in
-  real time across a curated portfolio of reforestation, biochar, direct air capture, renewable energy, and
-  methane-abatement projects sourced from registries such as Verra, Gold Standard, ACR, Climate Action
-  Reserve, and Puro.earth. The Catalyst product extends the same platform to project developers managing
-  inventory, pricing, content, payments, and omnichannel distribution. In 2024 Cloverly was acquired by
-  Climate Impact X (CIX), the Singapore-based carbon exchange, and has since operated as the technology
-  arm powering CIX-aligned voluntary carbon market infrastructure.
+description: >-
+  Cloverly is an Atlanta-headquartered climate technology company that operates a developer-first carbon-credit
+  infrastructure platform. The Cloverly API estimates and purchases verified carbon offsets in real time across a
+  curated portfolio of reforestation, biochar, direct air capture, renewable energy, and methane-abatement projects
+  sourced from registries such as Verra, Gold Standard, ACR, Climate Action Reserve, and Puro.earth. The Catalyst
+  product extends the same platform to project developers managing inventory, pricing, content, payments, and
+  omnichannel distribution. In 2024 Cloverly was acquired by Climate Impact X (CIX), the Singapore-based carbon
+  exchange, and has since operated as the technology arm powering CIX-aligned voluntary carbon market infrastructure.
 created: '2026-05-24'
 modified: '2026-05-24'
 maintainers:
-- FN: Kin Lane
-  email: info@apievangelist.com
+  - FN: Kin Lane
+    email: info@apievangelist.com
