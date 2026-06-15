@@ -1,0 +1,176 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Cloverly Purchases API",
+    "version": "2019-03-beta"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Purchases",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Cloverly List Purchases",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.cloverly.com/2019-03-beta/purchases"
+          },
+          "docs": "List purchases recorded against the authenticated account."
+        },
+        {
+          "info": {
+            "name": "Cloverly Convert Estimate To Purchase",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.cloverly.com/2019-03-beta/purchases",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Promote a previously created estimate to a purchase by posting its slug."
+        },
+        {
+          "info": {
+            "name": "Cloverly Retrieve Purchase",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.cloverly.com/2019-03-beta/purchases/:slug",
+            "params": [
+              {
+                "name": "slug",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve a single purchase by slug."
+        },
+        {
+          "info": {
+            "name": "Cloverly Cancel Purchase",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.cloverly.com/2019-03-beta/purchases/:slug",
+            "params": [
+              {
+                "name": "slug",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Cancel a purchase (subject to Cloverly's cancellation window)."
+        },
+        {
+          "info": {
+            "name": "Cloverly Purchase Shipping Offset",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.cloverly.com/2019-03-beta/purchases/shipping",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Estimate and immediately retire offsets for a shipping activity."
+        },
+        {
+          "info": {
+            "name": "Cloverly Purchase Vehicle Offset",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.cloverly.com/2019-03-beta/purchases/vehicle",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Estimate and immediately retire offsets for vehicle travel."
+        },
+        {
+          "info": {
+            "name": "Cloverly Purchase Flight Offset",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.cloverly.com/2019-03-beta/purchases/flights",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Estimate and immediately retire offsets for one or more flight legs."
+        },
+        {
+          "info": {
+            "name": "Cloverly Purchase Electricity Offset",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.cloverly.com/2019-03-beta/purchases/electricity",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Estimate and immediately retire offsets for electricity consumption."
+        },
+        {
+          "info": {
+            "name": "Cloverly Purchase Carbon Offset",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.cloverly.com/2019-03-beta/purchases/carbon",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Estimate and immediately retire offsets for a direct mass of CO2-equivalent emissions."
+        },
+        {
+          "info": {
+            "name": "Cloverly Purchase Currency Offset",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.cloverly.com/2019-03-beta/purchases/currency",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Retire offsets corresponding to a fixed currency spend."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

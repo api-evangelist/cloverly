@@ -1,0 +1,121 @@
+{
+  "item": [
+    {
+      "id": "e1800d7f-347a-490f-816c-1d4c5ac68bc2",
+      "name": "Account",
+      "description": {
+        "content": "Authenticated account context",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "01be1844-9c77-49f5-9bf9-fc010110d7d2",
+          "name": "Cloverly Retrieve Account",
+          "request": {
+            "name": "Cloverly Retrieve Account",
+            "description": {
+              "content": "Retrieve the account record associated with the supplied API key.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2019-03-beta",
+                "account"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "efbb44c0-883d-432b-8d45-4cdfc751c5d5",
+              "name": "The account record.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2019-03-beta",
+                    "account"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"slug\": \"string\",\n  \"name\": \"string\",\n  \"currency\": \"USD\",\n  \"default_offset_slug\": \"string\",\n  \"environment\": \"sandbox\",\n  \"key_type\": \"private\",\n  \"created_at\": \"2018-06-26T01:05:17.547Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.cloverly.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "4828657a-27f3-43dd-8c34-edce9d396f45",
+    "name": "Cloverly Account API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Retrieve the authenticated account record — currency, default offset preferences, and the API key context (public vs private, sandbox vs production).\n\n\nContact Support:\n Name: Cloverly Support",
+      "type": "text/plain"
+    }
+  }
+}

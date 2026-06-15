@@ -1,0 +1,35 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Cloverly Account API",
+    "version": "2019-03-beta"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Account",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Cloverly Retrieve Account",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.cloverly.com/2019-03-beta/account"
+          },
+          "docs": "Retrieve the account record associated with the supplied API key."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

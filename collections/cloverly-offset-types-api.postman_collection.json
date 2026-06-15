@@ -1,0 +1,219 @@
+{
+  "item": [
+    {
+      "id": "ceb1870d-e458-4e89-b404-d5133ce85995",
+      "name": "Offset Types",
+      "description": {
+        "content": "Catalog of available carbon-offset projects and sources",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "411a018b-6b7f-4b5a-99a7-07ed2751390a",
+          "name": "Cloverly List Offset Sources",
+          "request": {
+            "name": "Cloverly List Offset Sources",
+            "description": {
+              "content": "List the available offset sources (projects) the authenticated account can purchase from.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2019-03-beta",
+                "offsets"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7b5ac2e2-2dd3-4f02-87fa-567696368add",
+              "name": "A list of offset sources.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2019-03-beta",
+                    "offsets"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"slug\": \"string\",\n    \"name\": \"string\",\n    \"description\": \"string\",\n    \"registry_name\": \"string\",\n    \"registry_project_id\": \"string\",\n    \"registry_url\": \"https://LwmpptEgSICKNQnjNvbi.mmi2rjZCa1RmNr2uC1uHwmDVtjzed-Ddsqa19nZp8HXy6N\",\n    \"offset_type\": \"string\",\n    \"country\": \"string\",\n    \"location\": \"string\",\n    \"vintage_year\": 6209,\n    \"available_co2e_in_kg\": 5533.414487753848,\n    \"price_per_kg_in_usd_cents\": 5058.494090212279,\n    \"image_url\": \"https://ALvnts.rqklmq1xAyhy58pQ6+l3P4D,N.l434YY8gEX+1lqYL\"\n  },\n  {\n    \"slug\": \"string\",\n    \"name\": \"string\",\n    \"description\": \"string\",\n    \"registry_name\": \"string\",\n    \"registry_project_id\": \"string\",\n    \"registry_url\": \"http://YFgwqVUYXyZbsHfEOutoiLGFILmf.wdumfv+uxWV7RryS3aVBHirDf2du8pm05wv8hNkdo8rA5JOCczBN\",\n    \"offset_type\": \"string\",\n    \"country\": \"string\",\n    \"location\": \"string\",\n    \"vintage_year\": 468,\n    \"available_co2e_in_kg\": 3662.8529372530293,\n    \"price_per_kg_in_usd_cents\": 8386.273014020566,\n    \"image_url\": \"http://IplQMuxlwvpxRMqHzplVSLkohV.gqzpVRCwnNp1+SjjsE1V6gg\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c01a2012-1b4d-40b4-866f-917ba62fc2f2",
+          "name": "Cloverly Retrieve Offset Source",
+          "request": {
+            "name": "Cloverly Retrieve Offset Source",
+            "description": {
+              "content": "Retrieve a single offset source by slug, including project details, registry link, and price.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2019-03-beta",
+                "offsets",
+                ":slug"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "slug",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "aa3a1377-1b85-4d45-b4ce-b247c640c5fa",
+              "name": "The offset source record.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2019-03-beta",
+                    "offsets",
+                    ":slug"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "slug",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"slug\": \"string\",\n  \"name\": \"string\",\n  \"description\": \"string\",\n  \"registry_name\": \"string\",\n  \"registry_project_id\": \"string\",\n  \"registry_url\": \"http://kjOvdIbmpfdSgede.ekvvozFicmMeqUCb2qUy\",\n  \"offset_type\": \"string\",\n  \"country\": \"string\",\n  \"location\": \"string\",\n  \"vintage_year\": 6862,\n  \"available_co2e_in_kg\": 7738.938744988842,\n  \"price_per_kg_in_usd_cents\": 1543.2854572423605,\n  \"image_url\": \"https://OgLgS.suvlH2QmaXkf3\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.cloverly.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "4dae8d03-0a87-4551-b58a-a3de45086869",
+    "name": "Cloverly Offset Types API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "List the carbon-offset project types and individual offset sources available through Cloverly. Each source is backed by a registry-issued credit (Verra, Gold Standard, ACR, Climate Action Reserve, Puro.earth) and exposes its project type, location, vintage year, available tonnes, and price per kilogram of CO2-equivalent.\n\n\nContact Support:\n Name: Cloverly Support",
+      "type": "text/plain"
+    }
+  }
+}

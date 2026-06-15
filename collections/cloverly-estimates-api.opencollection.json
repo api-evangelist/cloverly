@@ -1,0 +1,163 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Cloverly Estimates API",
+    "version": "2019-03-beta"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Estimates",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Cloverly List Estimates",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.cloverly.com/2019-03-beta/estimates"
+          },
+          "docs": "List estimates created against the authenticated account."
+        },
+        {
+          "info": {
+            "name": "Cloverly Retrieve Estimate",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.cloverly.com/2019-03-beta/estimates/:slug",
+            "params": [
+              {
+                "name": "slug",
+                "value": "",
+                "type": "path",
+                "description": "The estimate slug returned at creation time."
+              }
+            ]
+          },
+          "docs": "Retrieve a single estimate by its slug."
+        },
+        {
+          "info": {
+            "name": "Cloverly Cancel Estimate",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.cloverly.com/2019-03-beta/estimates/:slug",
+            "params": [
+              {
+                "name": "slug",
+                "value": "",
+                "type": "path",
+                "description": "The estimate slug returned at creation time."
+              }
+            ]
+          },
+          "docs": "Cancel (delete) an outstanding estimate by slug."
+        },
+        {
+          "info": {
+            "name": "Cloverly Estimate Shipping Offset",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.cloverly.com/2019-03-beta/estimates/shipping",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Estimate the carbon-offset cost for a shipping activity defined by either an origin/destination pair or an explicit distance, plus the package weight.\n"
+        },
+        {
+          "info": {
+            "name": "Cloverly Estimate Vehicle Offset",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.cloverly.com/2019-03-beta/estimates/vehicle",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Estimate the carbon-offset cost for vehicle travel defined by either an origin/destination pair or an explicit distance, plus the vehicle's fuel efficiency.\n"
+        },
+        {
+          "info": {
+            "name": "Cloverly Estimate Flight Offset",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.cloverly.com/2019-03-beta/estimates/flights",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Estimate the carbon-offset cost for one or more flight legs defined by airports (IATA codes) and a passenger count or class of service.\n"
+        },
+        {
+          "info": {
+            "name": "Cloverly Estimate Electricity Offset",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.cloverly.com/2019-03-beta/estimates/electricity",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Estimate the carbon-offset cost for electricity consumption (kWh) in a given country / grid region.\n"
+        },
+        {
+          "info": {
+            "name": "Cloverly Estimate Carbon Offset",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.cloverly.com/2019-03-beta/estimates/carbon",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Estimate the offset cost for a direct mass of CO2-equivalent emissions (kg, g, pounds, or tonnes).\n"
+        },
+        {
+          "info": {
+            "name": "Cloverly Estimate Currency Offset",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.cloverly.com/2019-03-beta/estimates/currency",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Estimate the amount of CO2 offset that can be retired for a fixed currency amount.\n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,53 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Cloverly Offset Types API",
+    "version": "2019-03-beta"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Offset Types",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Cloverly List Offset Sources",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.cloverly.com/2019-03-beta/offsets"
+          },
+          "docs": "List the available offset sources (projects) the authenticated account can purchase from."
+        },
+        {
+          "info": {
+            "name": "Cloverly Retrieve Offset Source",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.cloverly.com/2019-03-beta/offsets/:slug",
+            "params": [
+              {
+                "name": "slug",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve a single offset source by slug, including project details, registry link, and price."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
