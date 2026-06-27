@@ -109,7 +109,7 @@ common:
   - url: https://docs.cloverly.com
     type: Documentation
   - url: https://dashboard.cloverly.com
-    type: SignUp
+    type: Signup
   - url: https://dashboard.cloverly.com/user/new
     type: Registration
   - url: https://cloverly.com/api
@@ -137,10 +137,10 @@ common:
   - url: https://github.com/cloverly
     type: GitHubOrganization
   - url: https://github.com/cloverly/cloverly-ruby-gem
-    type: SDK
+    type: SDKs
     name: Ruby Gem
   - url: https://github.com/cloverly/cloverly-python-module
-    type: SDK
+    type: SDKs
     name: Python Module
   - url: https://rubygems.org/gems/cloverly
     type: PackageRegistry
