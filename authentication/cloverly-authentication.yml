@@ -1,0 +1,16 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/cloverly-account-api-openapi.yml, openapi/cloverly-estimates-api-openapi.yml,
+  openapi/cloverly-offset-types-api-openapi.yml, openapi/cloverly-purchases-api-openapi.yml
+summary:
+  types:
+  - http
+schemes:
+- name: BearerAuth
+  type: http
+  scheme: bearer
+  sources:
+  - openapi/cloverly-account-api-openapi.yml
+  - openapi/cloverly-estimates-api-openapi.yml
+  - openapi/cloverly-offset-types-api-openapi.yml
+  - openapi/cloverly-purchases-api-openapi.yml
