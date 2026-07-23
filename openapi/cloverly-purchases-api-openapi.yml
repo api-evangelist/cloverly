@@ -1,14 +1,10 @@
 openapi: 3.1.0
 info:
-  title: Cloverly Purchases API
-  description: >
-    Purchase and retire carbon offsets via Cloverly. Mirrors the Estimates
-    activity surface (shipping, vehicle, flights, electricity, carbon,
-    currency), but each call immediately reserves credits against a verified
-    project source and returns a purchase record with the retired offset
-    details. Existing estimates can be converted to purchases by posting their
-    estimate slug.
-  version: '2019-03-beta'
+  title: Cloverly Account Purchases API
+  description: 'Retrieve the authenticated account record — currency, default offset preferences, and the API key context (public vs private, sandbox vs production).
+
+    '
+  version: 2019-03-beta
   contact:
     name: Cloverly Support
     url: https://cloverly.com/contact
@@ -16,13 +12,13 @@ info:
     name: Cloverly Terms of Service
     url: https://cloverly.com/terms-of-service
 servers:
-  - url: https://api.cloverly.com
-    description: Production server
+- url: https://api.cloverly.com
+  description: Production server
 security:
-  - BearerAuth: []
+- BearerAuth: []
 tags:
-  - name: Purchases
-    description: Retire carbon offsets and produce auditable purchase records
+- name: Purchases
+  description: Retire carbon offsets and produce auditable purchase records
 paths:
   /2019-03-beta/purchases:
     get:
@@ -30,7 +26,7 @@ paths:
       description: List purchases recorded against the authenticated account.
       operationId: listPurchases
       tags:
-        - Purchases
+      - Purchases
       responses:
         '200':
           description: A list of purchase records.
@@ -45,14 +41,15 @@ paths:
       description: Promote a previously created estimate to a purchase by posting its slug.
       operationId: convertEstimateToPurchase
       tags:
-        - Purchases
+      - Purchases
       requestBody:
         required: true
         content:
           application/json:
             schema:
               type: object
-              required: [estimate_slug]
+              required:
+              - estimate_slug
               properties:
                 estimate_slug:
                   type: string
@@ -69,9 +66,9 @@ paths:
       description: Retrieve a single purchase by slug.
       operationId: retrievePurchase
       tags:
-        - Purchases
+      - Purchases
       parameters:
-        - $ref: '#/components/parameters/PurchaseSlug'
+      - $ref: '#/components/parameters/PurchaseSlug'
       responses:
         '200':
           description: The purchase record.
@@ -84,9 +81,9 @@ paths:
       description: Cancel a purchase (subject to Cloverly's cancellation window).
       operationId: cancelPurchase
       tags:
-        - Purchases
+      - Purchases
       parameters:
-        - $ref: '#/components/parameters/PurchaseSlug'
+      - $ref: '#/components/parameters/PurchaseSlug'
       responses:
         '200':
           description: The cancelled purchase record.
@@ -96,7 +93,7 @@ paths:
       description: Estimate and immediately retire offsets for a shipping activity.
       operationId: purchaseShipping
       tags:
-        - Purchases
+      - Purchases
       requestBody:
         required: true
         content:
@@ -116,7 +113,7 @@ paths:
       description: Estimate and immediately retire offsets for vehicle travel.
       operationId: purchaseVehicle
       tags:
-        - Purchases
+      - Purchases
       requestBody:
         required: true
         content:
@@ -136,7 +133,7 @@ paths:
       description: Estimate and immediately retire offsets for one or more flight legs.
       operationId: purchaseFlight
       tags:
-        - Purchases
+      - Purchases
       requestBody:
         required: true
         content:
@@ -156,7 +153,7 @@ paths:
       description: Estimate and immediately retire offsets for electricity consumption.
       operationId: purchaseElectricity
       tags:
-        - Purchases
+      - Purchases
       requestBody:
         required: true
         content:
@@ -176,7 +173,7 @@ paths:
       description: Estimate and immediately retire offsets for a direct mass of CO2-equivalent emissions.
       operationId: purchaseCarbon
       tags:
-        - Purchases
+      - Purchases
       requestBody:
         required: true
         content:
@@ -196,7 +193,7 @@ paths:
       description: Retire offsets corresponding to a fixed currency spend.
       operationId: purchaseCurrency
       tags:
-        - Purchases
+      - Purchases
       requestBody:
         required: true
         content:
@@ -211,17 +208,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/Purchase'
 components:
-  securitySchemes:
-    BearerAuth:
-      type: http
-      scheme: bearer
-  parameters:
-    PurchaseSlug:
-      name: slug
-      in: path
-      required: true
-      schema:
-        type: string
   schemas:
     Purchase:
       type: object
@@ -230,7 +216,9 @@ components:
           type: string
         state:
           type: string
-          enum: [purchased, cancelled]
+          enum:
+          - purchased
+          - cancelled
         total_co2e_in_grams:
           type: number
         total_cost_in_usd_cents:
@@ -261,6 +249,96 @@ components:
         created_at:
           type: string
           format: date-time
+    ShippingRequest:
+      type: object
+      properties:
+        to:
+          $ref: '#/components/schemas/Place'
+        from:
+          $ref: '#/components/schemas/Place'
+        distance:
+          $ref: '#/components/schemas/Distance'
+        weight:
+          $ref: '#/components/schemas/Weight'
+    Weight:
+      type: object
+      required:
+      - value
+      - units
+      properties:
+        value:
+          type: number
+        units:
+          type: string
+          enum:
+          - g
+          - kg
+          - pounds
+          - tonnes
+          - mt
+    Place:
+      type: object
+      properties:
+        zip:
+          type: string
+        postal_code:
+          type: string
+        country:
+          type: string
+        city:
+          type: string
+        state:
+          type: string
+    CarbonRequest:
+      type: object
+      properties:
+        weight:
+          $ref: '#/components/schemas/Weight'
+    Distance:
+      type: object
+      required:
+      - value
+      - units
+      properties:
+        value:
+          type: number
+        units:
+          type: string
+          enum:
+          - meters
+          - km
+          - miles
+    FuelEfficiency:
+      type: object
+      required:
+      - value
+      - units
+      - of
+      properties:
+        value:
+          type: number
+        units:
+          type: string
+          enum:
+          - mpg
+          - km/l
+          - l/100km
+        of:
+          type: string
+          enum:
+          - gasoline
+          - diesel
+    VehicleRequest:
+      type: object
+      properties:
+        to:
+          $ref: '#/components/schemas/Place'
+        from:
+          $ref: '#/components/schemas/Place'
+        distance:
+          $ref: '#/components/schemas/Distance'
+        fuel_efficiency:
+          $ref: '#/components/schemas/FuelEfficiency'
     Offset:
       type: object
       properties:
@@ -278,80 +356,6 @@ components:
           type: integer
         price_per_kg_in_usd_cents:
           type: number
-    Place:
-      type: object
-      properties:
-        zip:
-          type: string
-        postal_code:
-          type: string
-        country:
-          type: string
-        city:
-          type: string
-        state:
-          type: string
-    Weight:
-      type: object
-      required: [value, units]
-      properties:
-        value:
-          type: number
-        units:
-          type: string
-          enum: [g, kg, pounds, tonnes, mt]
-    Distance:
-      type: object
-      required: [value, units]
-      properties:
-        value:
-          type: number
-        units:
-          type: string
-          enum: [meters, km, miles]
-    FuelEfficiency:
-      type: object
-      required: [value, units, of]
-      properties:
-        value:
-          type: number
-        units:
-          type: string
-          enum: [mpg, km/l, l/100km]
-        of:
-          type: string
-          enum: [gasoline, diesel]
-    Currency:
-      type: object
-      required: [value, units]
-      properties:
-        value:
-          type: number
-        units:
-          type: string
-          enum: [usd, usd cents]
-    ShippingRequest:
-      type: object
-      properties:
-        to:
-          $ref: '#/components/schemas/Place'
-        from:
-          $ref: '#/components/schemas/Place'
-        distance:
-          $ref: '#/components/schemas/Distance'
-        weight:
-          $ref: '#/components/schemas/Weight'
-    VehicleRequest:
-      type: object
-      properties:
-        to:
-          $ref: '#/components/schemas/Place'
-        from:
-          $ref: '#/components/schemas/Place'
-        distance:
-          $ref: '#/components/schemas/Distance'
-        fuel_efficiency:
-          $ref: '#/components/schemas/FuelEfficiency'
     FlightRequest:
       type: object
       properties:
@@ -366,30 +370,56 @@ components:
           type: integer
         cabin_class:
           type: string
-          enum: [economy, business, first]
+          enum:
+          - economy
+          - business
+          - first
     ElectricityRequest:
       type: object
       properties:
         energy:
           type: object
-          required: [value, units]
+          required:
+          - value
+          - units
           properties:
             value:
               type: number
             units:
               type: string
-              enum: [kwh, mwh]
+              enum:
+              - kwh
+              - mwh
         country:
           type: string
         region:
           type: string
-    CarbonRequest:
+    Currency:
       type: object
+      required:
+      - value
+      - units
       properties:
-        weight:
-          $ref: '#/components/schemas/Weight'
+        value:
+          type: number
+        units:
+          type: string
+          enum:
+          - usd
+          - usd cents
     CurrencyRequest:
       type: object
       properties:
         currency:
           $ref: '#/components/schemas/Currency'
+  parameters:
+    PurchaseSlug:
+      name: slug
+      in: path
+      required: true
+      schema:
+        type: string
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer

@@ -1,11 +1,10 @@
 openapi: 3.1.0
 info:
   title: Cloverly Account API
-  description: >
-    Retrieve the authenticated account record — currency, default offset
-    preferences, and the API key context (public vs private, sandbox vs
-    production).
-  version: '2019-03-beta'
+  description: 'Retrieve the authenticated account record — currency, default offset preferences, and the API key context (public vs private, sandbox vs production).
+
+    '
+  version: 2019-03-beta
   contact:
     name: Cloverly Support
     url: https://cloverly.com/contact
@@ -13,13 +12,13 @@ info:
     name: Cloverly Terms of Service
     url: https://cloverly.com/terms-of-service
 servers:
-  - url: https://api.cloverly.com
-    description: Production server
+- url: https://api.cloverly.com
+  description: Production server
 security:
-  - BearerAuth: []
+- BearerAuth: []
 tags:
-  - name: Account
-    description: Authenticated account context
+- name: Account
+  description: Authenticated account context
 paths:
   /2019-03-beta/account:
     get:
@@ -27,7 +26,7 @@ paths:
       description: Retrieve the account record associated with the supplied API key.
       operationId: retrieveAccount
       tags:
-        - Account
+      - Account
       responses:
         '200':
           description: The account record.
@@ -36,10 +35,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/Account'
 components:
-  securitySchemes:
-    BearerAuth:
-      type: http
-      scheme: bearer
   schemas:
     Account:
       type: object
@@ -55,10 +50,18 @@ components:
           type: string
         environment:
           type: string
-          enum: [sandbox, production]
+          enum:
+          - sandbox
+          - production
         key_type:
           type: string
-          enum: [public, private]
+          enum:
+          - public
+          - private
         created_at:
           type: string
           format: date-time
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer

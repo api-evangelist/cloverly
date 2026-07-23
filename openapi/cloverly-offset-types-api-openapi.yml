@@ -1,13 +1,10 @@
 openapi: 3.1.0
 info:
-  title: Cloverly Offset Types API
-  description: >
-    List the carbon-offset project types and individual offset sources
-    available through Cloverly. Each source is backed by a registry-issued
-    credit (Verra, Gold Standard, ACR, Climate Action Reserve, Puro.earth)
-    and exposes its project type, location, vintage year, available tonnes,
-    and price per kilogram of CO2-equivalent.
-  version: '2019-03-beta'
+  title: Cloverly Account Offset Types API
+  description: 'Retrieve the authenticated account record — currency, default offset preferences, and the API key context (public vs private, sandbox vs production).
+
+    '
+  version: 2019-03-beta
   contact:
     name: Cloverly Support
     url: https://cloverly.com/contact
@@ -15,13 +12,13 @@ info:
     name: Cloverly Terms of Service
     url: https://cloverly.com/terms-of-service
 servers:
-  - url: https://api.cloverly.com
-    description: Production server
+- url: https://api.cloverly.com
+  description: Production server
 security:
-  - BearerAuth: []
+- BearerAuth: []
 tags:
-  - name: Offset Types
-    description: Catalog of available carbon-offset projects and sources
+- name: Offset Types
+  description: Catalog of available carbon-offset projects and sources
 paths:
   /2019-03-beta/offsets:
     get:
@@ -29,7 +26,7 @@ paths:
       description: List the available offset sources (projects) the authenticated account can purchase from.
       operationId: listOffsets
       tags:
-        - Offset Types
+      - Offset Types
       responses:
         '200':
           description: A list of offset sources.
@@ -45,13 +42,13 @@ paths:
       description: Retrieve a single offset source by slug, including project details, registry link, and price.
       operationId: retrieveOffset
       tags:
-        - Offset Types
+      - Offset Types
       parameters:
-        - name: slug
-          in: path
-          required: true
-          schema:
-            type: string
+      - name: slug
+        in: path
+        required: true
+        schema:
+          type: string
       responses:
         '200':
           description: The offset source record.
@@ -60,10 +57,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/Offset'
 components:
-  securitySchemes:
-    BearerAuth:
-      type: http
-      scheme: bearer
   schemas:
     Offset:
       type: object
@@ -99,3 +92,7 @@ components:
         image_url:
           type: string
           format: uri
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
