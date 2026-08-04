@@ -1,0 +1,20 @@
+{
+  "provider": "cloverly",
+  "sources": [
+    "cloverly-account-api-openapi.yml",
+    "cloverly-estimates-api-openapi.yml",
+    "cloverly-offset-types-api-openapi.yml",
+    "cloverly-purchases-api-openapi.yml"
+  ],
+  "outputs": [
+    "cloverly-account-api-openapi.yml",
+    "cloverly-estimates-api-openapi.yml",
+    "cloverly-offset-types-api-openapi.yml",
+    "cloverly-purchases-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
