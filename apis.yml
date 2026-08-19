@@ -181,7 +181,7 @@ common:
     type: JSONLD
   - url: rules/cloverly-rules.yml
     type: Spectral
-specificationVersion: '0.20'
+specificationVersion: '0.23'
 description: >-
   Cloverly is an Atlanta-headquartered climate technology company that operates a developer-first carbon-credit
   infrastructure platform. The Cloverly API estimates and purchases verified carbon offsets in real time across a
