@@ -1,7 +1,7 @@
 {
   "item": [
     {
-      "id": "86bc9b62-8fcb-41ed-88b7-4389399b7165",
+      "id": "714be665-87fb-4211-a379-a59186524107",
       "name": "Purchases",
       "description": {
         "content": "Retire carbon offsets and produce auditable purchase records",
@@ -9,7 +9,7 @@
       },
       "item": [
         {
-          "id": "54236e6e-4a67-466c-805c-51da2c382ca5",
+          "id": "c1c1f059-aaa2-43d3-a309-4ee1ab15a34a",
           "name": "Cloverly List Purchases",
           "request": {
             "name": "Cloverly List Purchases",
@@ -39,7 +39,7 @@
           },
           "response": [
             {
-              "id": "686dae46-14c7-4274-ae24-abeb84feca78",
+              "id": "4e77868e-99f4-4914-86a9-b090009f6d89",
               "name": "A list of purchase records.",
               "originalRequest": {
                 "url": {
@@ -78,7 +78,7 @@
                   "value": "application/json"
                 }
               ],
-              "body": "[\n  {\n    \"slug\": \"string\",\n    \"state\": \"cancelled\",\n    \"total_co2e_in_grams\": 5590.573011224591,\n    \"total_cost_in_usd_cents\": 794,\n    \"transaction_cost_in_usd_cents\": 9712,\n    \"offset_cost_in_usd_cents\": 3948,\n    \"offset\": {\n      \"slug\": \"string\",\n      \"name\": \"string\",\n      \"registry_name\": \"string\",\n      \"offset_type\": \"string\",\n      \"country\": \"string\",\n      \"vintage_year\": 2395,\n      \"price_per_kg_in_usd_cents\": 3523.0876485154286\n    },\n    \"retirement\": {\n      \"serial_number\": \"string\",\n      \"registry_url\": \"https://dCKGcfNwfEaAuZmIvcyNd.tnlbW1q9YGjJVD4k-mT1VwOr\",\n      \"retired_at\": \"2022-07-23T12:14:43.625Z\"\n    },\n    \"receipt_url\": \"http://yESQvyohiuObRCMBxsz.qtrcj,Fg-3dy2EJaGE\",\n    \"pretty_url\": \"http://nfPnczcMCqXOjEMCvbjDgWSM.whyfQdA2Fb3+4T5us.KEVJKNu2sttKPzn-KBPr1EfmBAd5+tLoHX\",\n    \"created_at\": \"1966-04-05T13:42:31.839Z\"\n  },\n  {\n    \"slug\": \"string\",\n    \"state\": \"purchased\",\n    \"total_co2e_in_grams\": 8389.508510148287,\n    \"total_cost_in_usd_cents\": 2664,\n    \"transaction_cost_in_usd_cents\": 3189,\n    \"offset_cost_in_usd_cents\": 7991,\n    \"offset\": {\n      \"slug\": \"string\",\n      \"name\": \"string\",\n      \"registry_name\": \"string\",\n      \"offset_type\": \"string\",\n      \"country\": \"string\",\n      \"vintage_year\": 4473,\n      \"price_per_kg_in_usd_cents\": 4133.713378449345\n    },\n    \"retirement\": {\n      \"serial_number\": \"string\",\n      \"registry_url\": \"https://vFCQUber.zuP-8wHyP.lJrP7AJm3,zNgTNNjNk4O3zWgEdXkoZTwlfxz\",\n      \"retired_at\": \"1971-07-26T13:29:19.951Z\"\n    },\n    \"receipt_url\": \"https://JEZdSoeYfYGekXdCAoYsFOHfwyHjwawa.qlhmPDSQREUnID9z04Up4+axG.YA.G2Yxw9iwA\",\n    \"pretty_url\": \"https://oMIPXDcPjrfPrUWEEQGTteuQMqSqkgjyj.mskpateXW5DjBI4hegxku1QIDwTocVzfBunlUTgJfShRv4\",\n    \"created_at\": \"1964-11-12T12:07:40.934Z\"\n  }\n]",
+              "body": "[\n  {\n    \"slug\": \"string\",\n    \"state\": \"cancelled\",\n    \"total_co2e_in_grams\": 7025.462389598139,\n    \"total_cost_in_usd_cents\": 8086,\n    \"transaction_cost_in_usd_cents\": 7540,\n    \"offset_cost_in_usd_cents\": 8296,\n    \"offset\": {\n      \"slug\": \"string\",\n      \"name\": \"string\",\n      \"registry_name\": \"string\",\n      \"offset_type\": \"string\",\n      \"country\": \"string\",\n      \"vintage_year\": 275,\n      \"price_per_kg_in_usd_cents\": 6219.248834765464\n    },\n    \"retirement\": {\n      \"serial_number\": \"string\",\n      \"registry_url\": \"https://lhcZrKNLpHSaOLWiGIDFfu.qbsnFPhbuSIkGq8YkDPJL+rhUtOFz\",\n      \"retired_at\": \"1984-01-21T20:07:54.425Z\"\n    },\n    \"receipt_url\": \"https://VGkYmXAnYgdcITgObWeGrGGskDDkUtXuJ.xwgfH6afNep2A+2cikHeQRPVVu3a-KRnj\",\n    \"pretty_url\": \"http://NtpBefJKxlsfaJA.vnlalplSG0VmO+a6H89sFakcxV.dxpJMEK4qqv\",\n    \"created_at\": \"1993-07-31T13:15:59.063Z\"\n  },\n  {\n    \"slug\": \"string\",\n    \"state\": \"purchased\",\n    \"total_co2e_in_grams\": 2096.754412344053,\n    \"total_cost_in_usd_cents\": 3967,\n    \"transaction_cost_in_usd_cents\": 1296,\n    \"offset_cost_in_usd_cents\": 7875,\n    \"offset\": {\n      \"slug\": \"string\",\n      \"name\": \"string\",\n      \"registry_name\": \"string\",\n      \"offset_type\": \"string\",\n      \"country\": \"string\",\n      \"vintage_year\": 600,\n      \"price_per_kg_in_usd_cents\": 7608.786886806051\n    },\n    \"retirement\": {\n      \"serial_number\": \"string\",\n      \"registry_url\": \"https://yOoJayqBMYXZpNENwGjxYVJqifSna.xvmcj8n7AbLI296oiPVFz00mBofFjQEvk\",\n      \"retired_at\": \"2005-01-28T10:01:37.307Z\"\n    },\n    \"receipt_url\": \"http://QwYQeLSKBkMKDOpierfZSuTmjH.uwkN-ltdE4FvLih9-\",\n    \"pretty_url\": \"https://AvrxjtYID.ghsZ,qnaFq8igTkAgkrUydNnUkfcq8h9N3hgVIrot0GqJrfP4\",\n    \"created_at\": \"1989-07-01T15:32:40.904Z\"\n  }\n]",
               "cookie": [],
               "_postman_previewlanguage": "json"
             }
@@ -89,7 +89,7 @@
           }
         },
         {
-          "id": "b1d678d0-0ff6-4c35-9d4f-150a9c80d671",
+          "id": "046012a7-df47-4eb2-87ba-c61e36143204",
           "name": "Cloverly Convert Estimate To Purchase",
           "request": {
             "name": "Cloverly Convert Estimate To Purchase",
@@ -132,7 +132,7 @@
           },
           "response": [
             {
-              "id": "4f5d0c0a-6305-4831-9a5e-d19503f72ba2",
+              "id": "073e0920-80a7-4fe3-900b-e0c21e04a368",
               "name": "The purchased offset record.",
               "originalRequest": {
                 "url": {
@@ -179,7 +179,7 @@
                   "value": "application/json"
                 }
               ],
-              "body": "{\n  \"slug\": \"string\",\n  \"state\": \"purchased\",\n  \"total_co2e_in_grams\": 7296.494718067987,\n  \"total_cost_in_usd_cents\": 361,\n  \"transaction_cost_in_usd_cents\": 3992,\n  \"offset_cost_in_usd_cents\": 527,\n  \"offset\": {\n    \"slug\": \"string\",\n    \"name\": \"string\",\n    \"registry_name\": \"string\",\n    \"offset_type\": \"string\",\n    \"country\": \"string\",\n    \"vintage_year\": 716,\n    \"price_per_kg_in_usd_cents\": 5923.73450151033\n  },\n  \"retirement\": {\n    \"serial_number\": \"string\",\n    \"registry_url\": \"https://HWqnAkdS.dsbenbvvgABnS7z7wpxXmHz4fu7dUiSiKYe+wmmZhi\",\n    \"retired_at\": \"1977-04-09T01:27:01.085Z\"\n  },\n  \"receipt_url\": \"http://Lu.jjkRlzc+u0pifT7atvhYk8uO\",\n  \"pretty_url\": \"https://AluNkpDmWTxgWSTTrapuQVYYNpOFsojY.nobdlLK9PgeTPHc4uk-ZwuvfCdDEP8TFLgbOURru8PhV2GwDXYCRwKqlkmW\",\n  \"created_at\": \"2007-04-12T21:42:05.272Z\"\n}",
+              "body": "{\n  \"slug\": \"string\",\n  \"state\": \"purchased\",\n  \"total_co2e_in_grams\": 9463.654622601356,\n  \"total_cost_in_usd_cents\": 3011,\n  \"transaction_cost_in_usd_cents\": 3660,\n  \"offset_cost_in_usd_cents\": 8069,\n  \"offset\": {\n    \"slug\": \"string\",\n    \"name\": \"string\",\n    \"registry_name\": \"string\",\n    \"offset_type\": \"string\",\n    \"country\": \"string\",\n    \"vintage_year\": 8690,\n    \"price_per_kg_in_usd_cents\": 4628.112755035704\n  },\n  \"retirement\": {\n    \"serial_number\": \"string\",\n    \"registry_url\": \"http://BXNXeBkbJbCdOvTXgsFBPVFKKrXjyvg.rtwh5bj6ZfxW+SohV0iWg\",\n    \"retired_at\": \"1970-06-03T22:51:54.500Z\"\n  },\n  \"receipt_url\": \"https://wMChFKLEVucmHO.rjHlA,sW+Tsy,x\",\n  \"pretty_url\": \"http://BhCTGdutPSoLzovuuFfZNc.whtXMdZxDRsshP1BgPAKBu2mkzqjlQguUyS6MpgoiODF\",\n  \"created_at\": \"1974-08-26T15:35:46.641Z\"\n}",
               "cookie": [],
               "_postman_previewlanguage": "json"
             }
@@ -190,7 +190,7 @@
           }
         },
         {
-          "id": "40885e23-ab9f-4840-80d7-c037a2011bb2",
+          "id": "f60a1032-b1b0-4322-b52f-b0a99c05bc0c",
           "name": "Cloverly Retrieve Purchase",
           "request": {
             "name": "Cloverly Retrieve Purchase",
@@ -229,7 +229,7 @@
           },
           "response": [
             {
-              "id": "6d660b61-e186-4352-b4e2-03b79f9eeb9a",
+              "id": "9f19043f-8fd1-44da-bb32-d296a5b99f51",
               "name": "The purchase record.",
               "originalRequest": {
                 "url": {
@@ -277,7 +277,7 @@
                   "value": "application/json"
                 }
               ],
-              "body": "{\n  \"slug\": \"string\",\n  \"state\": \"purchased\",\n  \"total_co2e_in_grams\": 7296.494718067987,\n  \"total_cost_in_usd_cents\": 361,\n  \"transaction_cost_in_usd_cents\": 3992,\n  \"offset_cost_in_usd_cents\": 527,\n  \"offset\": {\n    \"slug\": \"string\",\n    \"name\": \"string\",\n    \"registry_name\": \"string\",\n    \"offset_type\": \"string\",\n    \"country\": \"string\",\n    \"vintage_year\": 716,\n    \"price_per_kg_in_usd_cents\": 5923.73450151033\n  },\n  \"retirement\": {\n    \"serial_number\": \"string\",\n    \"registry_url\": \"https://HWqnAkdS.dsbenbvvgABnS7z7wpxXmHz4fu7dUiSiKYe+wmmZhi\",\n    \"retired_at\": \"1977-04-09T01:27:01.085Z\"\n  },\n  \"receipt_url\": \"http://Lu.jjkRlzc+u0pifT7atvhYk8uO\",\n  \"pretty_url\": \"https://AluNkpDmWTxgWSTTrapuQVYYNpOFsojY.nobdlLK9PgeTPHc4uk-ZwuvfCdDEP8TFLgbOURru8PhV2GwDXYCRwKqlkmW\",\n  \"created_at\": \"2007-04-12T21:42:05.272Z\"\n}",
+              "body": "{\n  \"slug\": \"string\",\n  \"state\": \"purchased\",\n  \"total_co2e_in_grams\": 9463.654622601356,\n  \"total_cost_in_usd_cents\": 3011,\n  \"transaction_cost_in_usd_cents\": 3660,\n  \"offset_cost_in_usd_cents\": 8069,\n  \"offset\": {\n    \"slug\": \"string\",\n    \"name\": \"string\",\n    \"registry_name\": \"string\",\n    \"offset_type\": \"string\",\n    \"country\": \"string\",\n    \"vintage_year\": 8690,\n    \"price_per_kg_in_usd_cents\": 4628.112755035704\n  },\n  \"retirement\": {\n    \"serial_number\": \"string\",\n    \"registry_url\": \"http://BXNXeBkbJbCdOvTXgsFBPVFKKrXjyvg.rtwh5bj6ZfxW+SohV0iWg\",\n    \"retired_at\": \"1970-06-03T22:51:54.500Z\"\n  },\n  \"receipt_url\": \"https://wMChFKLEVucmHO.rjHlA,sW+Tsy,x\",\n  \"pretty_url\": \"http://BhCTGdutPSoLzovuuFfZNc.whtXMdZxDRsshP1BgPAKBu2mkzqjlQguUyS6MpgoiODF\",\n  \"created_at\": \"1974-08-26T15:35:46.641Z\"\n}",
               "cookie": [],
               "_postman_previewlanguage": "json"
             }
@@ -288,7 +288,7 @@
           }
         },
         {
-          "id": "24863213-4e42-46f3-aaf3-eb50f0117caf",
+          "id": "ab3fa37f-4cb8-44a1-b2d5-ceeabd760bbd",
           "name": "Cloverly Cancel Purchase",
           "request": {
             "name": "Cloverly Cancel Purchase",
@@ -321,7 +321,7 @@
           },
           "response": [
             {
-              "id": "82843659-19ee-4b81-a12b-36ce668e5240",
+              "id": "57d202d7-e6e1-4476-96a7-94c9b14bc6c0",
               "name": "The cancelled purchase record.",
               "originalRequest": {
                 "url": {
@@ -376,7 +376,7 @@
           }
         },
         {
-          "id": "0fc6a2ab-aba2-43c6-8300-d51b5c0b5004",
+          "id": "02c020aa-2f73-40fb-8973-74dd114ae1e8",
           "name": "Cloverly Purchase Shipping Offset",
           "request": {
             "name": "Cloverly Purchase Shipping Offset",
@@ -420,7 +420,7 @@
           },
           "response": [
             {
-              "id": "4a72f7e2-6db5-4646-ba95-2c86dd9b8a7d",
+              "id": "b7d8b1c9-e149-4c22-93af-d4b7b8cf5c2c",
               "name": "A purchased shipping offset.",
               "originalRequest": {
                 "url": {
@@ -452,7 +452,7 @@
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"to\": {\n    \"zip\": \"string\",\n    \"postal_code\": \"string\",\n    \"country\": \"string\",\n    \"city\": \"string\",\n    \"state\": \"string\"\n  },\n  \"from\": {\n    \"zip\": \"string\",\n    \"postal_code\": \"string\",\n    \"country\": \"string\",\n    \"city\": \"string\",\n    \"state\": \"string\"\n  },\n  \"distance\": {\n    \"value\": 8059.625745295818,\n    \"units\": \"km\"\n  },\n  \"weight\": {\n    \"value\": 9708.263757247061,\n    \"units\": \"tonnes\"\n  }\n}",
+                  "raw": "{\n  \"to\": {\n    \"zip\": \"string\",\n    \"postal_code\": \"string\",\n    \"country\": \"string\",\n    \"city\": \"string\",\n    \"state\": \"string\"\n  },\n  \"from\": {\n    \"zip\": \"string\",\n    \"postal_code\": \"string\",\n    \"country\": \"string\",\n    \"city\": \"string\",\n    \"state\": \"string\"\n  },\n  \"distance\": {\n    \"value\": 8967.083267379398,\n    \"units\": \"miles\"\n  },\n  \"weight\": {\n    \"value\": 884.8769936595424,\n    \"units\": \"tonnes\"\n  }\n}",
                   "options": {
                     "raw": {
                       "language": "json"
@@ -468,7 +468,7 @@
                   "value": "application/json"
                 }
               ],
-              "body": "{\n  \"slug\": \"string\",\n  \"state\": \"purchased\",\n  \"total_co2e_in_grams\": 7296.494718067987,\n  \"total_cost_in_usd_cents\": 361,\n  \"transaction_cost_in_usd_cents\": 3992,\n  \"offset_cost_in_usd_cents\": 527,\n  \"offset\": {\n    \"slug\": \"string\",\n    \"name\": \"string\",\n    \"registry_name\": \"string\",\n    \"offset_type\": \"string\",\n    \"country\": \"string\",\n    \"vintage_year\": 716,\n    \"price_per_kg_in_usd_cents\": 5923.73450151033\n  },\n  \"retirement\": {\n    \"serial_number\": \"string\",\n    \"registry_url\": \"https://HWqnAkdS.dsbenbvvgABnS7z7wpxXmHz4fu7dUiSiKYe+wmmZhi\",\n    \"retired_at\": \"1977-04-09T01:27:01.085Z\"\n  },\n  \"receipt_url\": \"http://Lu.jjkRlzc+u0pifT7atvhYk8uO\",\n  \"pretty_url\": \"https://AluNkpDmWTxgWSTTrapuQVYYNpOFsojY.nobdlLK9PgeTPHc4uk-ZwuvfCdDEP8TFLgbOURru8PhV2GwDXYCRwKqlkmW\",\n  \"created_at\": \"2007-04-12T21:42:05.272Z\"\n}",
+              "body": "{\n  \"slug\": \"string\",\n  \"state\": \"purchased\",\n  \"total_co2e_in_grams\": 9463.654622601356,\n  \"total_cost_in_usd_cents\": 3011,\n  \"transaction_cost_in_usd_cents\": 3660,\n  \"offset_cost_in_usd_cents\": 8069,\n  \"offset\": {\n    \"slug\": \"string\",\n    \"name\": \"string\",\n    \"registry_name\": \"string\",\n    \"offset_type\": \"string\",\n    \"country\": \"string\",\n    \"vintage_year\": 8690,\n    \"price_per_kg_in_usd_cents\": 4628.112755035704\n  },\n  \"retirement\": {\n    \"serial_number\": \"string\",\n    \"registry_url\": \"http://BXNXeBkbJbCdOvTXgsFBPVFKKrXjyvg.rtwh5bj6ZfxW+SohV0iWg\",\n    \"retired_at\": \"1970-06-03T22:51:54.500Z\"\n  },\n  \"receipt_url\": \"https://wMChFKLEVucmHO.rjHlA,sW+Tsy,x\",\n  \"pretty_url\": \"http://BhCTGdutPSoLzovuuFfZNc.whtXMdZxDRsshP1BgPAKBu2mkzqjlQguUyS6MpgoiODF\",\n  \"created_at\": \"1974-08-26T15:35:46.641Z\"\n}",
               "cookie": [],
               "_postman_previewlanguage": "json"
             }
@@ -479,7 +479,7 @@
           }
         },
         {
-          "id": "bdba4ea3-af78-4a31-b695-1ad286d4f002",
+          "id": "8722e7b9-933b-4df7-b856-f5551447dd7d",
           "name": "Cloverly Purchase Vehicle Offset",
           "request": {
             "name": "Cloverly Purchase Vehicle Offset",
@@ -523,7 +523,7 @@
           },
           "response": [
             {
-              "id": "f43bb226-e3f2-4f2b-8d61-fda87fb14963",
+              "id": "c730ff20-cea7-4aee-9e52-6d2ba4e638bc",
               "name": "A purchased vehicle offset.",
               "originalRequest": {
                 "url": {
@@ -555,7 +555,7 @@
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"to\": {\n    \"zip\": \"string\",\n    \"postal_code\": \"string\",\n    \"country\": \"string\",\n    \"city\": \"string\",\n    \"state\": \"string\"\n  },\n  \"from\": {\n    \"zip\": \"string\",\n    \"postal_code\": \"string\",\n    \"country\": \"string\",\n    \"city\": \"string\",\n    \"state\": \"string\"\n  },\n  \"distance\": {\n    \"value\": 8406.124628718822,\n    \"units\": \"miles\"\n  },\n  \"fuel_efficiency\": {\n    \"value\": 4057.373640554071,\n    \"units\": \"mpg\",\n    \"of\": \"gasoline\"\n  }\n}",
+                  "raw": "{\n  \"to\": {\n    \"zip\": \"string\",\n    \"postal_code\": \"string\",\n    \"country\": \"string\",\n    \"city\": \"string\",\n    \"state\": \"string\"\n  },\n  \"from\": {\n    \"zip\": \"string\",\n    \"postal_code\": \"string\",\n    \"country\": \"string\",\n    \"city\": \"string\",\n    \"state\": \"string\"\n  },\n  \"distance\": {\n    \"value\": 1884.2699104920891,\n    \"units\": \"km\"\n  },\n  \"fuel_efficiency\": {\n    \"value\": 7594.70912629813,\n    \"units\": \"mpg\",\n    \"of\": \"gasoline\"\n  }\n}",
                   "options": {
                     "raw": {
                       "language": "json"
@@ -571,7 +571,7 @@
                   "value": "application/json"
                 }
               ],
-              "body": "{\n  \"slug\": \"string\",\n  \"state\": \"purchased\",\n  \"total_co2e_in_grams\": 7296.494718067987,\n  \"total_cost_in_usd_cents\": 361,\n  \"transaction_cost_in_usd_cents\": 3992,\n  \"offset_cost_in_usd_cents\": 527,\n  \"offset\": {\n    \"slug\": \"string\",\n    \"name\": \"string\",\n    \"registry_name\": \"string\",\n    \"offset_type\": \"string\",\n    \"country\": \"string\",\n    \"vintage_year\": 716,\n    \"price_per_kg_in_usd_cents\": 5923.73450151033\n  },\n  \"retirement\": {\n    \"serial_number\": \"string\",\n    \"registry_url\": \"https://HWqnAkdS.dsbenbvvgABnS7z7wpxXmHz4fu7dUiSiKYe+wmmZhi\",\n    \"retired_at\": \"1977-04-09T01:27:01.085Z\"\n  },\n  \"receipt_url\": \"http://Lu.jjkRlzc+u0pifT7atvhYk8uO\",\n  \"pretty_url\": \"https://AluNkpDmWTxgWSTTrapuQVYYNpOFsojY.nobdlLK9PgeTPHc4uk-ZwuvfCdDEP8TFLgbOURru8PhV2GwDXYCRwKqlkmW\",\n  \"created_at\": \"2007-04-12T21:42:05.272Z\"\n}",
+              "body": "{\n  \"slug\": \"string\",\n  \"state\": \"purchased\",\n  \"total_co2e_in_grams\": 9463.654622601356,\n  \"total_cost_in_usd_cents\": 3011,\n  \"transaction_cost_in_usd_cents\": 3660,\n  \"offset_cost_in_usd_cents\": 8069,\n  \"offset\": {\n    \"slug\": \"string\",\n    \"name\": \"string\",\n    \"registry_name\": \"string\",\n    \"offset_type\": \"string\",\n    \"country\": \"string\",\n    \"vintage_year\": 8690,\n    \"price_per_kg_in_usd_cents\": 4628.112755035704\n  },\n  \"retirement\": {\n    \"serial_number\": \"string\",\n    \"registry_url\": \"http://BXNXeBkbJbCdOvTXgsFBPVFKKrXjyvg.rtwh5bj6ZfxW+SohV0iWg\",\n    \"retired_at\": \"1970-06-03T22:51:54.500Z\"\n  },\n  \"receipt_url\": \"https://wMChFKLEVucmHO.rjHlA,sW+Tsy,x\",\n  \"pretty_url\": \"http://BhCTGdutPSoLzovuuFfZNc.whtXMdZxDRsshP1BgPAKBu2mkzqjlQguUyS6MpgoiODF\",\n  \"created_at\": \"1974-08-26T15:35:46.641Z\"\n}",
               "cookie": [],
               "_postman_previewlanguage": "json"
             }
@@ -582,7 +582,7 @@
           }
         },
         {
-          "id": "a1d2bac3-eef1-4117-a6c8-87ea3bf9dc67",
+          "id": "776407b2-f872-48f1-9350-33e22cd5d1c9",
           "name": "Cloverly Purchase Flight Offset",
           "request": {
             "name": "Cloverly Purchase Flight Offset",
@@ -626,7 +626,7 @@
           },
           "response": [
             {
-              "id": "455ec2b8-0464-41e6-9a2c-759dab84f244",
+              "id": "7075cdc2-e7af-45a0-b755-978e4cab685b",
               "name": "A purchased flight offset.",
               "originalRequest": {
                 "url": {
@@ -674,7 +674,7 @@
                   "value": "application/json"
                 }
               ],
-              "body": "{\n  \"slug\": \"string\",\n  \"state\": \"purchased\",\n  \"total_co2e_in_grams\": 7296.494718067987,\n  \"total_cost_in_usd_cents\": 361,\n  \"transaction_cost_in_usd_cents\": 3992,\n  \"offset_cost_in_usd_cents\": 527,\n  \"offset\": {\n    \"slug\": \"string\",\n    \"name\": \"string\",\n    \"registry_name\": \"string\",\n    \"offset_type\": \"string\",\n    \"country\": \"string\",\n    \"vintage_year\": 716,\n    \"price_per_kg_in_usd_cents\": 5923.73450151033\n  },\n  \"retirement\": {\n    \"serial_number\": \"string\",\n    \"registry_url\": \"https://HWqnAkdS.dsbenbvvgABnS7z7wpxXmHz4fu7dUiSiKYe+wmmZhi\",\n    \"retired_at\": \"1977-04-09T01:27:01.085Z\"\n  },\n  \"receipt_url\": \"http://Lu.jjkRlzc+u0pifT7atvhYk8uO\",\n  \"pretty_url\": \"https://AluNkpDmWTxgWSTTrapuQVYYNpOFsojY.nobdlLK9PgeTPHc4uk-ZwuvfCdDEP8TFLgbOURru8PhV2GwDXYCRwKqlkmW\",\n  \"created_at\": \"2007-04-12T21:42:05.272Z\"\n}",
+              "body": "{\n  \"slug\": \"string\",\n  \"state\": \"purchased\",\n  \"total_co2e_in_grams\": 9463.654622601356,\n  \"total_cost_in_usd_cents\": 3011,\n  \"transaction_cost_in_usd_cents\": 3660,\n  \"offset_cost_in_usd_cents\": 8069,\n  \"offset\": {\n    \"slug\": \"string\",\n    \"name\": \"string\",\n    \"registry_name\": \"string\",\n    \"offset_type\": \"string\",\n    \"country\": \"string\",\n    \"vintage_year\": 8690,\n    \"price_per_kg_in_usd_cents\": 4628.112755035704\n  },\n  \"retirement\": {\n    \"serial_number\": \"string\",\n    \"registry_url\": \"http://BXNXeBkbJbCdOvTXgsFBPVFKKrXjyvg.rtwh5bj6ZfxW+SohV0iWg\",\n    \"retired_at\": \"1970-06-03T22:51:54.500Z\"\n  },\n  \"receipt_url\": \"https://wMChFKLEVucmHO.rjHlA,sW+Tsy,x\",\n  \"pretty_url\": \"http://BhCTGdutPSoLzovuuFfZNc.whtXMdZxDRsshP1BgPAKBu2mkzqjlQguUyS6MpgoiODF\",\n  \"created_at\": \"1974-08-26T15:35:46.641Z\"\n}",
               "cookie": [],
               "_postman_previewlanguage": "json"
             }
@@ -685,7 +685,7 @@
           }
         },
         {
-          "id": "fc46766e-590b-463c-b400-e0902a1e9534",
+          "id": "e7173d21-7f78-458a-91c1-74b201313e88",
           "name": "Cloverly Purchase Electricity Offset",
           "request": {
             "name": "Cloverly Purchase Electricity Offset",
@@ -729,7 +729,7 @@
           },
           "response": [
             {
-              "id": "2f459281-33ed-48fd-9dbb-ab603a9296b2",
+              "id": "873ebcbb-c519-4e5e-8859-a59aa77400f1",
               "name": "A purchased electricity offset.",
               "originalRequest": {
                 "url": {
@@ -777,7 +777,7 @@
                   "value": "application/json"
                 }
               ],
-              "body": "{\n  \"slug\": \"string\",\n  \"state\": \"purchased\",\n  \"total_co2e_in_grams\": 7296.494718067987,\n  \"total_cost_in_usd_cents\": 361,\n  \"transaction_cost_in_usd_cents\": 3992,\n  \"offset_cost_in_usd_cents\": 527,\n  \"offset\": {\n    \"slug\": \"string\",\n    \"name\": \"string\",\n    \"registry_name\": \"string\",\n    \"offset_type\": \"string\",\n    \"country\": \"string\",\n    \"vintage_year\": 716,\n    \"price_per_kg_in_usd_cents\": 5923.73450151033\n  },\n  \"retirement\": {\n    \"serial_number\": \"string\",\n    \"registry_url\": \"https://HWqnAkdS.dsbenbvvgABnS7z7wpxXmHz4fu7dUiSiKYe+wmmZhi\",\n    \"retired_at\": \"1977-04-09T01:27:01.085Z\"\n  },\n  \"receipt_url\": \"http://Lu.jjkRlzc+u0pifT7atvhYk8uO\",\n  \"pretty_url\": \"https://AluNkpDmWTxgWSTTrapuQVYYNpOFsojY.nobdlLK9PgeTPHc4uk-ZwuvfCdDEP8TFLgbOURru8PhV2GwDXYCRwKqlkmW\",\n  \"created_at\": \"2007-04-12T21:42:05.272Z\"\n}",
+              "body": "{\n  \"slug\": \"string\",\n  \"state\": \"purchased\",\n  \"total_co2e_in_grams\": 9463.654622601356,\n  \"total_cost_in_usd_cents\": 3011,\n  \"transaction_cost_in_usd_cents\": 3660,\n  \"offset_cost_in_usd_cents\": 8069,\n  \"offset\": {\n    \"slug\": \"string\",\n    \"name\": \"string\",\n    \"registry_name\": \"string\",\n    \"offset_type\": \"string\",\n    \"country\": \"string\",\n    \"vintage_year\": 8690,\n    \"price_per_kg_in_usd_cents\": 4628.112755035704\n  },\n  \"retirement\": {\n    \"serial_number\": \"string\",\n    \"registry_url\": \"http://BXNXeBkbJbCdOvTXgsFBPVFKKrXjyvg.rtwh5bj6ZfxW+SohV0iWg\",\n    \"retired_at\": \"1970-06-03T22:51:54.500Z\"\n  },\n  \"receipt_url\": \"https://wMChFKLEVucmHO.rjHlA,sW+Tsy,x\",\n  \"pretty_url\": \"http://BhCTGdutPSoLzovuuFfZNc.whtXMdZxDRsshP1BgPAKBu2mkzqjlQguUyS6MpgoiODF\",\n  \"created_at\": \"1974-08-26T15:35:46.641Z\"\n}",
               "cookie": [],
               "_postman_previewlanguage": "json"
             }
@@ -788,7 +788,7 @@
           }
         },
         {
-          "id": "ca2a22bc-c95e-461e-b119-5dfac2ff5f7d",
+          "id": "a9ba5707-2f03-4ce7-a3bc-d9738cee9766",
           "name": "Cloverly Purchase Carbon Offset",
           "request": {
             "name": "Cloverly Purchase Carbon Offset",
@@ -832,7 +832,7 @@
           },
           "response": [
             {
-              "id": "ed8c985a-3a6f-4210-a74d-9a7f20e98bd6",
+              "id": "c9fdfe2f-da19-4fcc-bb25-3a5732d30139",
               "name": "A purchased carbon offset.",
               "originalRequest": {
                 "url": {
@@ -864,7 +864,7 @@
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"weight\": {\n    \"value\": 7896.892644162752,\n    \"units\": \"pounds\"\n  }\n}",
+                  "raw": "{\n  \"weight\": {\n    \"value\": 2676.477870485683,\n    \"units\": \"kg\"\n  }\n}",
                   "options": {
                     "raw": {
                       "language": "json"
@@ -880,7 +880,7 @@
                   "value": "application/json"
                 }
               ],
-              "body": "{\n  \"slug\": \"string\",\n  \"state\": \"purchased\",\n  \"total_co2e_in_grams\": 7296.494718067987,\n  \"total_cost_in_usd_cents\": 361,\n  \"transaction_cost_in_usd_cents\": 3992,\n  \"offset_cost_in_usd_cents\": 527,\n  \"offset\": {\n    \"slug\": \"string\",\n    \"name\": \"string\",\n    \"registry_name\": \"string\",\n    \"offset_type\": \"string\",\n    \"country\": \"string\",\n    \"vintage_year\": 716,\n    \"price_per_kg_in_usd_cents\": 5923.73450151033\n  },\n  \"retirement\": {\n    \"serial_number\": \"string\",\n    \"registry_url\": \"https://HWqnAkdS.dsbenbvvgABnS7z7wpxXmHz4fu7dUiSiKYe+wmmZhi\",\n    \"retired_at\": \"1977-04-09T01:27:01.085Z\"\n  },\n  \"receipt_url\": \"http://Lu.jjkRlzc+u0pifT7atvhYk8uO\",\n  \"pretty_url\": \"https://AluNkpDmWTxgWSTTrapuQVYYNpOFsojY.nobdlLK9PgeTPHc4uk-ZwuvfCdDEP8TFLgbOURru8PhV2GwDXYCRwKqlkmW\",\n  \"created_at\": \"2007-04-12T21:42:05.272Z\"\n}",
+              "body": "{\n  \"slug\": \"string\",\n  \"state\": \"purchased\",\n  \"total_co2e_in_grams\": 9463.654622601356,\n  \"total_cost_in_usd_cents\": 3011,\n  \"transaction_cost_in_usd_cents\": 3660,\n  \"offset_cost_in_usd_cents\": 8069,\n  \"offset\": {\n    \"slug\": \"string\",\n    \"name\": \"string\",\n    \"registry_name\": \"string\",\n    \"offset_type\": \"string\",\n    \"country\": \"string\",\n    \"vintage_year\": 8690,\n    \"price_per_kg_in_usd_cents\": 4628.112755035704\n  },\n  \"retirement\": {\n    \"serial_number\": \"string\",\n    \"registry_url\": \"http://BXNXeBkbJbCdOvTXgsFBPVFKKrXjyvg.rtwh5bj6ZfxW+SohV0iWg\",\n    \"retired_at\": \"1970-06-03T22:51:54.500Z\"\n  },\n  \"receipt_url\": \"https://wMChFKLEVucmHO.rjHlA,sW+Tsy,x\",\n  \"pretty_url\": \"http://BhCTGdutPSoLzovuuFfZNc.whtXMdZxDRsshP1BgPAKBu2mkzqjlQguUyS6MpgoiODF\",\n  \"created_at\": \"1974-08-26T15:35:46.641Z\"\n}",
               "cookie": [],
               "_postman_previewlanguage": "json"
             }
@@ -891,7 +891,7 @@
           }
         },
         {
-          "id": "6b72dc23-652d-465a-b001-a08a67786356",
+          "id": "f3fdf509-1f75-4f48-a6b2-f4b40242bc82",
           "name": "Cloverly Purchase Currency Offset",
           "request": {
             "name": "Cloverly Purchase Currency Offset",
@@ -935,7 +935,7 @@
           },
           "response": [
             {
-              "id": "c0e8132c-6eb4-48c1-b0a1-5f6eb8c6f853",
+              "id": "cbaa8a5a-ff2a-4f2e-8782-9bc7a44932fe",
               "name": "A purchased currency-based offset.",
               "originalRequest": {
                 "url": {
@@ -967,7 +967,7 @@
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"currency\": {\n    \"value\": 9532.314625289819,\n    \"units\": \"usd cents\"\n  }\n}",
+                  "raw": "{\n  \"currency\": {\n    \"value\": 3593.8894386883335,\n    \"units\": \"usd cents\"\n  }\n}",
                   "options": {
                     "raw": {
                       "language": "json"
@@ -983,7 +983,7 @@
                   "value": "application/json"
                 }
               ],
-              "body": "{\n  \"slug\": \"string\",\n  \"state\": \"purchased\",\n  \"total_co2e_in_grams\": 7296.494718067987,\n  \"total_cost_in_usd_cents\": 361,\n  \"transaction_cost_in_usd_cents\": 3992,\n  \"offset_cost_in_usd_cents\": 527,\n  \"offset\": {\n    \"slug\": \"string\",\n    \"name\": \"string\",\n    \"registry_name\": \"string\",\n    \"offset_type\": \"string\",\n    \"country\": \"string\",\n    \"vintage_year\": 716,\n    \"price_per_kg_in_usd_cents\": 5923.73450151033\n  },\n  \"retirement\": {\n    \"serial_number\": \"string\",\n    \"registry_url\": \"https://HWqnAkdS.dsbenbvvgABnS7z7wpxXmHz4fu7dUiSiKYe+wmmZhi\",\n    \"retired_at\": \"1977-04-09T01:27:01.085Z\"\n  },\n  \"receipt_url\": \"http://Lu.jjkRlzc+u0pifT7atvhYk8uO\",\n  \"pretty_url\": \"https://AluNkpDmWTxgWSTTrapuQVYYNpOFsojY.nobdlLK9PgeTPHc4uk-ZwuvfCdDEP8TFLgbOURru8PhV2GwDXYCRwKqlkmW\",\n  \"created_at\": \"2007-04-12T21:42:05.272Z\"\n}",
+              "body": "{\n  \"slug\": \"string\",\n  \"state\": \"purchased\",\n  \"total_co2e_in_grams\": 9463.654622601356,\n  \"total_cost_in_usd_cents\": 3011,\n  \"transaction_cost_in_usd_cents\": 3660,\n  \"offset_cost_in_usd_cents\": 8069,\n  \"offset\": {\n    \"slug\": \"string\",\n    \"name\": \"string\",\n    \"registry_name\": \"string\",\n    \"offset_type\": \"string\",\n    \"country\": \"string\",\n    \"vintage_year\": 8690,\n    \"price_per_kg_in_usd_cents\": 4628.112755035704\n  },\n  \"retirement\": {\n    \"serial_number\": \"string\",\n    \"registry_url\": \"http://BXNXeBkbJbCdOvTXgsFBPVFKKrXjyvg.rtwh5bj6ZfxW+SohV0iWg\",\n    \"retired_at\": \"1970-06-03T22:51:54.500Z\"\n  },\n  \"receipt_url\": \"https://wMChFKLEVucmHO.rjHlA,sW+Tsy,x\",\n  \"pretty_url\": \"http://BhCTGdutPSoLzovuuFfZNc.whtXMdZxDRsshP1BgPAKBu2mkzqjlQguUyS6MpgoiODF\",\n  \"created_at\": \"1974-08-26T15:35:46.641Z\"\n}",
               "cookie": [],
               "_postman_previewlanguage": "json"
             }
@@ -1015,11 +1015,11 @@
     ]
   },
   "info": {
-    "_postman_id": "8d513b67-3f8f-4634-86c7-1618739564b8",
-    "name": "Cloverly Purchases API",
+    "_postman_id": "db78a785-f7dd-43bc-8bf2-70bb85421009",
+    "name": "Cloverly Account Purchases API",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
     "description": {
-      "content": "Purchase and retire carbon offsets via Cloverly. Mirrors the Estimates activity surface (shipping, vehicle, flights, electricity, carbon, currency), but each call immediately reserves credits against a verified project source and returns a purchase record with the retired offset details. Existing estimates can be converted to purchases by posting their estimate slug.\n\n\nContact Support:\n Name: Cloverly Support",
+      "content": "Retrieve the authenticated account record — currency, default offset preferences, and the API key context (public vs private, sandbox vs production).\n\n\nContact Support:\n Name: Cloverly Support",
       "type": "text/plain"
     }
   }

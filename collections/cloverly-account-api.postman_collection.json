@@ -1,7 +1,7 @@
 {
   "item": [
     {
-      "id": "e1800d7f-347a-490f-816c-1d4c5ac68bc2",
+      "id": "6c7dbba2-a5c5-4b04-9e2b-be6f58cea0eb",
       "name": "Account",
       "description": {
         "content": "Authenticated account context",
@@ -9,7 +9,7 @@
       },
       "item": [
         {
-          "id": "01be1844-9c77-49f5-9bf9-fc010110d7d2",
+          "id": "d070a0f7-ca4a-4661-bc67-3bf8419e8830",
           "name": "Cloverly Retrieve Account",
           "request": {
             "name": "Cloverly Retrieve Account",
@@ -39,7 +39,7 @@
           },
           "response": [
             {
-              "id": "efbb44c0-883d-432b-8d45-4cdfc751c5d5",
+              "id": "cdea374c-4470-4471-a7ce-e38689a8464f",
               "name": "The account record.",
               "originalRequest": {
                 "url": {
@@ -78,7 +78,7 @@
                   "value": "application/json"
                 }
               ],
-              "body": "{\n  \"slug\": \"string\",\n  \"name\": \"string\",\n  \"currency\": \"USD\",\n  \"default_offset_slug\": \"string\",\n  \"environment\": \"sandbox\",\n  \"key_type\": \"private\",\n  \"created_at\": \"2018-06-26T01:05:17.547Z\"\n}",
+              "body": "{\n  \"slug\": \"string\",\n  \"name\": \"string\",\n  \"currency\": \"USD\",\n  \"default_offset_slug\": \"string\",\n  \"environment\": \"sandbox\",\n  \"key_type\": \"public\",\n  \"created_at\": \"1959-04-21T06:20:21.565Z\"\n}",
               "cookie": [],
               "_postman_previewlanguage": "json"
             }
@@ -110,7 +110,7 @@
     ]
   },
   "info": {
-    "_postman_id": "4828657a-27f3-43dd-8c34-edce9d396f45",
+    "_postman_id": "1e33d766-8c9f-415f-8ab8-825969387728",
     "name": "Cloverly Account API",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
     "description": {

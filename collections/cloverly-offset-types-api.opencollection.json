@@ -1,7 +1,7 @@
 {
   "opencollection": "1.0.0",
   "info": {
-    "name": "Cloverly Offset Types API",
+    "name": "Cloverly Account Offset Types API",
     "version": "2019-03-beta"
   },
   "request": {

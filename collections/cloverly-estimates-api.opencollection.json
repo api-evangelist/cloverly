@@ -1,7 +1,7 @@
 {
   "opencollection": "1.0.0",
   "info": {
-    "name": "Cloverly Estimates API",
+    "name": "Cloverly Account Estimates API",
     "version": "2019-03-beta"
   },
   "request": {
