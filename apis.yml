@@ -51,6 +51,12 @@ apis:
       - Catalog
       - Climate
       - Offsets
+      - Project
+    tags_raw:
+      - Carbon
+      - Catalog
+      - Climate
+      - Offsets
       - Projects
     humanURL: https://docs.cloverly.com
     baseURL: https://api.cloverly.com
