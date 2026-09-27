@@ -204,6 +204,25 @@ components:
           type: string
         state:
           type: string
+    Offset:
+      type: object
+      properties:
+        slug:
+          type: string
+        name:
+          type: string
+        registry_name:
+          type: string
+          description: Registry that issued the credit (Verra, Gold Standard, ACR, CAR, Puro.earth, etc.).
+        offset_type:
+          type: string
+          description: Project category (Reforestation, Biochar, DAC, Renewable Energy, Methane).
+        country:
+          type: string
+        vintage_year:
+          type: integer
+        price_per_kg_in_usd_cents:
+          type: number
     Currency:
       type: object
       required:
@@ -222,25 +241,27 @@ components:
       properties:
         weight:
           $ref: '#/components/schemas/Weight'
-    FlightRequest:
+    Weight:
       type: object
+      required:
+      - value
+      - units
       properties:
-        airports:
-          type: array
-          items:
-            type: object
-            properties:
-              iata:
-                type: string
-                example: ATL
-        passengers:
-          type: integer
-        cabin_class:
+        value:
+          type: number
+        units:
           type: string
           enum:
-          - economy
-          - business
-          - first
+          - g
+          - kg
+          - pounds
+          - tonnes
+          - mt
+    Error:
+      type: object
+      properties:
+        error:
+          type: string
     VehicleRequest:
       type: object
       properties:
@@ -272,6 +293,11 @@ components:
           enum:
           - gasoline
           - diesel
+    CurrencyRequest:
+      type: object
+      properties:
+        currency:
+          $ref: '#/components/schemas/Currency'
     ElectricityRequest:
       type: object
       properties:
@@ -292,22 +318,36 @@ components:
           type: string
         region:
           type: string
-    Weight:
+    FlightRequest:
       type: object
-      required:
-      - value
-      - units
       properties:
-        value:
-          type: number
-        units:
+        airports:
+          type: array
+          items:
+            type: object
+            properties:
+              iata:
+                type: string
+                example: ATL
+        passengers:
+          type: integer
+        cabin_class:
           type: string
           enum:
-          - g
-          - kg
-          - pounds
-          - tonnes
-          - mt
+          - economy
+          - business
+          - first
+    ShippingRequest:
+      type: object
+      properties:
+        to:
+          $ref: '#/components/schemas/Place'
+        from:
+          $ref: '#/components/schemas/Place'
+        distance:
+          $ref: '#/components/schemas/Distance'
+        weight:
+          $ref: '#/components/schemas/Weight'
     Distance:
       type: object
       required:
@@ -322,46 +362,6 @@ components:
           - meters
           - km
           - miles
-    Error:
-      type: object
-      properties:
-        error:
-          type: string
-    CurrencyRequest:
-      type: object
-      properties:
-        currency:
-          $ref: '#/components/schemas/Currency'
-    ShippingRequest:
-      type: object
-      properties:
-        to:
-          $ref: '#/components/schemas/Place'
-        from:
-          $ref: '#/components/schemas/Place'
-        distance:
-          $ref: '#/components/schemas/Distance'
-        weight:
-          $ref: '#/components/schemas/Weight'
-    Offset:
-      type: object
-      properties:
-        slug:
-          type: string
-        name:
-          type: string
-        registry_name:
-          type: string
-          description: Registry that issued the credit (Verra, Gold Standard, ACR, CAR, Puro.earth, etc.).
-        offset_type:
-          type: string
-          description: Project category (Reforestation, Biochar, DAC, Renewable Energy, Methane).
-        country:
-          type: string
-        vintage_year:
-          type: integer
-        price_per_kg_in_usd_cents:
-          type: number
     Estimate:
       type: object
       properties:
@@ -394,14 +394,14 @@ components:
           type: string
           format: date-time
   responses:
-    Unauthorized:
-      description: Invalid or missing API key.
+    NotFound:
+      description: The requested resource does not exist.
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/Error'
-    NotFound:
-      description: The requested resource does not exist.
+    Unauthorized:
+      description: Invalid or missing API key.
       content:
         application/json:
           schema:

@@ -220,6 +220,23 @@ components:
           type: string
         state:
           type: string
+    Offset:
+      type: object
+      properties:
+        slug:
+          type: string
+        name:
+          type: string
+        registry_name:
+          type: string
+        offset_type:
+          type: string
+        country:
+          type: string
+        vintage_year:
+          type: integer
+        price_per_kg_in_usd_cents:
+          type: number
     Currency:
       type: object
       required:
@@ -238,105 +255,6 @@ components:
       properties:
         weight:
           $ref: '#/components/schemas/Weight'
-    FlightRequest:
-      type: object
-      properties:
-        airports:
-          type: array
-          items:
-            type: object
-            properties:
-              iata:
-                type: string
-        passengers:
-          type: integer
-        cabin_class:
-          type: string
-          enum:
-          - economy
-          - business
-          - first
-    VehicleRequest:
-      type: object
-      properties:
-        to:
-          $ref: '#/components/schemas/Place'
-        from:
-          $ref: '#/components/schemas/Place'
-        distance:
-          $ref: '#/components/schemas/Distance'
-        fuel_efficiency:
-          $ref: '#/components/schemas/FuelEfficiency'
-    FuelEfficiency:
-      type: object
-      required:
-      - value
-      - units
-      - of
-      properties:
-        value:
-          type: number
-        units:
-          type: string
-          enum:
-          - mpg
-          - km/l
-          - l/100km
-        of:
-          type: string
-          enum:
-          - gasoline
-          - diesel
-    ElectricityRequest:
-      type: object
-      properties:
-        energy:
-          type: object
-          required:
-          - value
-          - units
-          properties:
-            value:
-              type: number
-            units:
-              type: string
-              enum:
-              - kwh
-              - mwh
-        country:
-          type: string
-        region:
-          type: string
-    Weight:
-      type: object
-      required:
-      - value
-      - units
-      properties:
-        value:
-          type: number
-        units:
-          type: string
-          enum:
-          - g
-          - kg
-          - pounds
-          - tonnes
-          - mt
-    Distance:
-      type: object
-      required:
-      - value
-      - units
-      properties:
-        value:
-          type: number
-        units:
-          type: string
-          enum:
-          - meters
-          - km
-          - miles
     Purchase:
       type: object
       properties:
@@ -377,11 +295,96 @@ components:
         created_at:
           type: string
           format: date-time
+    Weight:
+      type: object
+      required:
+      - value
+      - units
+      properties:
+        value:
+          type: number
+        units:
+          type: string
+          enum:
+          - g
+          - kg
+          - pounds
+          - tonnes
+          - mt
+    VehicleRequest:
+      type: object
+      properties:
+        to:
+          $ref: '#/components/schemas/Place'
+        from:
+          $ref: '#/components/schemas/Place'
+        distance:
+          $ref: '#/components/schemas/Distance'
+        fuel_efficiency:
+          $ref: '#/components/schemas/FuelEfficiency'
+    FuelEfficiency:
+      type: object
+      required:
+      - value
+      - units
+      - of
+      properties:
+        value:
+          type: number
+        units:
+          type: string
+          enum:
+          - mpg
+          - km/l
+          - l/100km
+        of:
+          type: string
+          enum:
+          - gasoline
+          - diesel
     CurrencyRequest:
       type: object
       properties:
         currency:
           $ref: '#/components/schemas/Currency'
+    ElectricityRequest:
+      type: object
+      properties:
+        energy:
+          type: object
+          required:
+          - value
+          - units
+          properties:
+            value:
+              type: number
+            units:
+              type: string
+              enum:
+              - kwh
+              - mwh
+        country:
+          type: string
+        region:
+          type: string
+    FlightRequest:
+      type: object
+      properties:
+        airports:
+          type: array
+          items:
+            type: object
+            properties:
+              iata:
+                type: string
+        passengers:
+          type: integer
+        cabin_class:
+          type: string
+          enum:
+          - economy
+          - business
+          - first
     ShippingRequest:
       type: object
       properties:
@@ -393,23 +396,20 @@ components:
           $ref: '#/components/schemas/Distance'
         weight:
           $ref: '#/components/schemas/Weight'
-    Offset:
+    Distance:
       type: object
+      required:
+      - value
+      - units
       properties:
-        slug:
-          type: string
-        name:
-          type: string
-        registry_name:
-          type: string
-        offset_type:
-          type: string
-        country:
-          type: string
-        vintage_year:
-          type: integer
-        price_per_kg_in_usd_cents:
+        value:
           type: number
+        units:
+          type: string
+          enum:
+          - meters
+          - km
+          - miles
   parameters:
     PurchaseSlug:
       name: slug

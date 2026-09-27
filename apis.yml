@@ -1,5 +1,8 @@
 aid: cloverly
 url: https://raw.githubusercontent.com/api-evangelist/cloverly/refs/heads/main/apis.yml
+x-docs-platform: stoplight
+x-docs-platform-confidence: medium
+x-docs-platform-checked: 2026-09-24
 apis:
   - aid: cloverly:cloverly-estimates-api
     name: Cloverly Estimates API
