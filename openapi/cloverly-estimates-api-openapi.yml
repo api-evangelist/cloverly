@@ -191,22 +191,6 @@ paths:
                 $ref: '#/components/schemas/Estimate'
 components:
   schemas:
-    Error:
-      type: object
-      properties:
-        error:
-          type: string
-    VehicleRequest:
-      type: object
-      properties:
-        to:
-          $ref: '#/components/schemas/Place'
-        from:
-          $ref: '#/components/schemas/Place'
-        distance:
-          $ref: '#/components/schemas/Distance'
-        fuel_efficiency:
-          $ref: '#/components/schemas/FuelEfficiency'
     FuelEfficiency:
       type: object
       required:
@@ -227,6 +211,125 @@ components:
           enum:
           - gasoline
           - diesel
+    VehicleRequest:
+      type: object
+      properties:
+        to:
+          $ref: '#/components/schemas/Place'
+        from:
+          $ref: '#/components/schemas/Place'
+        distance:
+          $ref: '#/components/schemas/Distance'
+        fuel_efficiency:
+          $ref: '#/components/schemas/FuelEfficiency'
+    Place:
+      type: object
+      properties:
+        zip:
+          type: string
+        postal_code:
+          type: string
+        country:
+          type: string
+        city:
+          type: string
+        state:
+          type: string
+    CurrencyRequest:
+      type: object
+      properties:
+        currency:
+          $ref: '#/components/schemas/Currency'
+    Offset:
+      type: object
+      properties:
+        slug:
+          type: string
+        name:
+          type: string
+        registry_name:
+          type: string
+          description: Registry that issued the credit (Verra, Gold Standard, ACR, CAR, Puro.earth, etc.).
+        offset_type:
+          type: string
+          description: Project category (Reforestation, Biochar, DAC, Renewable Energy, Methane).
+        country:
+          type: string
+        vintage_year:
+          type: integer
+        price_per_kg_in_usd_cents:
+          type: number
+    CarbonRequest:
+      type: object
+      properties:
+        weight:
+          $ref: '#/components/schemas/Weight'
+    ElectricityRequest:
+      type: object
+      properties:
+        energy:
+          type: object
+          required:
+          - value
+          - units
+          properties:
+            value:
+              type: number
+            units:
+              type: string
+              enum:
+              - kwh
+              - mwh
+        country:
+          type: string
+        region:
+          type: string
+    ShippingRequest:
+      type: object
+      properties:
+        to:
+          $ref: '#/components/schemas/Place'
+        from:
+          $ref: '#/components/schemas/Place'
+        distance:
+          $ref: '#/components/schemas/Distance'
+        weight:
+          $ref: '#/components/schemas/Weight'
+    Weight:
+      type: object
+      required:
+      - value
+      - units
+      properties:
+        value:
+          type: number
+        units:
+          type: string
+          enum:
+          - g
+          - kg
+          - pounds
+          - tonnes
+          - mt
+    FlightRequest:
+      type: object
+      properties:
+        airports:
+          type: array
+          items:
+            type: object
+            properties:
+              iata:
+                type: string
+                example: ATL
+        passengers:
+          type: integer
+        cabin_class:
+          type: string
+          enum:
+          - economy
+          - business
+          - first
     Estimate:
       type: object
       properties:
@@ -258,32 +361,10 @@ components:
         created_at:
           type: string
           format: date-time
-    Distance:
-      type: object
-      required:
-      - value
-      - units
-      properties:
-        value:
-          type: number
-        units:
-          type: string
-          enum:
-          - meters
-          - km
-          - miles
-    Place:
+    Error:
       type: object
       properties:
-        zip:
-          type: string
-        postal_code:
-          type: string
-        country:
-          type: string
-        city:
-          type: string
-        state:
+        error:
           type: string
     Currency:
       type: object
@@ -298,50 +379,7 @@ components:
           enum:
           - usd
           - usd cents
-    Offset:
-      type: object
-      properties:
-        slug:
-          type: string
-        name:
-          type: string
-        registry_name:
-          type: string
-          description: Registry that issued the credit (Verra, Gold Standard, ACR, CAR, Puro.earth, etc.).
-        offset_type:
-          type: string
-          description: Project category (Reforestation, Biochar, DAC, Renewable Energy, Methane).
-        country:
-          type: string
-        vintage_year:
-          type: integer
-        price_per_kg_in_usd_cents:
-          type: number
-    FlightRequest:
-      type: object
-      properties:
-        airports:
-          type: array
-          items:
-            type: object
-            properties:
-              iata:
-                type: string
-                example: ATL
-        passengers:
-          type: integer
-        cabin_class:
-          type: string
-          enum:
-          - economy
-          - business
-          - first
-    CarbonRequest:
-      type: object
-      properties:
-        weight:
-          $ref: '#/components/schemas/Weight'
-    Weight:
+    Distance:
       type: object
       required:
       - value
@@ -352,56 +390,18 @@ components:
         units:
           type: string
           enum:
-          - g
-          - kg
-          - pounds
-          - tonnes
-          - mt
-    ShippingRequest:
-      type: object
-      properties:
-        to:
-          $ref: '#/components/schemas/Place'
-        from:
-          $ref: '#/components/schemas/Place'
-        distance:
-          $ref: '#/components/schemas/Distance'
-        weight:
-          $ref: '#/components/schemas/Weight'
-    ElectricityRequest:
-      type: object
-      properties:
-        energy:
-          type: object
-          required:
-          - value
-          - units
-          properties:
-            value:
-              type: number
-            units:
-              type: string
-              enum:
-              - kwh
-              - mwh
-        country:
-          type: string
-        region:
-          type: string
-    CurrencyRequest:
-      type: object
-      properties:
-        currency:
-          $ref: '#/components/schemas/Currency'
+          - meters
+          - km
+          - miles
   responses:
-    Unauthorized:
-      description: Invalid or missing API key.
+    NotFound:
+      description: The requested resource does not exist.
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/Error'
-    NotFound:
-      description: The requested resource does not exist.
+    Unauthorized:
+      description: Invalid or missing API key.
       content:
         application/json:
           schema:
