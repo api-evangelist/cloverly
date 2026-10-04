@@ -1,0 +1,49 @@
+slug: cloverly
+provider: Cloverly
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 3
+edges:
+- tag: Estimates
+  spec_file: cloverly-estimates-api-openapi.yml
+  capability_id: BC-740.20
+  capability_id_l1: BC-740
+  capability_name: Climate & Carbon Management
+  confidence: 0.85
+  evidence: POST /2019-03-beta/estimates/flights 'Cloverly Estimate Flight Offset'; POST /2019-03-beta/estimates/electricity
+    'Cloverly Estimate Electricity Offset'; POST /2019-03-beta/estimates/carbon 'Cloverly Estimate Carbon
+    Offset'
+  reason: Operations calculate carbon footprint and the corresponding offset quantity for shipping, vehicle,
+    flight and electricity activity — directly Climate & Carbon Management (carbon footprint, decarbonisation).
+    The OpenAPI description field is a mis-propagated Account blurb and is ignored per the operation evidence.
+- tag: Purchases
+  spec_file: cloverly-purchases-api-openapi.yml
+  capability_id: BC-740.20
+  capability_id_l1: BC-740
+  capability_name: Climate & Carbon Management
+  confidence: 0.8
+  evidence: POST /2019-03-beta/purchases 'Cloverly Convert Estimate To Purchase'; POST /2019-03-beta/purchases/carbon
+    'Cloverly Purchase Carbon Offset'
+  reason: Executes purchase (retirement) of verified carbon credits against estimated emissions — the
+    transactional half of Climate & Carbon Management. Procurement capabilities were considered but the
+    object purchased is a carbon instrument tied to emissions abatement, not general category sourcing.
+- tag: Offset Types
+  spec_file: cloverly-offset-types-api-openapi.yml
+  capability_id: BC-740.20
+  capability_id_l1: BC-740
+  capability_name: Climate & Carbon Management
+  confidence: 0.7
+  evidence: GET /2019-03-beta/offsets 'Cloverly List Offset Sources'; GET /2019-03-beta/offsets/{slug}
+    'Cloverly Retrieve Offset Source'
+  reason: Catalogue of carbon-offset projects/sources available for retirement, which supports the carbon
+    management motion. Lower confidence because the surface is read-only reference data about the vendor's
+    project portfolio rather than an executed carbon activity.
