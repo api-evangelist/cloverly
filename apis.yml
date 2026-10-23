@@ -138,6 +138,8 @@ accessModel:
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/cloverly.png
 access: 3rd-Party
 common:
+  - type: PostmanWorkspace
+    url: https://www.postman.com/kinlaneapi/cloverly/overview
   - type: CapabilityMap
     url: capabilities/cloverly-capability-edges.yml
     name: Cloverly Business Capability Map
