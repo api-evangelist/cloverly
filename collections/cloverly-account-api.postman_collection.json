@@ -1,103 +1,107 @@
 {
+  "info": {
+    "_postman_id": "902f6989-90c7-483c-b4c8-1fbd9862d8a0",
+    "name": "Cloverly Account API",
+    "description": "Retrieve the authenticated account record \u2014 currency, default offset preferences, and the API key context (public vs private, sandbox vs production).\n\nContact Support:\n Name: Cloverly Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-10-22T02:14:35.000Z",
+    "updatedAt": "2026-10-22T02:14:35.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-902f6989-90c7-483c-b4c8-1fbd9862d8a0"
+  },
   "item": [
     {
-      "id": "6c7dbba2-a5c5-4b04-9e2b-be6f58cea0eb",
-      "name": "Account",
-      "description": {
-        "content": "Authenticated account context",
-        "type": "text/plain"
-      },
+      "name": "2019-03-beta",
       "item": [
         {
-          "id": "d070a0f7-ca4a-4661-bc67-3bf8419e8830",
-          "name": "Cloverly Retrieve Account",
-          "request": {
-            "name": "Cloverly Retrieve Account",
-            "description": {
-              "content": "Retrieve the account record associated with the supplied API key.",
-              "type": "text/plain"
-            },
-            "url": {
-              "path": [
-                "2019-03-beta",
-                "account"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json"
-              }
-            ],
-            "method": "GET",
-            "auth": null
-          },
-          "response": [
+          "name": "account",
+          "item": [
             {
-              "id": "cdea374c-4470-4471-a7ce-e38689a8464f",
-              "name": "The account record.",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "2019-03-beta",
-                    "account"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": []
-                },
+              "name": "Cloverly Retrieve Account",
+              "id": "029aa6ee-7a30-4c7b-8cf3-502d7923e2d3",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
                 "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: bearer",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "Bearer <token>"
-                  },
                   {
                     "key": "Accept",
                     "value": "application/json"
                   }
                 ],
-                "method": "GET",
-                "body": {}
+                "url": {
+                  "raw": "{{baseUrl}}/2019-03-beta/account",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "2019-03-beta",
+                    "account"
+                  ]
+                },
+                "description": "Retrieve the account record associated with the supplied API key."
               },
-              "status": "OK",
-              "code": 200,
-              "header": [
+              "response": [
                 {
-                  "key": "Content-Type",
-                  "value": "application/json"
+                  "id": "6365c268-61c6-4dc8-8e75-084b8599ba21",
+                  "name": "The account record.",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/2019-03-beta/account",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "2019-03-beta",
+                        "account"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"slug\": \"<string>\",\n  \"name\": \"<string>\",\n  \"currency\": \"<string>\",\n  \"default_offset_slug\": \"<string>\",\n  \"environment\": \"sandbox\",\n  \"key_type\": \"public\",\n  \"created_at\": \"<dateTime>\"\n}",
+                  "createdAt": "2026-10-22T02:14:36.000Z",
+                  "updatedAt": "2026-10-22T02:14:36.000Z",
+                  "uid": "35240-6365c268-61c6-4dc8-8e75-084b8599ba21"
                 }
               ],
-              "body": "{\n  \"slug\": \"string\",\n  \"name\": \"string\",\n  \"currency\": \"USD\",\n  \"default_offset_slug\": \"string\",\n  \"environment\": \"sandbox\",\n  \"key_type\": \"public\",\n  \"created_at\": \"1959-04-21T06:20:21.565Z\"\n}",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
+              "createdAt": "2026-10-22T02:14:36.000Z",
+              "updatedAt": "2026-10-22T02:14:36.000Z",
+              "uid": "35240-029aa6ee-7a30-4c7b-8cf3-502d7923e2d3"
             }
           ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
+          "id": "b0dc27ad-adc5-4dd0-828f-3847f77ddcfc",
+          "createdAt": "2026-10-22T02:14:36.000Z",
+          "updatedAt": "2026-10-22T02:14:36.000Z",
+          "uid": "35240-b0dc27ad-adc5-4dd0-828f-3847f77ddcfc"
         }
       ],
-      "event": []
-    }
-  ],
-  "event": [],
-  "variable": [
-    {
-      "type": "string",
-      "value": "https://api.cloverly.com",
-      "key": "baseUrl"
+      "id": "39376925-61ca-469b-a8c0-d0fbd41aa159",
+      "createdAt": "2026-10-22T02:14:36.000Z",
+      "updatedAt": "2026-10-22T02:14:36.000Z",
+      "uid": "35240-39376925-61ca-469b-a8c0-d0fbd41aa159"
     }
   ],
   "auth": {
@@ -105,17 +109,15 @@
     "bearer": [
       {
         "key": "token",
-        "value": "{{bearerToken}}"
+        "value": "{{bearerToken}}",
+        "type": "string"
       }
     ]
   },
-  "info": {
-    "_postman_id": "1e33d766-8c9f-415f-8ab8-825969387728",
-    "name": "Cloverly Account API",
-    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-    "description": {
-      "content": "Retrieve the authenticated account record — currency, default offset preferences, and the API key context (public vs private, sandbox vs production).\n\n\nContact Support:\n Name: Cloverly Support",
-      "type": "text/plain"
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.cloverly.com"
     }
-  }
+  ]
 }

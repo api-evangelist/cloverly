@@ -1,201 +1,206 @@
 {
+  "info": {
+    "_postman_id": "fc6b2ef6-f84d-4388-b764-6a8bfbe9a8ef",
+    "name": "Cloverly Account Offset Types API",
+    "description": "Retrieve the authenticated account record \u2014 currency, default offset preferences, and the API key context (public vs private, sandbox vs production).\n\nContact Support:\n Name: Cloverly Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-10-22T02:14:28.000Z",
+    "updatedAt": "2026-10-22T02:14:28.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-fc6b2ef6-f84d-4388-b764-6a8bfbe9a8ef"
+  },
   "item": [
     {
-      "id": "a9aecee7-9675-40c4-b6de-4a6022904d86",
-      "name": "Offset Types",
-      "description": {
-        "content": "Catalog of available carbon-offset projects and sources",
-        "type": "text/plain"
-      },
+      "name": "2019-03-beta",
       "item": [
         {
-          "id": "63fc3ded-6c18-454a-b34d-ea603081433d",
-          "name": "Cloverly List Offset Sources",
-          "request": {
-            "name": "Cloverly List Offset Sources",
-            "description": {
-              "content": "List the available offset sources (projects) the authenticated account can purchase from.",
-              "type": "text/plain"
-            },
-            "url": {
-              "path": [
-                "2019-03-beta",
-                "offsets"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json"
-              }
-            ],
-            "method": "GET",
-            "auth": null
-          },
-          "response": [
+          "name": "offsets",
+          "item": [
             {
-              "id": "60b244bb-e1fd-4dcb-9bb2-762f2cd57c42",
-              "name": "A list of offset sources.",
-              "originalRequest": {
+              "name": "{slug}",
+              "item": [
+                {
+                  "name": "Cloverly Retrieve Offset Source",
+                  "id": "2cffc416-b932-4c21-a447-8919cf401cce",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/2019-03-beta/offsets/:slug",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "2019-03-beta",
+                        "offsets",
+                        ":slug"
+                      ],
+                      "variable": [
+                        {
+                          "id": "d73ba6a2-0458-4199-9d11-6b2830a9d7dd",
+                          "key": "slug",
+                          "value": "<string>",
+                          "description": "(Required) "
+                        }
+                      ]
+                    },
+                    "description": "Retrieve a single offset source by slug, including project details, registry link, and price."
+                  },
+                  "response": [
+                    {
+                      "id": "c569f775-b8cb-4d69-8225-e034bb7833dc",
+                      "name": "The offset source record.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/2019-03-beta/offsets/:slug",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "2019-03-beta",
+                            "offsets",
+                            ":slug"
+                          ],
+                          "variable": [
+                            {
+                              "key": "slug"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"slug\": \"<string>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"registry_name\": \"<string>\",\n  \"registry_project_id\": \"<string>\",\n  \"registry_url\": \"<uri>\",\n  \"offset_type\": \"<string>\",\n  \"country\": \"<string>\",\n  \"location\": \"<string>\",\n  \"vintage_year\": \"<integer>\",\n  \"available_co2e_in_kg\": \"<number>\",\n  \"price_per_kg_in_usd_cents\": \"<number>\",\n  \"image_url\": \"<uri>\"\n}",
+                      "createdAt": "2026-10-22T02:14:29.000Z",
+                      "updatedAt": "2026-10-22T02:14:29.000Z",
+                      "uid": "35240-c569f775-b8cb-4d69-8225-e034bb7833dc"
+                    }
+                  ],
+                  "createdAt": "2026-10-22T02:14:29.000Z",
+                  "updatedAt": "2026-10-22T02:14:29.000Z",
+                  "uid": "35240-2cffc416-b932-4c21-a447-8919cf401cce"
+                }
+              ],
+              "id": "b09ff8c0-a3b0-4053-ab66-10112a10011c",
+              "createdAt": "2026-10-22T02:14:28.000Z",
+              "updatedAt": "2026-10-22T02:14:28.000Z",
+              "uid": "35240-b09ff8c0-a3b0-4053-ab66-10112a10011c"
+            },
+            {
+              "name": "Cloverly List Offset Sources",
+              "id": "c21d81f7-2869-4bc4-9fe7-e6cd29478159",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
                 "url": {
+                  "raw": "{{baseUrl}}/2019-03-beta/offsets",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
                   "path": [
                     "2019-03-beta",
                     "offsets"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": []
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: bearer",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "Bearer <token>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "method": "GET",
-                "body": {}
-              },
-              "status": "OK",
-              "code": 200,
-              "header": [
-                {
-                  "key": "Content-Type",
-                  "value": "application/json"
-                }
-              ],
-              "body": "[\n  {\n    \"slug\": \"string\",\n    \"name\": \"string\",\n    \"description\": \"string\",\n    \"registry_name\": \"string\",\n    \"registry_project_id\": \"string\",\n    \"registry_url\": \"http://llXxCkkkMNgOI.zqcjgNTJO40nMteHfa,VstZ.Onez-\",\n    \"offset_type\": \"string\",\n    \"country\": \"string\",\n    \"location\": \"string\",\n    \"vintage_year\": 4278,\n    \"available_co2e_in_kg\": 1457.9579151930989,\n    \"price_per_kg_in_usd_cents\": 1549.9091401769992,\n    \"image_url\": \"https://oeaCYwXt.irlAH,9oVLpmo5ifg,J8AvjCquU1xAdAwIt68kkPRrTse-RLpGaZNiFlb83B0WQDS.UDRZ,v5JH-DX\"\n  },\n  {\n    \"slug\": \"string\",\n    \"name\": \"string\",\n    \"description\": \"string\",\n    \"registry_name\": \"string\",\n    \"registry_project_id\": \"string\",\n    \"registry_url\": \"https://ewtHgLRzagpEnvWsqIQFqNYzRi.nbjufVV5ZVW2DoDawnZ2y\",\n    \"offset_type\": \"string\",\n    \"country\": \"string\",\n    \"location\": \"string\",\n    \"vintage_year\": 5115,\n    \"available_co2e_in_kg\": 4812.240821074935,\n    \"price_per_kg_in_usd_cents\": 3084.623973928241,\n    \"image_url\": \"http://SOJQmAxqRXRwnawBzBTsgdTeGg.ienRyMfz9Ih8tGDh5U+bCjx0hipQWYlwg9ypXBHH3q.jbZvOHRGJ8Zs8NzyC42xrwcfBKnlE5J4rnKut\"\n  }\n]",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
-            }
-          ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
-        },
-        {
-          "id": "efc059e7-9c91-4a17-ae5d-1d49259cdbeb",
-          "name": "Cloverly Retrieve Offset Source",
-          "request": {
-            "name": "Cloverly Retrieve Offset Source",
-            "description": {
-              "content": "Retrieve a single offset source by slug, including project details, registry link, and price.",
-              "type": "text/plain"
-            },
-            "url": {
-              "path": [
-                "2019-03-beta",
-                "offsets",
-                ":slug"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": [
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "slug",
-                  "description": "(Required) "
-                }
-              ]
-            },
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json"
-              }
-            ],
-            "method": "GET",
-            "auth": null
-          },
-          "response": [
-            {
-              "id": "79f165a5-01e7-4ea5-821b-81c53389ef72",
-              "name": "The offset source record.",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "2019-03-beta",
-                    "offsets",
-                    ":slug"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": [
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "slug",
-                      "description": "(Required) "
-                    }
                   ]
                 },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: bearer",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "Bearer <token>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "method": "GET",
-                "body": {}
+                "description": "List the available offset sources (projects) the authenticated account can purchase from."
               },
-              "status": "OK",
-              "code": 200,
-              "header": [
+              "response": [
                 {
-                  "key": "Content-Type",
-                  "value": "application/json"
+                  "id": "00b2d0bc-0c98-4aae-9e2a-ef69db2f0cd6",
+                  "name": "A list of offset sources.",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/2019-03-beta/offsets",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "2019-03-beta",
+                        "offsets"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "[\n  {\n    \"slug\": \"<string>\",\n    \"name\": \"<string>\",\n    \"description\": \"<string>\",\n    \"registry_name\": \"<string>\",\n    \"registry_project_id\": \"<string>\",\n    \"registry_url\": \"<uri>\",\n    \"offset_type\": \"<string>\",\n    \"country\": \"<string>\",\n    \"location\": \"<string>\",\n    \"vintage_year\": \"<integer>\",\n    \"available_co2e_in_kg\": \"<number>\",\n    \"price_per_kg_in_usd_cents\": \"<number>\",\n    \"image_url\": \"<uri>\"\n  },\n  {\n    \"slug\": \"<string>\",\n    \"name\": \"<string>\",\n    \"description\": \"<string>\",\n    \"registry_name\": \"<string>\",\n    \"registry_project_id\": \"<string>\",\n    \"registry_url\": \"<uri>\",\n    \"offset_type\": \"<string>\",\n    \"country\": \"<string>\",\n    \"location\": \"<string>\",\n    \"vintage_year\": \"<integer>\",\n    \"available_co2e_in_kg\": \"<number>\",\n    \"price_per_kg_in_usd_cents\": \"<number>\",\n    \"image_url\": \"<uri>\"\n  }\n]",
+                  "createdAt": "2026-10-22T02:14:29.000Z",
+                  "updatedAt": "2026-10-22T02:14:29.000Z",
+                  "uid": "35240-00b2d0bc-0c98-4aae-9e2a-ef69db2f0cd6"
                 }
               ],
-              "body": "{\n  \"slug\": \"string\",\n  \"name\": \"string\",\n  \"description\": \"string\",\n  \"registry_name\": \"string\",\n  \"registry_project_id\": \"string\",\n  \"registry_url\": \"http://SgLrUbNc.wbrwCIViR82LVPD5RMOFpArFxEHcBIN2w4Q6.Nabi\",\n  \"offset_type\": \"string\",\n  \"country\": \"string\",\n  \"location\": \"string\",\n  \"vintage_year\": 6291,\n  \"available_co2e_in_kg\": 8754.720408570298,\n  \"price_per_kg_in_usd_cents\": 9158.969090246515,\n  \"image_url\": \"https://hedNlfAxixSwDlYLldGjql.iuvEeAYM3MjI9DZ3jsod3wu4-.EfUSc\"\n}",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
+              "createdAt": "2026-10-22T02:14:29.000Z",
+              "updatedAt": "2026-10-22T02:14:29.000Z",
+              "uid": "35240-c21d81f7-2869-4bc4-9fe7-e6cd29478159"
             }
           ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
+          "id": "2135cf0f-5628-452f-9e68-f8c02415fc43",
+          "createdAt": "2026-10-22T02:14:28.000Z",
+          "updatedAt": "2026-10-22T02:14:28.000Z",
+          "uid": "35240-2135cf0f-5628-452f-9e68-f8c02415fc43"
         }
       ],
-      "event": []
-    }
-  ],
-  "event": [],
-  "variable": [
-    {
-      "type": "string",
-      "value": "https://api.cloverly.com",
-      "key": "baseUrl"
+      "id": "c12afa80-5229-40f3-9fbe-b5c755f65384",
+      "createdAt": "2026-10-22T02:14:28.000Z",
+      "updatedAt": "2026-10-22T02:14:28.000Z",
+      "uid": "35240-c12afa80-5229-40f3-9fbe-b5c755f65384"
     }
   ],
   "auth": {
@@ -203,17 +208,15 @@
     "bearer": [
       {
         "key": "token",
-        "value": "{{bearerToken}}"
+        "value": "{{bearerToken}}",
+        "type": "string"
       }
     ]
   },
-  "info": {
-    "_postman_id": "69b72572-b03d-443b-85fa-c3f1438bf6a4",
-    "name": "Cloverly Account Offset Types API",
-    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-    "description": {
-      "content": "Retrieve the authenticated account record — currency, default offset preferences, and the API key context (public vs private, sandbox vs production).\n\n\nContact Support:\n Name: Cloverly Support",
-      "type": "text/plain"
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.cloverly.com"
     }
-  }
+  ]
 }

@@ -1,1008 +1,1069 @@
 {
+  "info": {
+    "_postman_id": "bcf61f02-3215-4f39-973f-88c77e5eee65",
+    "name": "Cloverly Account Purchases API",
+    "description": "Retrieve the authenticated account record \u2014 currency, default offset preferences, and the API key context (public vs private, sandbox vs production).\n\nContact Support:\n Name: Cloverly Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-10-22T02:14:22.000Z",
+    "updatedAt": "2026-10-22T02:14:22.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-bcf61f02-3215-4f39-973f-88c77e5eee65"
+  },
   "item": [
     {
-      "id": "714be665-87fb-4211-a379-a59186524107",
-      "name": "Purchases",
-      "description": {
-        "content": "Retire carbon offsets and produce auditable purchase records",
-        "type": "text/plain"
-      },
+      "name": "2019-03-beta",
       "item": [
         {
-          "id": "c1c1f059-aaa2-43d3-a309-4ee1ab15a34a",
-          "name": "Cloverly List Purchases",
-          "request": {
-            "name": "Cloverly List Purchases",
-            "description": {
-              "content": "List purchases recorded against the authenticated account.",
-              "type": "text/plain"
-            },
-            "url": {
-              "path": [
-                "2019-03-beta",
-                "purchases"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json"
-              }
-            ],
-            "method": "GET",
-            "auth": null
-          },
-          "response": [
+          "name": "purchases",
+          "item": [
             {
-              "id": "4e77868e-99f4-4914-86a9-b090009f6d89",
-              "name": "A list of purchase records.",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "2019-03-beta",
-                    "purchases"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": []
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: bearer",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "Bearer <token>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "method": "GET",
-                "body": {}
-              },
-              "status": "OK",
-              "code": 200,
-              "header": [
+              "name": "{slug}",
+              "item": [
                 {
-                  "key": "Content-Type",
-                  "value": "application/json"
-                }
-              ],
-              "body": "[\n  {\n    \"slug\": \"string\",\n    \"state\": \"cancelled\",\n    \"total_co2e_in_grams\": 7025.462389598139,\n    \"total_cost_in_usd_cents\": 8086,\n    \"transaction_cost_in_usd_cents\": 7540,\n    \"offset_cost_in_usd_cents\": 8296,\n    \"offset\": {\n      \"slug\": \"string\",\n      \"name\": \"string\",\n      \"registry_name\": \"string\",\n      \"offset_type\": \"string\",\n      \"country\": \"string\",\n      \"vintage_year\": 275,\n      \"price_per_kg_in_usd_cents\": 6219.248834765464\n    },\n    \"retirement\": {\n      \"serial_number\": \"string\",\n      \"registry_url\": \"https://lhcZrKNLpHSaOLWiGIDFfu.qbsnFPhbuSIkGq8YkDPJL+rhUtOFz\",\n      \"retired_at\": \"1984-01-21T20:07:54.425Z\"\n    },\n    \"receipt_url\": \"https://VGkYmXAnYgdcITgObWeGrGGskDDkUtXuJ.xwgfH6afNep2A+2cikHeQRPVVu3a-KRnj\",\n    \"pretty_url\": \"http://NtpBefJKxlsfaJA.vnlalplSG0VmO+a6H89sFakcxV.dxpJMEK4qqv\",\n    \"created_at\": \"1993-07-31T13:15:59.063Z\"\n  },\n  {\n    \"slug\": \"string\",\n    \"state\": \"purchased\",\n    \"total_co2e_in_grams\": 2096.754412344053,\n    \"total_cost_in_usd_cents\": 3967,\n    \"transaction_cost_in_usd_cents\": 1296,\n    \"offset_cost_in_usd_cents\": 7875,\n    \"offset\": {\n      \"slug\": \"string\",\n      \"name\": \"string\",\n      \"registry_name\": \"string\",\n      \"offset_type\": \"string\",\n      \"country\": \"string\",\n      \"vintage_year\": 600,\n      \"price_per_kg_in_usd_cents\": 7608.786886806051\n    },\n    \"retirement\": {\n      \"serial_number\": \"string\",\n      \"registry_url\": \"https://yOoJayqBMYXZpNENwGjxYVJqifSna.xvmcj8n7AbLI296oiPVFz00mBofFjQEvk\",\n      \"retired_at\": \"2005-01-28T10:01:37.307Z\"\n    },\n    \"receipt_url\": \"http://QwYQeLSKBkMKDOpierfZSuTmjH.uwkN-ltdE4FvLih9-\",\n    \"pretty_url\": \"https://AvrxjtYID.ghsZ,qnaFq8igTkAgkrUydNnUkfcq8h9N3hgVIrot0GqJrfP4\",\n    \"created_at\": \"1989-07-01T15:32:40.904Z\"\n  }\n]",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
-            }
-          ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
-        },
-        {
-          "id": "046012a7-df47-4eb2-87ba-c61e36143204",
-          "name": "Cloverly Convert Estimate To Purchase",
-          "request": {
-            "name": "Cloverly Convert Estimate To Purchase",
-            "description": {
-              "content": "Promote a previously created estimate to a purchase by posting its slug.",
-              "type": "text/plain"
-            },
-            "url": {
-              "path": [
-                "2019-03-beta",
-                "purchases"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json"
-              },
-              {
-                "key": "Accept",
-                "value": "application/json"
-              }
-            ],
-            "method": "POST",
-            "auth": null,
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"estimate_slug\": \"<string>\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            }
-          },
-          "response": [
-            {
-              "id": "073e0920-80a7-4fe3-900b-e0c21e04a368",
-              "name": "The purchased offset record.",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "2019-03-beta",
-                    "purchases"
+                  "name": "Cloverly Retrieve Purchase",
+                  "id": "30b6a60f-e8c5-4d62-87f9-9012a6d1ed0d",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/2019-03-beta/purchases/:slug",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "2019-03-beta",
+                        "purchases",
+                        ":slug"
+                      ],
+                      "variable": [
+                        {
+                          "id": "36c641f2-1239-4462-a860-c0b8258fcf87",
+                          "key": "slug",
+                          "value": "<string>",
+                          "description": "(Required) "
+                        }
+                      ]
+                    },
+                    "description": "Retrieve a single purchase by slug."
+                  },
+                  "response": [
+                    {
+                      "id": "b2ac717f-b3db-4023-b79c-3c8e398cee86",
+                      "name": "The purchase record.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/2019-03-beta/purchases/:slug",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "2019-03-beta",
+                            "purchases",
+                            ":slug"
+                          ],
+                          "variable": [
+                            {
+                              "key": "slug"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"slug\": \"<string>\",\n  \"state\": \"cancelled\",\n  \"total_co2e_in_grams\": \"<number>\",\n  \"total_cost_in_usd_cents\": \"<integer>\",\n  \"transaction_cost_in_usd_cents\": \"<integer>\",\n  \"offset_cost_in_usd_cents\": \"<integer>\",\n  \"offset\": {\n    \"slug\": \"<string>\",\n    \"name\": \"<string>\",\n    \"registry_name\": \"<string>\",\n    \"offset_type\": \"<string>\",\n    \"country\": \"<string>\",\n    \"vintage_year\": \"<integer>\",\n    \"price_per_kg_in_usd_cents\": \"<number>\"\n  },\n  \"retirement\": {\n    \"serial_number\": \"<string>\",\n    \"registry_url\": \"<uri>\",\n    \"retired_at\": \"<dateTime>\"\n  },\n  \"receipt_url\": \"<uri>\",\n  \"pretty_url\": \"<uri>\",\n  \"created_at\": \"<dateTime>\"\n}",
+                      "createdAt": "2026-10-22T02:14:22.000Z",
+                      "updatedAt": "2026-10-22T02:14:22.000Z",
+                      "uid": "35240-b2ac717f-b3db-4023-b79c-3c8e398cee86"
+                    }
                   ],
+                  "createdAt": "2026-10-22T02:14:22.000Z",
+                  "updatedAt": "2026-10-22T02:14:22.000Z",
+                  "uid": "35240-30b6a60f-e8c5-4d62-87f9-9012a6d1ed0d"
+                },
+                {
+                  "name": "Cloverly Cancel Purchase",
+                  "id": "6c01a0aa-15c0-404e-89db-3dfd0098ac9a",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "DELETE",
+                    "header": [],
+                    "url": {
+                      "raw": "{{baseUrl}}/2019-03-beta/purchases/:slug",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "2019-03-beta",
+                        "purchases",
+                        ":slug"
+                      ],
+                      "variable": [
+                        {
+                          "id": "086d72b0-d1b6-4ec9-a0cb-a904c878ff3f",
+                          "key": "slug",
+                          "value": "<string>",
+                          "description": "(Required) "
+                        }
+                      ]
+                    },
+                    "description": "Cancel a purchase (subject to Cloverly's cancellation window)."
+                  },
+                  "response": [
+                    {
+                      "id": "bbece3f2-4965-4f63-bec1-e1f1dfc478db",
+                      "name": "The cancelled purchase record.",
+                      "originalRequest": {
+                        "method": "DELETE",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/2019-03-beta/purchases/:slug",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "2019-03-beta",
+                            "purchases",
+                            ":slug"
+                          ],
+                          "variable": [
+                            {
+                              "key": "slug"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-10-22T02:14:22.000Z",
+                      "updatedAt": "2026-10-22T02:14:22.000Z",
+                      "uid": "35240-bbece3f2-4965-4f63-bec1-e1f1dfc478db"
+                    }
+                  ],
+                  "createdAt": "2026-10-22T02:14:22.000Z",
+                  "updatedAt": "2026-10-22T02:14:22.000Z",
+                  "uid": "35240-6c01a0aa-15c0-404e-89db-3dfd0098ac9a"
+                }
+              ],
+              "id": "b3d76401-f7ed-4532-ba99-d5cbc4c6544f",
+              "createdAt": "2026-10-22T02:14:22.000Z",
+              "updatedAt": "2026-10-22T02:14:22.000Z",
+              "uid": "35240-b3d76401-f7ed-4532-ba99-d5cbc4c6544f"
+            },
+            {
+              "name": "shipping",
+              "item": [
+                {
+                  "name": "Cloverly Purchase Shipping Offset",
+                  "id": "8845f58d-7163-43e6-9a72-14b16835f8b3",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"to\": {\n    \"zip\": \"<string>\",\n    \"postal_code\": \"<string>\",\n    \"country\": \"<string>\",\n    \"city\": \"<string>\",\n    \"state\": \"<string>\"\n  },\n  \"from\": {\n    \"zip\": \"<string>\",\n    \"postal_code\": \"<string>\",\n    \"country\": \"<string>\",\n    \"city\": \"<string>\",\n    \"state\": \"<string>\"\n  },\n  \"distance\": {\n    \"value\": \"<number>\",\n    \"units\": \"meters\"\n  },\n  \"weight\": {\n    \"value\": \"<number>\",\n    \"units\": \"mt\"\n  }\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/2019-03-beta/purchases/shipping",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "2019-03-beta",
+                        "purchases",
+                        "shipping"
+                      ]
+                    },
+                    "description": "Estimate and immediately retire offsets for a shipping activity."
+                  },
+                  "response": [
+                    {
+                      "id": "b80ecbd0-3cf5-478c-97d0-4376cdc02584",
+                      "name": "A purchased shipping offset.",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"to\": {\n    \"zip\": \"<string>\",\n    \"postal_code\": \"<string>\",\n    \"country\": \"<string>\",\n    \"city\": \"<string>\",\n    \"state\": \"<string>\"\n  },\n  \"from\": {\n    \"zip\": \"<string>\",\n    \"postal_code\": \"<string>\",\n    \"country\": \"<string>\",\n    \"city\": \"<string>\",\n    \"state\": \"<string>\"\n  },\n  \"distance\": {\n    \"value\": \"<number>\",\n    \"units\": \"meters\"\n  },\n  \"weight\": {\n    \"value\": \"<number>\",\n    \"units\": \"mt\"\n  }\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/2019-03-beta/purchases/shipping",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "2019-03-beta",
+                            "purchases",
+                            "shipping"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"slug\": \"<string>\",\n  \"state\": \"cancelled\",\n  \"total_co2e_in_grams\": \"<number>\",\n  \"total_cost_in_usd_cents\": \"<integer>\",\n  \"transaction_cost_in_usd_cents\": \"<integer>\",\n  \"offset_cost_in_usd_cents\": \"<integer>\",\n  \"offset\": {\n    \"slug\": \"<string>\",\n    \"name\": \"<string>\",\n    \"registry_name\": \"<string>\",\n    \"offset_type\": \"<string>\",\n    \"country\": \"<string>\",\n    \"vintage_year\": \"<integer>\",\n    \"price_per_kg_in_usd_cents\": \"<number>\"\n  },\n  \"retirement\": {\n    \"serial_number\": \"<string>\",\n    \"registry_url\": \"<uri>\",\n    \"retired_at\": \"<dateTime>\"\n  },\n  \"receipt_url\": \"<uri>\",\n  \"pretty_url\": \"<uri>\",\n  \"created_at\": \"<dateTime>\"\n}",
+                      "createdAt": "2026-10-22T02:14:22.000Z",
+                      "updatedAt": "2026-10-22T02:14:22.000Z",
+                      "uid": "35240-b80ecbd0-3cf5-478c-97d0-4376cdc02584"
+                    }
+                  ],
+                  "createdAt": "2026-10-22T02:14:22.000Z",
+                  "updatedAt": "2026-10-22T02:14:22.000Z",
+                  "uid": "35240-8845f58d-7163-43e6-9a72-14b16835f8b3"
+                }
+              ],
+              "id": "b64622e5-c4c7-42d0-893e-12ccaa089998",
+              "createdAt": "2026-10-22T02:14:22.000Z",
+              "updatedAt": "2026-10-22T02:14:22.000Z",
+              "uid": "35240-b64622e5-c4c7-42d0-893e-12ccaa089998"
+            },
+            {
+              "name": "vehicle",
+              "item": [
+                {
+                  "name": "Cloverly Purchase Vehicle Offset",
+                  "id": "43672a43-201e-466f-8b1a-44609c6522c4",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"to\": {\n    \"zip\": \"<string>\",\n    \"postal_code\": \"<string>\",\n    \"country\": \"<string>\",\n    \"city\": \"<string>\",\n    \"state\": \"<string>\"\n  },\n  \"from\": {\n    \"zip\": \"<string>\",\n    \"postal_code\": \"<string>\",\n    \"country\": \"<string>\",\n    \"city\": \"<string>\",\n    \"state\": \"<string>\"\n  },\n  \"distance\": {\n    \"value\": \"<number>\",\n    \"units\": \"miles\"\n  },\n  \"fuel_efficiency\": {\n    \"value\": \"<number>\",\n    \"units\": \"mpg\",\n    \"of\": \"diesel\"\n  }\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/2019-03-beta/purchases/vehicle",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "2019-03-beta",
+                        "purchases",
+                        "vehicle"
+                      ]
+                    },
+                    "description": "Estimate and immediately retire offsets for vehicle travel."
+                  },
+                  "response": [
+                    {
+                      "id": "8294b478-fe17-43b1-8bcf-851b90eed99d",
+                      "name": "A purchased vehicle offset.",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"to\": {\n    \"zip\": \"<string>\",\n    \"postal_code\": \"<string>\",\n    \"country\": \"<string>\",\n    \"city\": \"<string>\",\n    \"state\": \"<string>\"\n  },\n  \"from\": {\n    \"zip\": \"<string>\",\n    \"postal_code\": \"<string>\",\n    \"country\": \"<string>\",\n    \"city\": \"<string>\",\n    \"state\": \"<string>\"\n  },\n  \"distance\": {\n    \"value\": \"<number>\",\n    \"units\": \"miles\"\n  },\n  \"fuel_efficiency\": {\n    \"value\": \"<number>\",\n    \"units\": \"mpg\",\n    \"of\": \"diesel\"\n  }\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/2019-03-beta/purchases/vehicle",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "2019-03-beta",
+                            "purchases",
+                            "vehicle"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"slug\": \"<string>\",\n  \"state\": \"cancelled\",\n  \"total_co2e_in_grams\": \"<number>\",\n  \"total_cost_in_usd_cents\": \"<integer>\",\n  \"transaction_cost_in_usd_cents\": \"<integer>\",\n  \"offset_cost_in_usd_cents\": \"<integer>\",\n  \"offset\": {\n    \"slug\": \"<string>\",\n    \"name\": \"<string>\",\n    \"registry_name\": \"<string>\",\n    \"offset_type\": \"<string>\",\n    \"country\": \"<string>\",\n    \"vintage_year\": \"<integer>\",\n    \"price_per_kg_in_usd_cents\": \"<number>\"\n  },\n  \"retirement\": {\n    \"serial_number\": \"<string>\",\n    \"registry_url\": \"<uri>\",\n    \"retired_at\": \"<dateTime>\"\n  },\n  \"receipt_url\": \"<uri>\",\n  \"pretty_url\": \"<uri>\",\n  \"created_at\": \"<dateTime>\"\n}",
+                      "createdAt": "2026-10-22T02:14:22.000Z",
+                      "updatedAt": "2026-10-22T02:14:22.000Z",
+                      "uid": "35240-8294b478-fe17-43b1-8bcf-851b90eed99d"
+                    }
+                  ],
+                  "createdAt": "2026-10-22T02:14:22.000Z",
+                  "updatedAt": "2026-10-22T02:14:22.000Z",
+                  "uid": "35240-43672a43-201e-466f-8b1a-44609c6522c4"
+                }
+              ],
+              "id": "40a0f043-6742-46a5-ab1f-ae3a95cc425b",
+              "createdAt": "2026-10-22T02:14:22.000Z",
+              "updatedAt": "2026-10-22T02:14:22.000Z",
+              "uid": "35240-40a0f043-6742-46a5-ab1f-ae3a95cc425b"
+            },
+            {
+              "name": "flights",
+              "item": [
+                {
+                  "name": "Cloverly Purchase Flight Offset",
+                  "id": "55b03653-82e4-45f8-87ce-0f4bca538cc6",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"airports\": [\n    {\n      \"iata\": \"<string>\"\n    },\n    {\n      \"iata\": \"<string>\"\n    }\n  ],\n  \"passengers\": \"<integer>\",\n  \"cabin_class\": \"economy\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/2019-03-beta/purchases/flights",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "2019-03-beta",
+                        "purchases",
+                        "flights"
+                      ]
+                    },
+                    "description": "Estimate and immediately retire offsets for one or more flight legs."
+                  },
+                  "response": [
+                    {
+                      "id": "290d510d-b743-4e74-bc07-77332206d773",
+                      "name": "A purchased flight offset.",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"airports\": [\n    {\n      \"iata\": \"<string>\"\n    },\n    {\n      \"iata\": \"<string>\"\n    }\n  ],\n  \"passengers\": \"<integer>\",\n  \"cabin_class\": \"economy\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/2019-03-beta/purchases/flights",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "2019-03-beta",
+                            "purchases",
+                            "flights"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"slug\": \"<string>\",\n  \"state\": \"cancelled\",\n  \"total_co2e_in_grams\": \"<number>\",\n  \"total_cost_in_usd_cents\": \"<integer>\",\n  \"transaction_cost_in_usd_cents\": \"<integer>\",\n  \"offset_cost_in_usd_cents\": \"<integer>\",\n  \"offset\": {\n    \"slug\": \"<string>\",\n    \"name\": \"<string>\",\n    \"registry_name\": \"<string>\",\n    \"offset_type\": \"<string>\",\n    \"country\": \"<string>\",\n    \"vintage_year\": \"<integer>\",\n    \"price_per_kg_in_usd_cents\": \"<number>\"\n  },\n  \"retirement\": {\n    \"serial_number\": \"<string>\",\n    \"registry_url\": \"<uri>\",\n    \"retired_at\": \"<dateTime>\"\n  },\n  \"receipt_url\": \"<uri>\",\n  \"pretty_url\": \"<uri>\",\n  \"created_at\": \"<dateTime>\"\n}",
+                      "createdAt": "2026-10-22T02:14:22.000Z",
+                      "updatedAt": "2026-10-22T02:14:22.000Z",
+                      "uid": "35240-290d510d-b743-4e74-bc07-77332206d773"
+                    }
+                  ],
+                  "createdAt": "2026-10-22T02:14:22.000Z",
+                  "updatedAt": "2026-10-22T02:14:22.000Z",
+                  "uid": "35240-55b03653-82e4-45f8-87ce-0f4bca538cc6"
+                }
+              ],
+              "id": "eada5c1e-29f0-4d40-b474-3b9071c1f8bd",
+              "createdAt": "2026-10-22T02:14:22.000Z",
+              "updatedAt": "2026-10-22T02:14:22.000Z",
+              "uid": "35240-eada5c1e-29f0-4d40-b474-3b9071c1f8bd"
+            },
+            {
+              "name": "electricity",
+              "item": [
+                {
+                  "name": "Cloverly Purchase Electricity Offset",
+                  "id": "f034de88-958d-42a5-ba74-ffd658de47cf",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"energy\": {\n    \"value\": \"<number>\",\n    \"units\": \"kwh\"\n  },\n  \"country\": \"<string>\",\n  \"region\": \"<string>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/2019-03-beta/purchases/electricity",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "2019-03-beta",
+                        "purchases",
+                        "electricity"
+                      ]
+                    },
+                    "description": "Estimate and immediately retire offsets for electricity consumption."
+                  },
+                  "response": [
+                    {
+                      "id": "ee6cbd5f-fbc9-4f8c-a7ab-33fbde9b550a",
+                      "name": "A purchased electricity offset.",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"energy\": {\n    \"value\": \"<number>\",\n    \"units\": \"kwh\"\n  },\n  \"country\": \"<string>\",\n  \"region\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/2019-03-beta/purchases/electricity",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "2019-03-beta",
+                            "purchases",
+                            "electricity"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"slug\": \"<string>\",\n  \"state\": \"cancelled\",\n  \"total_co2e_in_grams\": \"<number>\",\n  \"total_cost_in_usd_cents\": \"<integer>\",\n  \"transaction_cost_in_usd_cents\": \"<integer>\",\n  \"offset_cost_in_usd_cents\": \"<integer>\",\n  \"offset\": {\n    \"slug\": \"<string>\",\n    \"name\": \"<string>\",\n    \"registry_name\": \"<string>\",\n    \"offset_type\": \"<string>\",\n    \"country\": \"<string>\",\n    \"vintage_year\": \"<integer>\",\n    \"price_per_kg_in_usd_cents\": \"<number>\"\n  },\n  \"retirement\": {\n    \"serial_number\": \"<string>\",\n    \"registry_url\": \"<uri>\",\n    \"retired_at\": \"<dateTime>\"\n  },\n  \"receipt_url\": \"<uri>\",\n  \"pretty_url\": \"<uri>\",\n  \"created_at\": \"<dateTime>\"\n}",
+                      "createdAt": "2026-10-22T02:14:22.000Z",
+                      "updatedAt": "2026-10-22T02:14:22.000Z",
+                      "uid": "35240-ee6cbd5f-fbc9-4f8c-a7ab-33fbde9b550a"
+                    }
+                  ],
+                  "createdAt": "2026-10-22T02:14:22.000Z",
+                  "updatedAt": "2026-10-22T02:14:22.000Z",
+                  "uid": "35240-f034de88-958d-42a5-ba74-ffd658de47cf"
+                }
+              ],
+              "id": "55861e85-364b-40a0-a1f2-eb010f073819",
+              "createdAt": "2026-10-22T02:14:22.000Z",
+              "updatedAt": "2026-10-22T02:14:22.000Z",
+              "uid": "35240-55861e85-364b-40a0-a1f2-eb010f073819"
+            },
+            {
+              "name": "carbon",
+              "item": [
+                {
+                  "name": "Cloverly Purchase Carbon Offset",
+                  "id": "1d0a6631-322b-4283-a373-1fcd639194de",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"weight\": {\n    \"value\": \"<number>\",\n    \"units\": \"tonnes\"\n  }\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/2019-03-beta/purchases/carbon",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "2019-03-beta",
+                        "purchases",
+                        "carbon"
+                      ]
+                    },
+                    "description": "Estimate and immediately retire offsets for a direct mass of CO2-equivalent emissions."
+                  },
+                  "response": [
+                    {
+                      "id": "ab3fc417-e34a-4e69-8d8f-0325b6b206da",
+                      "name": "A purchased carbon offset.",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"weight\": {\n    \"value\": \"<number>\",\n    \"units\": \"tonnes\"\n  }\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/2019-03-beta/purchases/carbon",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "2019-03-beta",
+                            "purchases",
+                            "carbon"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"slug\": \"<string>\",\n  \"state\": \"cancelled\",\n  \"total_co2e_in_grams\": \"<number>\",\n  \"total_cost_in_usd_cents\": \"<integer>\",\n  \"transaction_cost_in_usd_cents\": \"<integer>\",\n  \"offset_cost_in_usd_cents\": \"<integer>\",\n  \"offset\": {\n    \"slug\": \"<string>\",\n    \"name\": \"<string>\",\n    \"registry_name\": \"<string>\",\n    \"offset_type\": \"<string>\",\n    \"country\": \"<string>\",\n    \"vintage_year\": \"<integer>\",\n    \"price_per_kg_in_usd_cents\": \"<number>\"\n  },\n  \"retirement\": {\n    \"serial_number\": \"<string>\",\n    \"registry_url\": \"<uri>\",\n    \"retired_at\": \"<dateTime>\"\n  },\n  \"receipt_url\": \"<uri>\",\n  \"pretty_url\": \"<uri>\",\n  \"created_at\": \"<dateTime>\"\n}",
+                      "createdAt": "2026-10-22T02:14:22.000Z",
+                      "updatedAt": "2026-10-22T02:14:22.000Z",
+                      "uid": "35240-ab3fc417-e34a-4e69-8d8f-0325b6b206da"
+                    }
+                  ],
+                  "createdAt": "2026-10-22T02:14:22.000Z",
+                  "updatedAt": "2026-10-22T02:14:22.000Z",
+                  "uid": "35240-1d0a6631-322b-4283-a373-1fcd639194de"
+                }
+              ],
+              "id": "ab9ffff4-e538-45e6-a2ea-a2e2cb20c6dc",
+              "createdAt": "2026-10-22T02:14:22.000Z",
+              "updatedAt": "2026-10-22T02:14:22.000Z",
+              "uid": "35240-ab9ffff4-e538-45e6-a2ea-a2e2cb20c6dc"
+            },
+            {
+              "name": "currency",
+              "item": [
+                {
+                  "name": "Cloverly Purchase Currency Offset",
+                  "id": "7d7ab998-1f3a-456d-b901-c8f87512b704",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"currency\": {\n    \"value\": \"<number>\",\n    \"units\": \"usd cents\"\n  }\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/2019-03-beta/purchases/currency",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "2019-03-beta",
+                        "purchases",
+                        "currency"
+                      ]
+                    },
+                    "description": "Retire offsets corresponding to a fixed currency spend."
+                  },
+                  "response": [
+                    {
+                      "id": "13d4aa13-b2cc-4f56-9f4d-12ac668e9841",
+                      "name": "A purchased currency-based offset.",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"currency\": {\n    \"value\": \"<number>\",\n    \"units\": \"usd cents\"\n  }\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/2019-03-beta/purchases/currency",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "2019-03-beta",
+                            "purchases",
+                            "currency"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"slug\": \"<string>\",\n  \"state\": \"cancelled\",\n  \"total_co2e_in_grams\": \"<number>\",\n  \"total_cost_in_usd_cents\": \"<integer>\",\n  \"transaction_cost_in_usd_cents\": \"<integer>\",\n  \"offset_cost_in_usd_cents\": \"<integer>\",\n  \"offset\": {\n    \"slug\": \"<string>\",\n    \"name\": \"<string>\",\n    \"registry_name\": \"<string>\",\n    \"offset_type\": \"<string>\",\n    \"country\": \"<string>\",\n    \"vintage_year\": \"<integer>\",\n    \"price_per_kg_in_usd_cents\": \"<number>\"\n  },\n  \"retirement\": {\n    \"serial_number\": \"<string>\",\n    \"registry_url\": \"<uri>\",\n    \"retired_at\": \"<dateTime>\"\n  },\n  \"receipt_url\": \"<uri>\",\n  \"pretty_url\": \"<uri>\",\n  \"created_at\": \"<dateTime>\"\n}",
+                      "createdAt": "2026-10-22T02:14:22.000Z",
+                      "updatedAt": "2026-10-22T02:14:22.000Z",
+                      "uid": "35240-13d4aa13-b2cc-4f56-9f4d-12ac668e9841"
+                    }
+                  ],
+                  "createdAt": "2026-10-22T02:14:22.000Z",
+                  "updatedAt": "2026-10-22T02:14:22.000Z",
+                  "uid": "35240-7d7ab998-1f3a-456d-b901-c8f87512b704"
+                }
+              ],
+              "id": "4f423a06-b3c9-485f-bf56-12f294f9e799",
+              "createdAt": "2026-10-22T02:14:22.000Z",
+              "updatedAt": "2026-10-22T02:14:22.000Z",
+              "uid": "35240-4f423a06-b3c9-485f-bf56-12f294f9e799"
+            },
+            {
+              "name": "Cloverly List Purchases",
+              "id": "7c6753d7-9c6e-4225-befc-86813de8b6b5",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/2019-03-beta/purchases",
                   "host": [
                     "{{baseUrl}}"
                   ],
-                  "query": [],
-                  "variable": []
+                  "path": [
+                    "2019-03-beta",
+                    "purchases"
+                  ]
                 },
+                "description": "List purchases recorded against the authenticated account."
+              },
+              "response": [
+                {
+                  "id": "cfc81f66-f339-4d11-a980-db21085f1257",
+                  "name": "A list of purchase records.",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/2019-03-beta/purchases",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "2019-03-beta",
+                        "purchases"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "[\n  {\n    \"slug\": \"<string>\",\n    \"state\": \"cancelled\",\n    \"total_co2e_in_grams\": \"<number>\",\n    \"total_cost_in_usd_cents\": \"<integer>\",\n    \"transaction_cost_in_usd_cents\": \"<integer>\",\n    \"offset_cost_in_usd_cents\": \"<integer>\",\n    \"offset\": {\n      \"slug\": \"<string>\",\n      \"name\": \"<string>\",\n      \"registry_name\": \"<string>\",\n      \"offset_type\": \"<string>\",\n      \"country\": \"<string>\",\n      \"vintage_year\": \"<integer>\",\n      \"price_per_kg_in_usd_cents\": \"<number>\"\n    },\n    \"retirement\": {\n      \"serial_number\": \"<string>\",\n      \"registry_url\": \"<uri>\",\n      \"retired_at\": \"<dateTime>\"\n    },\n    \"receipt_url\": \"<uri>\",\n    \"pretty_url\": \"<uri>\",\n    \"created_at\": \"<dateTime>\"\n  },\n  {\n    \"slug\": \"<string>\",\n    \"state\": \"cancelled\",\n    \"total_co2e_in_grams\": \"<number>\",\n    \"total_cost_in_usd_cents\": \"<integer>\",\n    \"transaction_cost_in_usd_cents\": \"<integer>\",\n    \"offset_cost_in_usd_cents\": \"<integer>\",\n    \"offset\": {\n      \"slug\": \"<string>\",\n      \"name\": \"<string>\",\n      \"registry_name\": \"<string>\",\n      \"offset_type\": \"<string>\",\n      \"country\": \"<string>\",\n      \"vintage_year\": \"<integer>\",\n      \"price_per_kg_in_usd_cents\": \"<number>\"\n    },\n    \"retirement\": {\n      \"serial_number\": \"<string>\",\n      \"registry_url\": \"<uri>\",\n      \"retired_at\": \"<dateTime>\"\n    },\n    \"receipt_url\": \"<uri>\",\n    \"pretty_url\": \"<uri>\",\n    \"created_at\": \"<dateTime>\"\n  }\n]",
+                  "createdAt": "2026-10-22T02:14:22.000Z",
+                  "updatedAt": "2026-10-22T02:14:22.000Z",
+                  "uid": "35240-cfc81f66-f339-4d11-a980-db21085f1257"
+                }
+              ],
+              "createdAt": "2026-10-22T02:14:22.000Z",
+              "updatedAt": "2026-10-22T02:14:22.000Z",
+              "uid": "35240-7c6753d7-9c6e-4225-befc-86813de8b6b5"
+            },
+            {
+              "name": "Cloverly Convert Estimate To Purchase",
+              "id": "ebf90b7c-80c1-4af3-858b-aec855e1ffb4",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
                 "header": [
                   {
-                    "description": {
-                      "content": "Added as a part of security scheme: bearer",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "Bearer <token>"
+                    "key": "Content-Type",
+                    "value": "application/json"
                   },
                   {
                     "key": "Accept",
                     "value": "application/json"
                   }
                 ],
-                "method": "POST",
                 "body": {
                   "mode": "raw",
                   "raw": "{\n  \"estimate_slug\": \"<string>\"\n}",
                   "options": {
                     "raw": {
+                      "headerFamily": "json",
                       "language": "json"
                     }
                   }
-                }
-              },
-              "status": "OK",
-              "code": 200,
-              "header": [
-                {
-                  "key": "Content-Type",
-                  "value": "application/json"
-                }
-              ],
-              "body": "{\n  \"slug\": \"string\",\n  \"state\": \"purchased\",\n  \"total_co2e_in_grams\": 9463.654622601356,\n  \"total_cost_in_usd_cents\": 3011,\n  \"transaction_cost_in_usd_cents\": 3660,\n  \"offset_cost_in_usd_cents\": 8069,\n  \"offset\": {\n    \"slug\": \"string\",\n    \"name\": \"string\",\n    \"registry_name\": \"string\",\n    \"offset_type\": \"string\",\n    \"country\": \"string\",\n    \"vintage_year\": 8690,\n    \"price_per_kg_in_usd_cents\": 4628.112755035704\n  },\n  \"retirement\": {\n    \"serial_number\": \"string\",\n    \"registry_url\": \"http://BXNXeBkbJbCdOvTXgsFBPVFKKrXjyvg.rtwh5bj6ZfxW+SohV0iWg\",\n    \"retired_at\": \"1970-06-03T22:51:54.500Z\"\n  },\n  \"receipt_url\": \"https://wMChFKLEVucmHO.rjHlA,sW+Tsy,x\",\n  \"pretty_url\": \"http://BhCTGdutPSoLzovuuFfZNc.whtXMdZxDRsshP1BgPAKBu2mkzqjlQguUyS6MpgoiODF\",\n  \"created_at\": \"1974-08-26T15:35:46.641Z\"\n}",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
-            }
-          ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
-        },
-        {
-          "id": "f60a1032-b1b0-4322-b52f-b0a99c05bc0c",
-          "name": "Cloverly Retrieve Purchase",
-          "request": {
-            "name": "Cloverly Retrieve Purchase",
-            "description": {
-              "content": "Retrieve a single purchase by slug.",
-              "type": "text/plain"
-            },
-            "url": {
-              "path": [
-                "2019-03-beta",
-                "purchases",
-                ":slug"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": [
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "slug",
-                  "description": "(Required) "
-                }
-              ]
-            },
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json"
-              }
-            ],
-            "method": "GET",
-            "auth": null
-          },
-          "response": [
-            {
-              "id": "9f19043f-8fd1-44da-bb32-d296a5b99f51",
-              "name": "The purchase record.",
-              "originalRequest": {
+                },
                 "url": {
-                  "path": [
-                    "2019-03-beta",
-                    "purchases",
-                    ":slug"
-                  ],
+                  "raw": "{{baseUrl}}/2019-03-beta/purchases",
                   "host": [
                     "{{baseUrl}}"
                   ],
-                  "query": [],
-                  "variable": [
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "slug",
-                      "description": "(Required) "
-                    }
+                  "path": [
+                    "2019-03-beta",
+                    "purchases"
                   ]
                 },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: bearer",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "Bearer <token>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "method": "GET",
-                "body": {}
+                "description": "Promote a previously created estimate to a purchase by posting its slug."
               },
-              "status": "OK",
-              "code": 200,
-              "header": [
+              "response": [
                 {
-                  "key": "Content-Type",
-                  "value": "application/json"
-                }
-              ],
-              "body": "{\n  \"slug\": \"string\",\n  \"state\": \"purchased\",\n  \"total_co2e_in_grams\": 9463.654622601356,\n  \"total_cost_in_usd_cents\": 3011,\n  \"transaction_cost_in_usd_cents\": 3660,\n  \"offset_cost_in_usd_cents\": 8069,\n  \"offset\": {\n    \"slug\": \"string\",\n    \"name\": \"string\",\n    \"registry_name\": \"string\",\n    \"offset_type\": \"string\",\n    \"country\": \"string\",\n    \"vintage_year\": 8690,\n    \"price_per_kg_in_usd_cents\": 4628.112755035704\n  },\n  \"retirement\": {\n    \"serial_number\": \"string\",\n    \"registry_url\": \"http://BXNXeBkbJbCdOvTXgsFBPVFKKrXjyvg.rtwh5bj6ZfxW+SohV0iWg\",\n    \"retired_at\": \"1970-06-03T22:51:54.500Z\"\n  },\n  \"receipt_url\": \"https://wMChFKLEVucmHO.rjHlA,sW+Tsy,x\",\n  \"pretty_url\": \"http://BhCTGdutPSoLzovuuFfZNc.whtXMdZxDRsshP1BgPAKBu2mkzqjlQguUyS6MpgoiODF\",\n  \"created_at\": \"1974-08-26T15:35:46.641Z\"\n}",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
-            }
-          ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
-        },
-        {
-          "id": "ab3fa37f-4cb8-44a1-b2d5-ceeabd760bbd",
-          "name": "Cloverly Cancel Purchase",
-          "request": {
-            "name": "Cloverly Cancel Purchase",
-            "description": {
-              "content": "Cancel a purchase (subject to Cloverly's cancellation window).",
-              "type": "text/plain"
-            },
-            "url": {
-              "path": [
-                "2019-03-beta",
-                "purchases",
-                ":slug"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": [
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "slug",
-                  "description": "(Required) "
-                }
-              ]
-            },
-            "method": "DELETE",
-            "auth": null
-          },
-          "response": [
-            {
-              "id": "57d202d7-e6e1-4476-96a7-94c9b14bc6c0",
-              "name": "The cancelled purchase record.",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "2019-03-beta",
-                    "purchases",
-                    ":slug"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": [
+                  "id": "a5bd8544-9ea9-4d64-9f2a-0f73bce2cce6",
+                  "name": "The purchased offset record.",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"estimate_slug\": \"<string>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/2019-03-beta/purchases",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "2019-03-beta",
+                        "purchases"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
                     {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "slug",
-                      "description": "(Required) "
+                      "key": "Content-Type",
+                      "value": "application/json"
                     }
-                  ]
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: bearer",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "Bearer <token>"
-                  }
-                ],
-                "method": "DELETE",
-                "body": {}
-              },
-              "status": "OK",
-              "code": 200,
-              "header": [
-                {
-                  "key": "Content-Type",
-                  "value": "text/plain"
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"slug\": \"<string>\",\n  \"state\": \"cancelled\",\n  \"total_co2e_in_grams\": \"<number>\",\n  \"total_cost_in_usd_cents\": \"<integer>\",\n  \"transaction_cost_in_usd_cents\": \"<integer>\",\n  \"offset_cost_in_usd_cents\": \"<integer>\",\n  \"offset\": {\n    \"slug\": \"<string>\",\n    \"name\": \"<string>\",\n    \"registry_name\": \"<string>\",\n    \"offset_type\": \"<string>\",\n    \"country\": \"<string>\",\n    \"vintage_year\": \"<integer>\",\n    \"price_per_kg_in_usd_cents\": \"<number>\"\n  },\n  \"retirement\": {\n    \"serial_number\": \"<string>\",\n    \"registry_url\": \"<uri>\",\n    \"retired_at\": \"<dateTime>\"\n  },\n  \"receipt_url\": \"<uri>\",\n  \"pretty_url\": \"<uri>\",\n  \"created_at\": \"<dateTime>\"\n}",
+                  "createdAt": "2026-10-22T02:14:22.000Z",
+                  "updatedAt": "2026-10-22T02:14:22.000Z",
+                  "uid": "35240-a5bd8544-9ea9-4d64-9f2a-0f73bce2cce6"
                 }
               ],
-              "body": "",
-              "cookie": [],
-              "_postman_previewlanguage": "text"
+              "createdAt": "2026-10-22T02:14:22.000Z",
+              "updatedAt": "2026-10-22T02:14:22.000Z",
+              "uid": "35240-ebf90b7c-80c1-4af3-858b-aec855e1ffb4"
             }
           ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
-        },
-        {
-          "id": "02c020aa-2f73-40fb-8973-74dd114ae1e8",
-          "name": "Cloverly Purchase Shipping Offset",
-          "request": {
-            "name": "Cloverly Purchase Shipping Offset",
-            "description": {
-              "content": "Estimate and immediately retire offsets for a shipping activity.",
-              "type": "text/plain"
-            },
-            "url": {
-              "path": [
-                "2019-03-beta",
-                "purchases",
-                "shipping"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json"
-              },
-              {
-                "key": "Accept",
-                "value": "application/json"
-              }
-            ],
-            "method": "POST",
-            "auth": null,
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"to\": {\n    \"zip\": \"<string>\",\n    \"postal_code\": \"<string>\",\n    \"country\": \"<string>\",\n    \"city\": \"<string>\",\n    \"state\": \"<string>\"\n  },\n  \"from\": {\n    \"zip\": \"<string>\",\n    \"postal_code\": \"<string>\",\n    \"country\": \"<string>\",\n    \"city\": \"<string>\",\n    \"state\": \"<string>\"\n  },\n  \"distance\": {\n    \"value\": \"<number>\",\n    \"units\": \"<string>\"\n  },\n  \"weight\": {\n    \"value\": \"<number>\",\n    \"units\": \"<string>\"\n  }\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            }
-          },
-          "response": [
-            {
-              "id": "b7d8b1c9-e149-4c22-93af-d4b7b8cf5c2c",
-              "name": "A purchased shipping offset.",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "2019-03-beta",
-                    "purchases",
-                    "shipping"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": []
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: bearer",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "Bearer <token>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "method": "POST",
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\n  \"to\": {\n    \"zip\": \"string\",\n    \"postal_code\": \"string\",\n    \"country\": \"string\",\n    \"city\": \"string\",\n    \"state\": \"string\"\n  },\n  \"from\": {\n    \"zip\": \"string\",\n    \"postal_code\": \"string\",\n    \"country\": \"string\",\n    \"city\": \"string\",\n    \"state\": \"string\"\n  },\n  \"distance\": {\n    \"value\": 8967.083267379398,\n    \"units\": \"miles\"\n  },\n  \"weight\": {\n    \"value\": 884.8769936595424,\n    \"units\": \"tonnes\"\n  }\n}",
-                  "options": {
-                    "raw": {
-                      "language": "json"
-                    }
-                  }
-                }
-              },
-              "status": "OK",
-              "code": 200,
-              "header": [
-                {
-                  "key": "Content-Type",
-                  "value": "application/json"
-                }
-              ],
-              "body": "{\n  \"slug\": \"string\",\n  \"state\": \"purchased\",\n  \"total_co2e_in_grams\": 9463.654622601356,\n  \"total_cost_in_usd_cents\": 3011,\n  \"transaction_cost_in_usd_cents\": 3660,\n  \"offset_cost_in_usd_cents\": 8069,\n  \"offset\": {\n    \"slug\": \"string\",\n    \"name\": \"string\",\n    \"registry_name\": \"string\",\n    \"offset_type\": \"string\",\n    \"country\": \"string\",\n    \"vintage_year\": 8690,\n    \"price_per_kg_in_usd_cents\": 4628.112755035704\n  },\n  \"retirement\": {\n    \"serial_number\": \"string\",\n    \"registry_url\": \"http://BXNXeBkbJbCdOvTXgsFBPVFKKrXjyvg.rtwh5bj6ZfxW+SohV0iWg\",\n    \"retired_at\": \"1970-06-03T22:51:54.500Z\"\n  },\n  \"receipt_url\": \"https://wMChFKLEVucmHO.rjHlA,sW+Tsy,x\",\n  \"pretty_url\": \"http://BhCTGdutPSoLzovuuFfZNc.whtXMdZxDRsshP1BgPAKBu2mkzqjlQguUyS6MpgoiODF\",\n  \"created_at\": \"1974-08-26T15:35:46.641Z\"\n}",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
-            }
-          ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
-        },
-        {
-          "id": "8722e7b9-933b-4df7-b856-f5551447dd7d",
-          "name": "Cloverly Purchase Vehicle Offset",
-          "request": {
-            "name": "Cloverly Purchase Vehicle Offset",
-            "description": {
-              "content": "Estimate and immediately retire offsets for vehicle travel.",
-              "type": "text/plain"
-            },
-            "url": {
-              "path": [
-                "2019-03-beta",
-                "purchases",
-                "vehicle"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json"
-              },
-              {
-                "key": "Accept",
-                "value": "application/json"
-              }
-            ],
-            "method": "POST",
-            "auth": null,
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"to\": {\n    \"zip\": \"<string>\",\n    \"postal_code\": \"<string>\",\n    \"country\": \"<string>\",\n    \"city\": \"<string>\",\n    \"state\": \"<string>\"\n  },\n  \"from\": {\n    \"zip\": \"<string>\",\n    \"postal_code\": \"<string>\",\n    \"country\": \"<string>\",\n    \"city\": \"<string>\",\n    \"state\": \"<string>\"\n  },\n  \"distance\": {\n    \"value\": \"<number>\",\n    \"units\": \"<string>\"\n  },\n  \"fuel_efficiency\": {\n    \"value\": \"<number>\",\n    \"units\": \"<string>\",\n    \"of\": \"<string>\"\n  }\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            }
-          },
-          "response": [
-            {
-              "id": "c730ff20-cea7-4aee-9e52-6d2ba4e638bc",
-              "name": "A purchased vehicle offset.",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "2019-03-beta",
-                    "purchases",
-                    "vehicle"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": []
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: bearer",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "Bearer <token>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "method": "POST",
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\n  \"to\": {\n    \"zip\": \"string\",\n    \"postal_code\": \"string\",\n    \"country\": \"string\",\n    \"city\": \"string\",\n    \"state\": \"string\"\n  },\n  \"from\": {\n    \"zip\": \"string\",\n    \"postal_code\": \"string\",\n    \"country\": \"string\",\n    \"city\": \"string\",\n    \"state\": \"string\"\n  },\n  \"distance\": {\n    \"value\": 1884.2699104920891,\n    \"units\": \"km\"\n  },\n  \"fuel_efficiency\": {\n    \"value\": 7594.70912629813,\n    \"units\": \"mpg\",\n    \"of\": \"gasoline\"\n  }\n}",
-                  "options": {
-                    "raw": {
-                      "language": "json"
-                    }
-                  }
-                }
-              },
-              "status": "OK",
-              "code": 200,
-              "header": [
-                {
-                  "key": "Content-Type",
-                  "value": "application/json"
-                }
-              ],
-              "body": "{\n  \"slug\": \"string\",\n  \"state\": \"purchased\",\n  \"total_co2e_in_grams\": 9463.654622601356,\n  \"total_cost_in_usd_cents\": 3011,\n  \"transaction_cost_in_usd_cents\": 3660,\n  \"offset_cost_in_usd_cents\": 8069,\n  \"offset\": {\n    \"slug\": \"string\",\n    \"name\": \"string\",\n    \"registry_name\": \"string\",\n    \"offset_type\": \"string\",\n    \"country\": \"string\",\n    \"vintage_year\": 8690,\n    \"price_per_kg_in_usd_cents\": 4628.112755035704\n  },\n  \"retirement\": {\n    \"serial_number\": \"string\",\n    \"registry_url\": \"http://BXNXeBkbJbCdOvTXgsFBPVFKKrXjyvg.rtwh5bj6ZfxW+SohV0iWg\",\n    \"retired_at\": \"1970-06-03T22:51:54.500Z\"\n  },\n  \"receipt_url\": \"https://wMChFKLEVucmHO.rjHlA,sW+Tsy,x\",\n  \"pretty_url\": \"http://BhCTGdutPSoLzovuuFfZNc.whtXMdZxDRsshP1BgPAKBu2mkzqjlQguUyS6MpgoiODF\",\n  \"created_at\": \"1974-08-26T15:35:46.641Z\"\n}",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
-            }
-          ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
-        },
-        {
-          "id": "776407b2-f872-48f1-9350-33e22cd5d1c9",
-          "name": "Cloverly Purchase Flight Offset",
-          "request": {
-            "name": "Cloverly Purchase Flight Offset",
-            "description": {
-              "content": "Estimate and immediately retire offsets for one or more flight legs.",
-              "type": "text/plain"
-            },
-            "url": {
-              "path": [
-                "2019-03-beta",
-                "purchases",
-                "flights"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json"
-              },
-              {
-                "key": "Accept",
-                "value": "application/json"
-              }
-            ],
-            "method": "POST",
-            "auth": null,
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"airports\": [\n    {\n      \"iata\": \"<string>\"\n    },\n    {\n      \"iata\": \"<string>\"\n    }\n  ],\n  \"passengers\": \"<integer>\",\n  \"cabin_class\": \"<string>\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            }
-          },
-          "response": [
-            {
-              "id": "7075cdc2-e7af-45a0-b755-978e4cab685b",
-              "name": "A purchased flight offset.",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "2019-03-beta",
-                    "purchases",
-                    "flights"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": []
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: bearer",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "Bearer <token>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "method": "POST",
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\n  \"airports\": [\n    {\n      \"iata\": \"<string>\"\n    },\n    {\n      \"iata\": \"<string>\"\n    }\n  ],\n  \"passengers\": \"<integer>\",\n  \"cabin_class\": \"<string>\"\n}",
-                  "options": {
-                    "raw": {
-                      "language": "json"
-                    }
-                  }
-                }
-              },
-              "status": "OK",
-              "code": 200,
-              "header": [
-                {
-                  "key": "Content-Type",
-                  "value": "application/json"
-                }
-              ],
-              "body": "{\n  \"slug\": \"string\",\n  \"state\": \"purchased\",\n  \"total_co2e_in_grams\": 9463.654622601356,\n  \"total_cost_in_usd_cents\": 3011,\n  \"transaction_cost_in_usd_cents\": 3660,\n  \"offset_cost_in_usd_cents\": 8069,\n  \"offset\": {\n    \"slug\": \"string\",\n    \"name\": \"string\",\n    \"registry_name\": \"string\",\n    \"offset_type\": \"string\",\n    \"country\": \"string\",\n    \"vintage_year\": 8690,\n    \"price_per_kg_in_usd_cents\": 4628.112755035704\n  },\n  \"retirement\": {\n    \"serial_number\": \"string\",\n    \"registry_url\": \"http://BXNXeBkbJbCdOvTXgsFBPVFKKrXjyvg.rtwh5bj6ZfxW+SohV0iWg\",\n    \"retired_at\": \"1970-06-03T22:51:54.500Z\"\n  },\n  \"receipt_url\": \"https://wMChFKLEVucmHO.rjHlA,sW+Tsy,x\",\n  \"pretty_url\": \"http://BhCTGdutPSoLzovuuFfZNc.whtXMdZxDRsshP1BgPAKBu2mkzqjlQguUyS6MpgoiODF\",\n  \"created_at\": \"1974-08-26T15:35:46.641Z\"\n}",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
-            }
-          ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
-        },
-        {
-          "id": "e7173d21-7f78-458a-91c1-74b201313e88",
-          "name": "Cloverly Purchase Electricity Offset",
-          "request": {
-            "name": "Cloverly Purchase Electricity Offset",
-            "description": {
-              "content": "Estimate and immediately retire offsets for electricity consumption.",
-              "type": "text/plain"
-            },
-            "url": {
-              "path": [
-                "2019-03-beta",
-                "purchases",
-                "electricity"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json"
-              },
-              {
-                "key": "Accept",
-                "value": "application/json"
-              }
-            ],
-            "method": "POST",
-            "auth": null,
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"energy\": {\n    \"value\": \"<number>\",\n    \"units\": \"<string>\"\n  },\n  \"country\": \"<string>\",\n  \"region\": \"<string>\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            }
-          },
-          "response": [
-            {
-              "id": "873ebcbb-c519-4e5e-8859-a59aa77400f1",
-              "name": "A purchased electricity offset.",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "2019-03-beta",
-                    "purchases",
-                    "electricity"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": []
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: bearer",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "Bearer <token>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "method": "POST",
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\n  \"energy\": {\n    \"value\": \"<number>\",\n    \"units\": \"<string>\"\n  },\n  \"country\": \"<string>\",\n  \"region\": \"<string>\"\n}",
-                  "options": {
-                    "raw": {
-                      "language": "json"
-                    }
-                  }
-                }
-              },
-              "status": "OK",
-              "code": 200,
-              "header": [
-                {
-                  "key": "Content-Type",
-                  "value": "application/json"
-                }
-              ],
-              "body": "{\n  \"slug\": \"string\",\n  \"state\": \"purchased\",\n  \"total_co2e_in_grams\": 9463.654622601356,\n  \"total_cost_in_usd_cents\": 3011,\n  \"transaction_cost_in_usd_cents\": 3660,\n  \"offset_cost_in_usd_cents\": 8069,\n  \"offset\": {\n    \"slug\": \"string\",\n    \"name\": \"string\",\n    \"registry_name\": \"string\",\n    \"offset_type\": \"string\",\n    \"country\": \"string\",\n    \"vintage_year\": 8690,\n    \"price_per_kg_in_usd_cents\": 4628.112755035704\n  },\n  \"retirement\": {\n    \"serial_number\": \"string\",\n    \"registry_url\": \"http://BXNXeBkbJbCdOvTXgsFBPVFKKrXjyvg.rtwh5bj6ZfxW+SohV0iWg\",\n    \"retired_at\": \"1970-06-03T22:51:54.500Z\"\n  },\n  \"receipt_url\": \"https://wMChFKLEVucmHO.rjHlA,sW+Tsy,x\",\n  \"pretty_url\": \"http://BhCTGdutPSoLzovuuFfZNc.whtXMdZxDRsshP1BgPAKBu2mkzqjlQguUyS6MpgoiODF\",\n  \"created_at\": \"1974-08-26T15:35:46.641Z\"\n}",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
-            }
-          ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
-        },
-        {
-          "id": "a9ba5707-2f03-4ce7-a3bc-d9738cee9766",
-          "name": "Cloverly Purchase Carbon Offset",
-          "request": {
-            "name": "Cloverly Purchase Carbon Offset",
-            "description": {
-              "content": "Estimate and immediately retire offsets for a direct mass of CO2-equivalent emissions.",
-              "type": "text/plain"
-            },
-            "url": {
-              "path": [
-                "2019-03-beta",
-                "purchases",
-                "carbon"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json"
-              },
-              {
-                "key": "Accept",
-                "value": "application/json"
-              }
-            ],
-            "method": "POST",
-            "auth": null,
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"weight\": {\n    \"value\": \"<number>\",\n    \"units\": \"<string>\"\n  }\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            }
-          },
-          "response": [
-            {
-              "id": "c9fdfe2f-da19-4fcc-bb25-3a5732d30139",
-              "name": "A purchased carbon offset.",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "2019-03-beta",
-                    "purchases",
-                    "carbon"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": []
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: bearer",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "Bearer <token>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "method": "POST",
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\n  \"weight\": {\n    \"value\": 2676.477870485683,\n    \"units\": \"kg\"\n  }\n}",
-                  "options": {
-                    "raw": {
-                      "language": "json"
-                    }
-                  }
-                }
-              },
-              "status": "OK",
-              "code": 200,
-              "header": [
-                {
-                  "key": "Content-Type",
-                  "value": "application/json"
-                }
-              ],
-              "body": "{\n  \"slug\": \"string\",\n  \"state\": \"purchased\",\n  \"total_co2e_in_grams\": 9463.654622601356,\n  \"total_cost_in_usd_cents\": 3011,\n  \"transaction_cost_in_usd_cents\": 3660,\n  \"offset_cost_in_usd_cents\": 8069,\n  \"offset\": {\n    \"slug\": \"string\",\n    \"name\": \"string\",\n    \"registry_name\": \"string\",\n    \"offset_type\": \"string\",\n    \"country\": \"string\",\n    \"vintage_year\": 8690,\n    \"price_per_kg_in_usd_cents\": 4628.112755035704\n  },\n  \"retirement\": {\n    \"serial_number\": \"string\",\n    \"registry_url\": \"http://BXNXeBkbJbCdOvTXgsFBPVFKKrXjyvg.rtwh5bj6ZfxW+SohV0iWg\",\n    \"retired_at\": \"1970-06-03T22:51:54.500Z\"\n  },\n  \"receipt_url\": \"https://wMChFKLEVucmHO.rjHlA,sW+Tsy,x\",\n  \"pretty_url\": \"http://BhCTGdutPSoLzovuuFfZNc.whtXMdZxDRsshP1BgPAKBu2mkzqjlQguUyS6MpgoiODF\",\n  \"created_at\": \"1974-08-26T15:35:46.641Z\"\n}",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
-            }
-          ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
-        },
-        {
-          "id": "f3fdf509-1f75-4f48-a6b2-f4b40242bc82",
-          "name": "Cloverly Purchase Currency Offset",
-          "request": {
-            "name": "Cloverly Purchase Currency Offset",
-            "description": {
-              "content": "Retire offsets corresponding to a fixed currency spend.",
-              "type": "text/plain"
-            },
-            "url": {
-              "path": [
-                "2019-03-beta",
-                "purchases",
-                "currency"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json"
-              },
-              {
-                "key": "Accept",
-                "value": "application/json"
-              }
-            ],
-            "method": "POST",
-            "auth": null,
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"currency\": {\n    \"value\": \"<number>\",\n    \"units\": \"<string>\"\n  }\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            }
-          },
-          "response": [
-            {
-              "id": "cbaa8a5a-ff2a-4f2e-8782-9bc7a44932fe",
-              "name": "A purchased currency-based offset.",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "2019-03-beta",
-                    "purchases",
-                    "currency"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": []
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: bearer",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "Bearer <token>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "method": "POST",
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\n  \"currency\": {\n    \"value\": 3593.8894386883335,\n    \"units\": \"usd cents\"\n  }\n}",
-                  "options": {
-                    "raw": {
-                      "language": "json"
-                    }
-                  }
-                }
-              },
-              "status": "OK",
-              "code": 200,
-              "header": [
-                {
-                  "key": "Content-Type",
-                  "value": "application/json"
-                }
-              ],
-              "body": "{\n  \"slug\": \"string\",\n  \"state\": \"purchased\",\n  \"total_co2e_in_grams\": 9463.654622601356,\n  \"total_cost_in_usd_cents\": 3011,\n  \"transaction_cost_in_usd_cents\": 3660,\n  \"offset_cost_in_usd_cents\": 8069,\n  \"offset\": {\n    \"slug\": \"string\",\n    \"name\": \"string\",\n    \"registry_name\": \"string\",\n    \"offset_type\": \"string\",\n    \"country\": \"string\",\n    \"vintage_year\": 8690,\n    \"price_per_kg_in_usd_cents\": 4628.112755035704\n  },\n  \"retirement\": {\n    \"serial_number\": \"string\",\n    \"registry_url\": \"http://BXNXeBkbJbCdOvTXgsFBPVFKKrXjyvg.rtwh5bj6ZfxW+SohV0iWg\",\n    \"retired_at\": \"1970-06-03T22:51:54.500Z\"\n  },\n  \"receipt_url\": \"https://wMChFKLEVucmHO.rjHlA,sW+Tsy,x\",\n  \"pretty_url\": \"http://BhCTGdutPSoLzovuuFfZNc.whtXMdZxDRsshP1BgPAKBu2mkzqjlQguUyS6MpgoiODF\",\n  \"created_at\": \"1974-08-26T15:35:46.641Z\"\n}",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
-            }
-          ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
+          "id": "b1fe3d38-90f8-4de9-ac04-6ca58783a78f",
+          "createdAt": "2026-10-22T02:14:22.000Z",
+          "updatedAt": "2026-10-22T02:14:22.000Z",
+          "uid": "35240-b1fe3d38-90f8-4de9-ac04-6ca58783a78f"
         }
       ],
-      "event": []
-    }
-  ],
-  "event": [],
-  "variable": [
-    {
-      "type": "string",
-      "value": "https://api.cloverly.com",
-      "key": "baseUrl"
+      "id": "0f581503-fb5c-4721-85d0-135c1d2afe14",
+      "createdAt": "2026-10-22T02:14:22.000Z",
+      "updatedAt": "2026-10-22T02:14:22.000Z",
+      "uid": "35240-0f581503-fb5c-4721-85d0-135c1d2afe14"
     }
   ],
   "auth": {
@@ -1010,17 +1071,15 @@
     "bearer": [
       {
         "key": "token",
-        "value": "{{bearerToken}}"
+        "value": "{{bearerToken}}",
+        "type": "string"
       }
     ]
   },
-  "info": {
-    "_postman_id": "db78a785-f7dd-43bc-8bf2-70bb85421009",
-    "name": "Cloverly Account Purchases API",
-    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-    "description": {
-      "content": "Retrieve the authenticated account record — currency, default offset preferences, and the API key context (public vs private, sandbox vs production).\n\n\nContact Support:\n Name: Cloverly Support",
-      "type": "text/plain"
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.cloverly.com"
     }
-  }
+  ]
 }
