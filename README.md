@@ -1,4 +1,4 @@
-# Cloverly (cloverly)
+# Cloverly
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,158 +66,164 @@
 
 Cloverly is an Atlanta-headquartered climate technology company that operates a developer-first carbon-credit infrastructure platform. The Cloverly API estimates and purchases verified carbon offsets in real time across a curated portfolio of reforestation, biochar, direct air capture, renewable energy, and methane-abatement projects sourced from registries such as Verra, Gold Standard, ACR, Climate Action Reserve, and Puro.earth. The Catalyst product extends the same platform to project developers managing inventory, pricing, content, payments, and omnichannel distribution. In 2024 Cloverly was acquired by Climate Impact X (CIX), the Singapore-based carbon exchange, and has since operated as the technology arm powering CIX-aligned voluntary carbon market infrastructure.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/cloverly/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/cloverly/refs/heads/main/apis.yml)
+**Areas:** Carbon · Carbon Credits · Carbon Offsets · Catalyst · Climate · Climate Action · Climate Impact X · CIX · Decarbonization · ESG · Greenhouse Gas · Net Zero
 
-## Scope
+## Cloverly on APIs.io
 
-- **Access:** 3rd-Party
+Everything profiled for Cloverly is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/cloverly/](https://apis.io/providers/cloverly/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (4)
 
-- Carbon
-- Carbon Credits
-- Carbon Offsets
-- Catalyst
-- Climate
-- Climate Action
-- Climate Impact X
-- CIX
-- Decarbonization
-- ESG
-- Greenhouse Gas
-- Net Zero
-- Project Developers
-- Registries
-- Sustainability
-- Voluntary Carbon Market
-- VCM
+- [Cloverly Estimates API](https://apis.io/apis/cloverly/cloverly-estimates-api/) — Create and retrieve carbon-offset estimates without committing a purchase. Supports shipping (distance + weight), vehicle (distance + fuel efficiency),…
+- [Cloverly Purchases API](https://apis.io/apis/cloverly/cloverly-purchases-api/) — Purchase and retire carbon offsets from Cloverly's curated marketplace. Mirrors the Estimates shape (shipping, vehicle, flight, electricity, carbon,…
+- [Cloverly Offset Types API](https://apis.io/apis/cloverly/cloverly-offset-types-api/) — List the carbon-offset project types and individual offset sources available through Cloverly — including reforestation, biochar, direct air capture,…
+- [Cloverly Account API](https://apis.io/apis/cloverly/cloverly-account-api/) — Retrieve the authenticated account record including the configured currency, default offset type preferences, and the public/private API key context. Useful…
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-05-24
-- **Modified:** 2026-05-24
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### Cloverly Estimates API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-Create and retrieve carbon-offset estimates without committing a purchase. Supports shipping (distance + weight), vehicle (distance + fuel efficiency), flights (passenger-miles), electricity (kWh), direct carbon weight, and fixed currency amounts. Each estimate returns a slug, the equivalent carbon in grams, the matched offset source, and the transaction cost in USD cents, then can be converted to a purchase via the Purchases API.
+- [Cloverly Agentic Access](https://apis.io/agentic-access/cloverly/cloverly-agentic-access/)
 
-- **Human URL:** [https://docs.cloverly.com](https://docs.cloverly.com)
-- **Base URL:** `https://api.cloverly.com`
+#### JSON Schema (2)
 
-#### Tags
+The data models the API reads and writes.
 
-- Carbon
-- Climate
-- Estimates
-- Offsets
-- Sustainability
+- [Cloverly Estimate](https://apis.io/schemas/cloverly/cloverly-estimate/)
+- [Cloverly Purchase](https://apis.io/schemas/cloverly/cloverly-purchase/)
 
-#### Properties
+#### JSON Structure (1)
 
+Data models expressed in JSON Structure.
+
+- [Cloverly Estimate Structure](https://apis.io/json-structure/cloverly/cloverly-estimate-structure/)
+
+#### JSON-LD (1)
+
+Linked-data contexts for the provider's vocabulary.
+
+- [Cloverly Context](https://apis.io/jsonld/cloverly/cloverly-context/)
+
+#### Vocabulary (1)
+
+The provider's domain terms, defined.
+
+- [Cloverly Vocabulary](https://apis.io/vocabularies/cloverly/cloverly-vocabulary/)
+
+#### Examples (3)
+
+Example requests and responses.
+
+- [Cloverly Estimate Shipping Example](https://apis.io/examples/cloverly/cloverly-estimate-shipping-example/)
+- [Cloverly List Offsets Example](https://apis.io/examples/cloverly/cloverly-list-offsets-example/)
+- [Cloverly Purchase Conversion Example](https://apis.io/examples/cloverly/cloverly-purchase-conversion-example/)
+
+#### Collections (4)
+
+Postman and Open Collection request collections.
+
+- [Cloverly Account API](https://apis.io/collections/cloverly/open-cloverly-account-api/)
+- [Cloverly Account Estimates API](https://apis.io/collections/cloverly/open-cloverly-estimates-api/)
+- [Cloverly Account Offset Types API](https://apis.io/collections/cloverly/open-cloverly-offset-types-api/)
+- [Cloverly Account Purchases API](https://apis.io/collections/cloverly/open-cloverly-purchases-api/)
+
+#### Governance rules (2)
+
+Spectral rulesets for the provider's contracts.
+
+- [Cloverly — jsonschema rules](https://apis.io/rules/cloverly/cloverly-jsonschema-spectral-rules/)
+- [Cloverly API Rules](https://apis.io/rules/cloverly/cloverly-rules/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Cloverly Authentication](https://apis.io/security/cloverly/cloverly-authentication/)
+- [Cloverly Domain Security](https://apis.io/security/cloverly/cloverly-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Cloverly Plans Pricing](https://apis.io/plans/cloverly/cloverly-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Cloverly Rate Limits](https://apis.io/rate-limits/cloverly/cloverly-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Cloverly Finops](https://apis.io/finops/cloverly/cloverly-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.cloverly.com/)
 - [Documentation](https://docs.cloverly.com)
-- [OpenAPI](openapi/cloverly-estimates-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/cloverly-estimates-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/cloverly-estimates-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [JSON Schema](json-schema/cloverly-estimate-schema.json) — [JSON Schema](https://json-schema.org/specification)
-
-### Cloverly Purchases API
-
-Purchase and retire carbon offsets from Cloverly's curated marketplace. Mirrors the Estimates shape (shipping, vehicle, flight, electricity, carbon, currency) but immediately reserves and retires credits against a verified project. Estimates can be promoted to purchases by posting their slug.
-
-- **Human URL:** [https://docs.cloverly.com](https://docs.cloverly.com)
-- **Base URL:** `https://api.cloverly.com`
-
-#### Tags
-
-- Carbon
-- Climate
-- Purchases
-- Offsets
-- Retirement
-
-#### Properties
-
-- [Documentation](https://docs.cloverly.com)
-- [OpenAPI](openapi/cloverly-purchases-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/cloverly-purchases-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/cloverly-purchases-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [JSON Schema](json-schema/cloverly-purchase-schema.json) — [JSON Schema](https://json-schema.org/specification)
-
-### Cloverly Offset Types API
-
-List the carbon-offset project types and individual offset sources available through Cloverly — including reforestation, biochar, direct air capture, renewable energy, methane abatement, and other registry-backed projects. Each source records the registry (Verra, Gold Standard, ACR, Climate Action Reserve, Puro.earth, etc.), project location, vintage, available tonnes, and price per tonne.
-
-- **Human URL:** [https://docs.cloverly.com](https://docs.cloverly.com)
-- **Base URL:** `https://api.cloverly.com`
-
-#### Tags
-
-- Carbon
-- Catalog
-- Climate
-- Offsets
-- Projects
-
-#### Properties
-
-- [Documentation](https://docs.cloverly.com)
-- [OpenAPI](openapi/cloverly-offset-types-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/cloverly-offset-types-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/cloverly-offset-types-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Cloverly Account API
-
-Retrieve the authenticated account record including the configured currency, default offset type preferences, and the public/private API key context. Useful for confirming which environment (sandbox vs production) and which key tier a client is operating under.
-
-- **Human URL:** [https://docs.cloverly.com](https://docs.cloverly.com)
-- **Base URL:** `https://api.cloverly.com`
-
-#### Tags
-
-- Account
-- Carbon
-- Climate
-
-#### Properties
-
-- [Documentation](https://docs.cloverly.com)
-- [OpenAPI](openapi/cloverly-account-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/cloverly-account-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/cloverly-account-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-## Common Properties
-
-- [Portal](https://cloverly.com)
-- [Documentation](https://docs.cloverly.com)
-- [Sign Up](https://dashboard.cloverly.com)
-- [Registration](https://dashboard.cloverly.com/user/new)
-- [Product Page](https://cloverly.com/api)
-- [Product Page](https://cloverly.com/catalyst)
-- [Marketplace](https://supply.cloverly.com)
+- [API reference](https://docs.cloverly.com)
 - [Blog](https://cloverly.com/blog)
-- [Case Studies](https://cloverly.com/case-studies)
-- [White Papers](https://cloverly.com/white-papers)
-- [Contact Us](https://cloverly.com/contact)
-- [Careers](https://cloverly.com/careers)
-- [LinkedIn](https://www.linkedin.com/company/cloverly/)
-- [Twitter](https://twitter.com/getcloverly)
-- [YouTube](https://www.youtube.com/@getcloverly)
-- [GitHub Organization](https://github.com/cloverly)
-- [SDK](https://github.com/cloverly/cloverly-ruby-gem)
-- [SDK](https://github.com/cloverly/cloverly-python-module)
-- [Package Registry](https://rubygems.org/gems/cloverly)
-- [Package Registry](https://pypi.org/project/cloverly-python-module/)
-- [API Reference](https://docs.cloverly.com)
-- [Plans](plans/cloverly-plans-pricing.yml)
-- [Rate Limits](rate-limits/cloverly-rate-limits.yml)
-- [Fin Ops](finops/cloverly-finops.yml)
-- [Vocabulary](vocabulary/cloverly-vocabulary.yml)
-- [JSON-LD](json-ld/cloverly-context.jsonld) — [JSON-LD](https://www.w3.org/TR/json-ld11/)
-- [Spectral Rules](rules/cloverly-rules.yml) — [Spectral](https://docs.stoplight.io/docs/spectral)
+- [GitHub](https://github.com/cloverly)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** info@apievangelist.com
+**Kin Score 41.0** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 71.4 |
+| Contract quality | 57.0 |
+| Contract governance | 27.3 |
+| Operational transparency | 10.5 |
+| Developer ergonomics | 48.8 |
+| Access clarity | 28.9 |
+
+**Agent readiness 20.6** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | documented (partial credit) |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | — |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 13.9** — Energy & Utilities
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/cloverly/](https://apis.io/providers/cloverly/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Cloverly: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/cloverly/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
